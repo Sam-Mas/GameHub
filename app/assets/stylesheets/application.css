@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+.global-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #1a1a1a;
+	padding-left: 40px;
+}
+
+.global-header div {
+	padding-top: 30px;
+	color: #FFFFFF;
+	font-size: 32px;
+	font-family: "Copperplate Gothic Light", sans-serif;
+	vertical-align: middle;
+}
+
+#icon {
+	height: 90px;
+	float: left;
+	vertical-align: middle;
+}
