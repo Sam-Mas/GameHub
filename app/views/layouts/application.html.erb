@@ -8,9 +8,13 @@
 </head>
 <body>
 
-	<h2>HI THIS IS A TEST</h2>
-
-<%= yield %>
+	<header role="banner" class="global-header">
+		<%= image_tag("icon.jpg", :alt => "GameHub Icon", :height => "75px", :id => "icon") %>
+		<div>GameHub</div>
+	</header>
+	<div id="content">
+		<%= yield() %>
+	</div>
 
 </body>
 </html>
