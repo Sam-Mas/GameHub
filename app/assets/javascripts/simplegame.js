@@ -1,12 +1,18 @@
-function simplegame() 
+function simplegame(guess) 
 {
 	var x = Math.random()
-	var y
+	var flip_result
+	var response_to_player
 	
 	if (x < 0.5)
-		y = "Heads!"
+		flip_result = "Heads!"
 	else
-		y = "Tails!"
+		flip_result = "Tails!"
 	
-	document.getElementById("coin_result").innerHTML = y;
+	if (flip_result == guess)
+		response_to_player = flip_result + " Win!"
+	else
+		response_to_player = flip_result + " Lose..."
+	
+	document.getElementById("coin_result").innerHTML = response_to_player;
 }
