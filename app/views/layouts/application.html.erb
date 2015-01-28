@@ -5,16 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+  </head>
 
+<body>
 	<header role="banner" class="global-header">
 		<%= image_tag("icon.jpg", :alt => "GameHub Icon", :height => "75px", :id => "icon") %>
 		<div>GameHub</div>
 	</header>
-	<div id="content">
-		<%= yield() %>
-	</div>
-
+	<%= yield() %>
 </body>
 </html>
