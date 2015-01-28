@@ -1,4 +1,4 @@
-function simplegame(guess) 
+function coingame(guess) 
 {
 	var x = Math.random()
 	var flip_result
