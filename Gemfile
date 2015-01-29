@@ -44,5 +44,8 @@ group :development, :test do
   
   # Time zone requirement
   gem 'tzinfo-data'  
+
+  # Rails Server requirement
+  gem 'therubyracer'
 end
 
