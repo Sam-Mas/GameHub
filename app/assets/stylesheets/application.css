@@ -27,7 +27,7 @@
 	padding-top: 30px;
 	color: #FFFFFF;
 	font-size: 32px;
-	font-family: "Copperplate Gothic Light", sans-serif;
+	font-family: Impact, Charcoal, sans-serif;
 	vertical-align: middle;
 }
 
@@ -42,11 +42,7 @@
 	vertical-align: middle;
 }
 
-#game
-{
-    border: 2px solid #a1a1a1;
-    padding: 10px 40px; 
-    background: #dddddd;
-    width: 300px;
-    border-radius: 25px;
+#gameDiv {
+	display: none;
+	text-align: center;
 }
