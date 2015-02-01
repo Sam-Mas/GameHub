@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'challengers/new'
+  get 'challengers/index'
+  resources :challengers
 
   get 'game/index'
 

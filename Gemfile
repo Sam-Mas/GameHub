@@ -29,6 +29,9 @@ gem 'tzinfo-data'
 # Rails Server requirement
 gem 'therubyracer'
 
+# For Ajax 
+gem 'responders'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
