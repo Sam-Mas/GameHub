@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'tzinfo-data'  
 
 # Rails Server requirement
-gem 'therubyracer'
+# gem 'therubyracer'
 
 # For Ajax 
 gem 'responders'
