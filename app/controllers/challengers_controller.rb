@@ -8,14 +8,44 @@ class ChallengersController < ApplicationController
 
 	def index
 		@challengers = Challenger.all
-	end
+	end 
 
 	def create
-		@challenger = Challenger.create(challenger_params)
-	
-		respond_to do |format|
-			format.js 
+		# puts challenger_params
+		@challenger = Challenger.new(challenger_params)
+
+
+
+		puts @challenger.name
+		
+		if Challenger.find_by name: @challenger.name
+			# log in 
+			# flash[:notice] = "Logged into existing user"
+			
+			# redirect_to challenger_url(@challenger)
+			
+		else
+			
+			@challenger = Challenger.create(challenger_params)
+			if @challenger.save
+				# flash[:notice] = "User Created"
+				# redirect_to challenger_url(@challenger)
+				
+
+			else
+				# flash[:notice] = "Could not create Users"
+				# redirect_to new_challenger_url
+							
+
+			end
+
 		end
+		
+		# respond_to do |format|
+		# 	format: "js"
+		# 	format: "html"
+		# end
+		
 	end
 
 	def show
