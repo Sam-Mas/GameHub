@@ -1,5 +1,7 @@
+<table>
 <% @challengers.each do |challenger| %>
 	<tr>
-		<td><%= challenger.name %></td>
+		<td><%= challenger.name.upcase %></td>
 	</tr>
 <% end %>
+</table>

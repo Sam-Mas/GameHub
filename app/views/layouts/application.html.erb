@@ -9,18 +9,15 @@
 
 	<body>
 		<header role="banner" class="global-header">
-		<%= image_tag("icon.jpg", :alt => "GameHub Icon", :height => "75px", :id => "icon") %>
 		<div>GameHub</div>
 		</header>
 		<div id="content">
-			<div id="loginUsername">
-			</div>
 			<%= yield() %>
-
-			<div id="gameDiv">
-				<%= render "/game/coingame" %>
-			</div>
-			<div id="challengersList">
+		
+			<div id="usernameDisplay"></div>
+			<div id="gameDisplay"></div>
+			<div id="challengerList">
+				<h3> All GameHub Users: </h3>
 				<%= render partial: "/challengers/index", object: @challenger %>
 			</div>
 		</div>
