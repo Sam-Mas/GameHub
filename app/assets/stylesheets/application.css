@@ -16,7 +16,7 @@
 
 body {
 	/* Image Source: http://subtlepatterns.com/ */
-	background: url("background.png");
+	background: url("/assets/background.png");
 	color: #FFFFFF;
 }
 
