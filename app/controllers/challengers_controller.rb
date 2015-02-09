@@ -14,7 +14,7 @@ class ChallengersController < ApplicationController
 		# puts challenger_params
 		@challenger = Challenger.new(challenger_params)
 
-
+		StreamsController.new
 
 		puts @challenger.name
 		

@@ -5,9 +5,10 @@
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
+		<script type="text/javascript" src="reloader.js"></script>
 	</head>
 
-	<body>
+	<body onload="reloadData()">
 		<header role="banner" class="global-header">
 		<div>GameHub</div>
 		</header>
@@ -19,6 +20,9 @@
 			<div id="challengerList">
 				<h3> All GameHub Users: </h3>
 				<%= render partial: "/challengers/index", object: @challenger %>
+					<div id="currentData" align="center">
+					<%= render partial: "/streams/new" %>
+					</div>
 			</div>
 		</div>
 	</body>
