@@ -16,7 +16,7 @@
 
 body {
 	/* Image Source: http://subtlepatterns.com/ */
-	background: url("/assets/background.jpg");
+	background: url("/assets/digitalbackground.jpg");
 	color: #FFFFFF;
 }
 
@@ -70,7 +70,7 @@ body {
 	display: none;
 }
 
-#background {
+#chipsBackground {
 	position: absolute;
 	margin:auto;
 	top: 0;
