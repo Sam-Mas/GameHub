@@ -16,7 +16,8 @@
 
 body {
 	/* Image Source: http://subtlepatterns.com/ */
-	background: url("/assets/digitalbackground.jpg");
+	/*background: #background;*/
+	background-color: #848484;
 	color: #FFFFFF;
 }
 

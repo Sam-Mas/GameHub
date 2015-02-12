@@ -16,7 +16,12 @@
 		<div>GameHub</div>
 		</header>
 
-		<%= image_tag("digitalbackground.jpg", id:"background") %>
+		<% if false %>
+		<!-- temporary taken out of main code -->
+			<%= image_tag("digitalbackground.jpg", id:"background") %>
+		<% end %>
+
+
 		<div id="content">
 			<%= yield() %>
 		
