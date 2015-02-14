@@ -59,7 +59,7 @@ class ChallengersController < ApplicationController
 	end
 
 	def challenger_params
-		params.require(:challenger).permit(:name)
+		params.require(:challenger).permit(:name, :balance)
 	end
 
 end

@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Stub challenger for testing
+#emanuel = Challenger.create(name: 'Emanuel', balance: '25.50')

@@ -14,9 +14,10 @@
 ActiveRecord::Schema.define(version: 20150209022841) do
 
   create_table "challengers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "name"
+    t.float    "balance",    default: 0.0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "online_challenger_lists", force: :cascade do |t|
