@@ -34,11 +34,9 @@
 			<div id="challengerList">
 				<h3> All GameHub Users: </h3>
 				<%= render partial: "/challengers/index", object: @challenger %>
-					<% if false %>
 					<div id="currentData" align="center">
 					<%= render partial: "/streams/new" %>
 					</div>
-					<% end %>
 			</div>
 			
 			<% if false %>	
