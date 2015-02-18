@@ -4,14 +4,10 @@
 		<title>GameHub</title>
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	
-
 		<%= csrf_meta_tags %>
-
-		
 	</head>
 
-	<body onload="reloadData()">
+	<body>
 		<header role="banner" class="global-header">
 		<div>GameHub</div>
 		</header>
@@ -36,7 +32,6 @@
 				<%= render partial: "/challengers/index", object: @challenger %>
 					<% if false %>
 					<div id="currentData" align="center">
-					<%= render partial: "/streams/new" %>
 					</div>
 					<% end %>
 			</div>

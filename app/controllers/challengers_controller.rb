@@ -13,9 +13,6 @@ class ChallengersController < ApplicationController
 	def create
 		# puts challenger_params
 		@challenger = Challenger.new(challenger_params)
-
-		StreamsController.new
-
 		puts @challenger.name
 		
 		if Challenger.find_by name: @challenger.name
