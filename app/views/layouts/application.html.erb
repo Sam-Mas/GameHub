@@ -12,38 +12,24 @@
 		<div>GameHub</div>
 		</header>
 
-		<% if false %>
-		<!-- temporary taken out of main code -->
-			<%= image_tag("digitalbackground.jpg", id:"background") %>
-		<% end %>
-
-
 		<div id="content">
-			<%= yield() %>
+			<%= yield %>
 		
-			<div id="usernameDisplay"></div>
-
-			<!-- <button type="button">Play Game</button> -->
-			<!-- <input id="playbtn" type="button" value="Play Game" onclick="printTest();" /> -->
+			<div id="usernameDisplay">
+				Name:
+				<%= cookies[:challenger_name] %>
+				<%= link_to "Sign in",
+					{ controller: "challengers", action: "new"} %>
+			</div>
 			
-			<div id="gameDisplay"></div>
 			<div id="challengerList">
 				<h3> All GameHub Users: </h3>
 				<%= render partial: "/challengers/index", object: @challenger %>
-					<% if false %>
-					<div id="currentData" align="center">
-					</div>
-					<% end %>
+			</div>
+			<div id="gmaeList">
+				<h3> All GameHub Games: </h3>
 			</div>
 			
-			<% if false %>	
-		 	<div id="accountbalancemanagement">
-				<ul>
-					<li><%= link_to :AccountBalance , :accountbalance %></li>|
-				</ul>
-			</div>
-			<% end %>
-
 		</div>
 	</body>
 </html>

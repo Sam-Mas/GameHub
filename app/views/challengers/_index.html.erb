@@ -1,7 +1,8 @@
-
-<% @challengers.each do |challenger| %>
-	<tr>
-		<td><%= challenger.name %></td><br>
-	</tr>
+<% if @challengers %>
+	<% @challengers.each do |challenger| %>
+		<tr>
+			<td><%= challenger.name %></td><br>
+		</tr>
+	<% end %>
 <% end %>
 

@@ -1,11 +1,7 @@
-<!-- Tombstone : 2015-02-07 -->
-<!-- <div class ="centerBox" id="loginForm">
-	<h2>Welcome to GameHub</h2>
-	<%= form_for @challenger, remote: true do |f| %>
-		<p>
-			<%= f.text_field :name, :placeholder => "Username" %>
-		</p>
-		<%= f.button :Login %>
-	<% end %>
-</div>
- -->
+<h2>Welcome to GameHub</h2>
+<%= form_for @challenger, remote: true do |f| %>
+	<p>
+	<%= f.text_field :name, :placeholder => "Username" %>
+	</p>
+	<%= f.button :Login %>
+<% end %>
