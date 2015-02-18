@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>GameHub</title>
+		<%= include_gon %> 
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
@@ -19,7 +20,7 @@
 				Name:
 				<%= cookies[:challenger_name] %>
 				<%= link_to "Sign in",
-					{ controller: "challengers", action: "new"} %>
+					{ controller: "/challengers", action: "new"} %>
                                 <% unless cookies[:challenger_id].blank? %>
                                     <%= link_to "Manage Account", edit_challenger_path(cookies[:challenger_id]) %>
                                 <% end %>

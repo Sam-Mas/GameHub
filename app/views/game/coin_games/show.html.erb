@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back', game_coin_games_path, data: { no_turbolink: true } %>
+
+<% if @other_challenger != nil %>
+	Challenger
+	<%= @other_challenger.name %>
+<% end %>
+
+<div id="gameDisplay">
+	<%= render "/game/coin_games/coingame" %>
+</div>

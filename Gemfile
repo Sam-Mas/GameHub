@@ -32,6 +32,9 @@ gem 'tzinfo-data'
 # For Ajax 
 gem 'responders'
 
+# For server updating client
+gem 'gon', '~> 5.2.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
 	def require_login
 		unless cookies[:challenger_name]
-			redirect_to url_for(controller: "challengers",
+			redirect_to url_for(controller: "/challengers",
 					    action: "new",) and return 
 			
 		end

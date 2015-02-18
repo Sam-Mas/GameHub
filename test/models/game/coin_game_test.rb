@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class OnlineChallengerListTest < ActiveSupport::TestCase
+class Game::CoinGameTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

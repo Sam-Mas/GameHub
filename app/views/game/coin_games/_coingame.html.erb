@@ -1,0 +1,19 @@
+<div id="coingame" class="centerBox">
+	<h2>Coin Toss Game</h2>
+	<%= form_for(@game, remote: true, html: {:id => "game_form"}) do |f| %>
+		<%= f.button 'Heads', value: "heads" %>
+		or
+		<%= f.button 'Tails', value: "tails" %>
+	<% end %>
+	My Score
+	<span id='my_score'>
+		<%= @my_score %>
+	</span>
+	<br>
+	Opponents Score
+	<span id='opponents_score'>
+		<%= @opponents_score %>
+	</span>
+</div>
+
+<%= javascript_include_tag '_coingame' %>
