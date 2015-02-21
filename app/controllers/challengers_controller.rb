@@ -25,6 +25,10 @@ class ChallengersController < ApplicationController
 
 	end
 
+	def edit
+		@challenger = Challenger.find(cookies[:challenger_id]);
+	end
+
 	private 
 
 	def challenger_params
