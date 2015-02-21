@@ -1,7 +1,17 @@
 <% if @challengers %>
 	<% @challengers.each do |challenger| %>
 		<tr>
-			<td><%= challenger.name %></td><br>
+
+			<div class= "btn_challenge">
+				<%= button_to "Challenege", {}, :disabled => true%>
+			</div>
+			<div class="users">
+				<%= challenger.name %>
+			</div>
+
+			<br>
+			
+
 		</tr>
 	<% end %>
 <% end %>
