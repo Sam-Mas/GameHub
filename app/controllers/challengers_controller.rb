@@ -29,6 +29,16 @@ class ChallengersController < ApplicationController
 		@challenger = Challenger.find(cookies[:challenger_id]);
 	end
 
+        def update
+                @challenger = Challenger.find(cookies[:challenger_id])
+
+                if @challenger.update_attributes(challenger_params)
+                    redirect_to root_path
+                else
+                    render 'edit'
+                end
+        end
+
 	private 
 
 	def challenger_params
