@@ -3,7 +3,7 @@ class CreateChallengers < ActiveRecord::Migration
     create_table :challengers do |t|
 	t.string :name
 	t.float :balance, :default => '0.0'
-     	t.timestamps
+        t.timestamps null: false
     end
   end
 end
