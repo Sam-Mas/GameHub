@@ -18,4 +18,10 @@ class ChallengerTest < ActiveSupport::TestCase
     	assert_not challenger.save, "Saved a challenger with nil name"
     end
 
+    test "when creating a challenger the balance should not be negative" do
+      challenger = Challenger.new(name: "Tom")
+      assert_equal challenger.name, "Tom", "Challenger name not saved properly"
+      assert_operator challenger.balance, :>=, 0, "Challenger balance is negative"
+    end
+
 end
