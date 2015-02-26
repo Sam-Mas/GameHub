@@ -35,6 +35,9 @@ gem 'responders'
 # For server updating client
 gem 'gon', '~> 5.2.3'
 
+# For testing
+gem 'rspec', '~> 3.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
