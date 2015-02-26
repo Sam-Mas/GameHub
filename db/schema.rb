@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20150221074232) do
 
   create_table "challengers", force: :cascade do |t|
     t.string   "name"
-    t.float    "balance",      default: 0.0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.float    "balance",      default: 500.0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "coin_game_id"
   end
 
