@@ -24,4 +24,24 @@ class ChallengerTest < ActiveSupport::TestCase
       assert_operator challenger.balance, :>=, 0, "Challenger balance is negative"
     end
 
+    test "when creating a challenger the balance should not be nil" do
+      challenger = Challenger.new(name: "Tom")
+      assert_not_nil challenger.balance, "Challenger balance is nil"
+    end
+
+    test "when creating a challenger the balance should be numeric" do
+      challenger = Challenger.new(name: "Tom")
+      assert ((challenger.balance).is_a? Float), "Challenger balance is not a floating point number"
+    end
+
+    test "when creating a challenger the balance should exist" do
+      challenger = Challenger.new(name: "Tom")
+      assert_not ((challenger.balance).nil?), "Challenger balance does not exist"
+    end
+
+    test "when creating a challenger the balance should have a default value" do
+      challenger = Challenger.new(name: "Tom")
+      assert_equal challenger.balance, 0, "Challenger balance is not the default"
+    end
+
 end
