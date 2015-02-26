@@ -114,6 +114,6 @@ class Game::CoinGamesController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def game_coin_game_params
-		params[:game_coin_game]
+		params[:game_coin_game].permit(:score1, :score2)
 	end
 end
