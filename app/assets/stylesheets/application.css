@@ -59,6 +59,7 @@ body {
 
 .userDropdown div:hover {
 	font-size: 22px;
+	cursor: pointer;
 }
 
 .userDropdown img {
