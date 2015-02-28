@@ -1,5 +1,7 @@
 class Game::CoinGame < ActiveRecord::Base
 
+	validates :score1, presence: true, allow_nil: false
+	validates :score2, presence: true, allow_nil: false
 	has_many :challengers, before_add: :check_challengers_limit
 
 	def add_a_win_for(challenger_id)

@@ -19,5 +19,25 @@ class Game::CoinGameTest < ActiveSupport::TestCase
 	assert_not game.save, "Saved a game with nil values as the scores"
 
   end
-  
+
+  test "scores should not be negative numbers" do
+
+  	# game = Game::CoinGame.new
+  	# game.score1 = -2;
+  	# game.score2 = -4
+
+
+  	# #asserts
+
+  end
+
+  test "when player wins their score should be incremented by 1" do
+
+
+
+  end
+
+  test "scores should not be alpha character" do
+
+  end
 end
