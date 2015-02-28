@@ -12,7 +12,7 @@
 		<header role="banner" class="global-header">
 			<div><%= link_to "GAMEHUB",{ controller: "/welcome", action: "index"} %></div>
 			<div class="userDropdown dropdown">
-				<div class="dropdown-toggle" data-toggle="dropdown"><%= cookies[:challenger_name].upcase %><span class="caret"></span></div>
+				<div class="dropdown-toggle" data-toggle="dropdown"><%= cookies[:challenger_name] %><span class="caret"></span></div>
 				<ul class="dropdown-menu dropdown-menu-right" role="menu">
 					<li role="menuitem"><%= link_to "Sign in",{ controller: "/challengers", action: "new"} %></li>
 		            <% unless cookies[:challenger_id].blank? %>
