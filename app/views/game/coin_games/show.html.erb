@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', game_coin_games_path, data: { no_turbolink: true } %>
+<%= link_to image_tag("Previous-48.png"), game_coin_games_path, data: { no_turbolink: true }, id: 'backBtn' %>
 
-<% if @other_challenger != nil %>
-	Challenger
-	<%= @other_challenger.name %>
-<% end %>
+<div id="opponentName">
+	<% if @other_challenger != nil %>
+		CHALLENGER:
+		<%= @other_challenger.name.upcase %>
+	<% end %>
+</div>
 
 <div id="gameDisplay">
 	<%= render "/game/coin_games/coingame" %>

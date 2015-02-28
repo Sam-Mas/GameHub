@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Avaliable Games</h1>
+<%= link_to "#{image_tag("Add-New-48.png")} NEW GAME ".html_safe, new_game_coin_game_path, data: { no_turbolink: true }, class: 'newGame btn btn-primary' %>
+
+<h1>GAMES IN PROGRESS</h1>
 
 	<table>
 		<thead>
@@ -12,12 +14,8 @@
 		<tbody>
 			<% @coin_games_need_another_player.each do |coin_game| %>
 				<tr>
-					<td ><%= link_to('Join Game', coin_game, data: { no_turbolink: true }) %></td>
+					<td ><%= link_to('JOIN GAME', coin_game, data: { no_turbolink: true }, class: 'btn btn-primary') %></td>
 				</tr>
 			<% end %>
 		</tbody>
 	</table>
-
-<br>
-
-<%= link_to 'Start a new game', new_game_coin_game_path, data: { no_turbolink: true } %>

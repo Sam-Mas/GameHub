@@ -24,6 +24,36 @@ body {
 	font-family: Georgia, sans-serif;
 }
 
+a {
+	color: #FFF;
+}
+
+a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+
+.btn-primary {
+	background-color: #6D4A7E;
+	border: 1px solid black;
+	margin-bottom: 15px;
+}
+
+.btn-primary:hover {
+	background-color: #4D3653;
+	border: 1px solid black;
+}
+
+.btn-primary:focus {
+	background-color: #4D3653;
+	border: 1px solid black;
+}
+
+.btn-primary[disabled] {
+	background-color: #896E8D;
+	border: 1px solid gray;
+}
+
 .global-header {
 	position: fixed;
 	top: 0;
@@ -44,11 +74,6 @@ body {
 
 .global-header a {
 	color: #fff;
-}
-
-.global-header a:hover {
-	color: #fff;
-	text-decoration: none;
 }
 
 .userDropdown {
@@ -94,8 +119,7 @@ body {
 	letter-spacing: 0px;
 }
 
-#content 
-{
+#content {
 	margin-top: 110px;
 }
 
@@ -114,7 +138,7 @@ body {
 	left: 0;
 	right: 0;	
 	width:500px;
-	height: 140px;
+	height: 200px;
 	background-color: #1a1a1a;
 	padding-bottom:20px;
 	padding-top:2px;

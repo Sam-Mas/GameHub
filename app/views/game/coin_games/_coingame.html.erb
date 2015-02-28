@@ -1,16 +1,17 @@
 <div id="coingame" class="centerBox">
-	<h2>Coin Toss Game</h2>
+	<h2>COIN TOSS GAME</h2>
 	<%= form_for(@game, remote: true, html: {:id => "game_form"}) do |f| %>
-		<%= f.button 'Heads', value: "heads" %>
+		<%= f.button "#{image_tag("Money-Coin-24.png")} &nbsp; HEADS".html_safe, value: "heads", class: 'btn btn-primary' %>
 		or
-		<%= f.button 'Tails', value: "tails" %>
+		<%= f.button "#{image_tag("Money-Coin-01-24.png")} &nbsp; TAILS".html_safe, value: "tails", class: 'btn btn-primary' %>
 	<% end %>
-	My Score
+
+	My Score:
 	<span id='my_score'>
 		<%= @my_score %>
 	</span>
 	<br>
-	Opponents Score
+	Opponents Score:
 	<span id='opponents_score'>
 		<%= @opponents_score %>
 	</span>
