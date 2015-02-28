@@ -10,6 +10,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap.min
+ *= require slide-in-panel
  *= require_tree .
  *= require_self
  */
@@ -19,6 +21,7 @@ body {
 	/*background: #background;*/
 	background-color: #848484;
 	color: #FFFFFF;
+	font-family: Georgia, sans-serif;
 }
 
 .global-header {
@@ -28,20 +31,62 @@ body {
 	width: 100%;
 	background: #1a1a1a;
 	padding-left: 40px;
-	padding-bottom: 20px;
-}
-
-.global-header div {
+	padding-bottom: 15px;
 	padding-top: 30px;
 	color: #FFFFFF;
 	font-size: 32px;
-	font-family: Impact, Charcoal, sans-serif;
-	vertical-align: middle;
+}
+
+.global-header div {
+	display: inline-block;
+	letter-spacing: 8px;
+}
+
+.userDropdown {
+	list-style-type: none;
+	display: inline-block;
+	font-size: 20px;
+	float: right;
+	margin-right: 25px;
+	margin-top: 10px;
+	line-height: 25px;
+}
+
+.userDropdown div {
+	letter-spacing: 4px;
+	padding-right: 40px;
+}
+
+.userDropdown div:hover {
+	font-size: 22px;
+}
+
+.userDropdown img {
+	height: 25px;
+}
+
+.userDropdown img:hover {
+	height: 30px;
+}
+
+.userDropdown ul {
+	text-align: right;
+	margin-top: 20px;
+	margin-right: 120px;
+}
+
+.userDropdown li a:hover {
+	background-color: lightgray;
+}
+
+.userDropdown li {
+	font-size: 14px;
+	letter-spacing: 0px;
 }
 
 #content 
 {
-	margin-top: 100px;
+	margin-top: 110px;
 }
 
 #icon {
@@ -67,9 +112,6 @@ body {
 	box-shadow: 5px 5px 5px #888888;
 }
 
-#challengerList {
-}
-
 #chipsBackground {
 	position: absolute;
 	margin:auto;
@@ -84,3 +126,37 @@ body {
 	border: 25px solid black;
 }
 
+.cd-panel-header {
+	width: 25%;
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 1px solid black;
+	letter-spacing: 8px;
+	text-align: center;
+	font-size: 32px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+
+.cd-panel-header h3 {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cd-panel-container {
+	width: 25%;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-left: 1px solid black;
+	margin-top: 40px;
+}
+
+.cd-panel-close {
+	color: white;
+	text-indent: 0px;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 18px;
+}
+
+.cd-panel-close:hover {
+	color: white;
+	text-decoration: none;
+}

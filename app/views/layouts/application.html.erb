@@ -10,30 +10,42 @@
 
 	<body>
 		<header role="banner" class="global-header">
-		<div>GameHub</div>
+			<div>GAMEHUB</div>
+			<div class="userDropdown dropdown">
+				<div class="dropdown-toggle" data-toggle="dropdown"><%= cookies[:challenger_name].upcase %><span class="caret"></span></div>
+				<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					<li role="menuitem"><%= link_to "Sign in",{ controller: "/challengers", action: "new"} %></li>
+		            <% unless cookies[:challenger_id].blank? %>
+		                <li role"menuitem"><%= link_to "Manage Account", edit_challenger_path(cookies[:challenger_id]) %></li>
+		            <% end %>
+		        </ul>
+		        <div onclick="slideChallengers(true)">
+		           	<%= image_tag("users.png") %>
+		        </div>
+			</div>
 		</header>
 
-		<div id="content">
+		<main id="content">
 			<%= yield %>
-		
-			<div id="usernameDisplay">
-				Name:
-				<%= cookies[:challenger_name] %>
-				<%= link_to "Sign in",
-					{ controller: "/challengers", action: "new"} %>
-                                <% unless cookies[:challenger_id].blank? %>
-                                    <%= link_to "Manage Account", edit_challenger_path(cookies[:challenger_id]) %>
-                                <% end %>
-			</div>
-			
-			<div id="challengerList">
-				<h3> All GameHub Users: </h3>
-				<%= render partial: "/challengers/index", object: @challenger %>
-			</div>
-			<div id="gmaeList">
+	
+			<div id="gameList" style="display:none">
 				<h3> All GameHub Games: </h3>
 			</div>
 			
+		</main>
+
+		<div class="cd-panel from-right" id="challengerContainer">
+			<header class="cd-panel-header">
+				<h3>CHALLENGERS</h3>
+				<a href="#0" class="cd-panel-close" onclick="slideChallengers(false)">X</a>
+			</header>
+			<div class="cd-panel-container">
+				<div class="cd-panel-content">
+					<div id="challengerList">
+						<%= render partial: "/challengers/index", object: @challenger %>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
