@@ -18,6 +18,21 @@ class ChallengerTest < ActiveSupport::TestCase
     	assert_not challenger.save, "Saved a challenger with nil name"
     end
 
+    test "name should not be empty" do
+      challenger = Challenger.new(name: "")
+      assert_not challenger.save, "Saved a challenger with an empty name"
+    end
+
+    test "name should not contain spaces" do
+      challenger = Challenger.new(name: "Bob Fredrick")
+      assert_not challenger.save, "Saved a challenger with spaces in the name"
+    end
+
+    test "name should not contain special characters" do
+      challenger = Challenger.new(name: "Bob&%#")
+      assert_not challenger.save, "Saved a challenger with spaces in the name"
+    end
+
     test "when creating a challenger the balance should not be negative" do
       challenger = Challenger.new(name: "Tom")
       assert_equal challenger.name, "Tom", "Challenger name not saved properly"
