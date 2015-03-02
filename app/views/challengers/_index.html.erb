@@ -1,33 +1,31 @@
 <% if @challengers %>
+	<% @myself = Challenger.find_by_name(cookies[:challenger_name]) %>
 	<% @challengers.each do |challenger| %>
+
 		<tr>
-		
-			<% if (challenger.name != cookies[:challenger_name]) %>
+			<% if (challenger.name != @myself.name) %>
 
+				<! -- run down the list of challengers and return different results based on their opponent status >
 				<div class= "btn_challenge">
-
 					<%= form_tag("challenge_player", method: "post") do %>
-						<input type="hidden" name="pitcher", type="text" value="<%=cookies[:challenger_name]%>"/>
+						<input type="hidden" name="pitcher", type="text" value="<%=@myself.name%>"/>
 						<input type="hidden" name="catcher", type="text" value="<%=challenger.name%>"/>
-						
-						<% if challenger.opponent != cookies[:challenger_name] %>
+						<% if challenger.name == @myself.opponent %>
+							<%= submit_tag " Accept challenge from #{challenger.name}?" %>
+						<% elsif challenger.opponent == nil %>
 							<%= submit_tag " Challenge #{challenger.name}?" %>
 						<% else %>
-							<%= submit_tag " Challenged!", disabled: true %>
+							<div class = "report">
+							<%= "#{challenger.name} has been challenged by #{challenger.opponent}!" %>
+							</div>
 						<% end %> 
-							
 					<% end %>
-					
 				</div>
-				<div class="users">
-					<%= "Challenged by: #{challenger.opponent}" %>
-				</div>
-
-				<br>
-				<br>
+				
+				</br></br>
 			<% end %>	
-
 		</tr>
+		
 	<% end %>
 <% end %>
 
