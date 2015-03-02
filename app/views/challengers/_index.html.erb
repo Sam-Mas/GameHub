@@ -1,6 +1,5 @@
 <% if @challengers %>
 	<% @myself = Challenger.find_by_name(cookies[:challenger_name]) %>
-	<% @challengers = @challengers.order(:name) %>
 	<% @challengers.each do |challenger| %>
 
 		<tr>
@@ -11,21 +10,15 @@
 					<%= form_tag("challenge_player", method: "post") do %>
 						<input type="hidden" name="pitcher", type="text" value="<%=@myself.name%>"/>
 						<input type="hidden" name="catcher", type="text" value="<%=challenger.name%>"/>
-						
 						<% if challenger.name == @myself.opponent %>
-							<div class = "chall_button">
 							<%= submit_tag " Accept challenge from #{challenger.name}?" %>
-							</div>
 						<% elsif challenger.opponent == nil %>
-							<div class = "chall_button">
 							<%= submit_tag " Challenge #{challenger.name}?" %>
-							</div>
 						<% else %>
 							<div class = "report">
 							<%= "#{challenger.name} has been challenged by #{challenger.opponent}!" %>
 							</div>
 						<% end %> 
-						
 					<% end %>
 				</div>
 				

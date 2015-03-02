@@ -2,18 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 #challengerList .btn_challenge{
+	float: left;
+	margin-right: 10px;
+	color: black;
 }
 
 #challengerList .report{
 	float: left;
 	margin-right: 10px;
 	color: white;
-}
-
-#challengerList .chall_button{
-	float: left;
-	margin-right: 10px;
-	color: black;
-	font-size: 12px;
 }
