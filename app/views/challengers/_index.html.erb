@@ -1,6 +1,10 @@
 <% if @challengers %>
-
-	<% if cookies[:challenger_name] != nil %>
+	
+	<% if ((cookies[:challenger_name] == nil) or (Challenger.find_by_name(cookies[:challenger_name]) == nil)) %>
+		<% cookies[:challenger_name] = "Guest" %>
+	<% end %>
+	
+	<% if (cookies[:challenger_name] != nil and cookies[:challenger_name] != "Guest") %>
 		<!-- if the user is signed in... -->
 		<% @myself = Challenger.find_by_name(cookies[:challenger_name]) %>
 		<% @challengers = @challengers.order(:name) %>
@@ -56,4 +60,3 @@
 		<% end %>
 	<% end %>
 <% end %>
-
