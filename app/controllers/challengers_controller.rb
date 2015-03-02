@@ -6,10 +6,11 @@ class ChallengersController < ApplicationController
 	respond_to :html, :js
 
 	def challenge_player()
-		@issuer = Challenger.find_by_name(params[:challenge_issuer])
-		@receiver = Challenger.find_by_name(params[:challenge_receiver])
-		@receiver.opponent = @issuer.name
-		@receiver.save
+		@pitcher = Challenger.find_by_name(params[:pitcher])
+		@catcher = Challenger.find_by_name(params[:catcher])
+		
+		@catcher.opponent = @pitcher.name
+		@catcher.save
 	end	
 	
 	def new
