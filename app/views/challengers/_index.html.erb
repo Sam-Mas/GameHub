@@ -1,17 +1,31 @@
 <% if @challengers %>
 	<% @challengers.each do |challenger| %>
 		<tr>
+		
+			<% if (challenger.name != cookies[:challenger_name]) %>
 
-			<div class= "btn_challenge">
-				<%= button_to "CHALLENGE", {}, :disabled => true, class: 'btn btn-primary' %>
-			</div>
-			<div class="users">
-				<%= challenger.name %>
-			</div>
+				<div class= "btn_challenge">
 
-			<br>
-			<br>
-			
+					<%= form_tag("challenge_player", method: "post") do %>
+						<input type="hidden" name="pitcher", type="text" value="<%=cookies[:challenger_name]%>"/>
+						<input type="hidden" name="catcher", type="text" value="<%=challenger.name%>"/>
+						
+						<% if challenger.opponent != cookies[:challenger_name] %>
+							<%= submit_tag " Challenge #{challenger.name}?" %>
+						<% else %>
+							<%= submit_tag " Challenged!", disabled: true %>
+						<% end %> 
+							
+					<% end %>
+					
+				</div>
+				<div class="users">
+					<%= "Challenged by: #{challenger.opponent}" %>
+				</div>
+
+				<br>
+				<br>
+			<% end %>	
 
 		</tr>
 	<% end %>

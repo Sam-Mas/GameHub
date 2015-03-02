@@ -24,6 +24,11 @@ body {
 	font-family: Georgia, sans-serif;
 }
 
+.field
+{
+	color: black;
+}
+
 a {
 	color: #FFF;
 }

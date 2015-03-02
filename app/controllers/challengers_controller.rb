@@ -5,6 +5,16 @@ class ChallengersController < ApplicationController
 
 	respond_to :html, :js
 
+	def challenge_player()
+		@pitcher = Challenger.find_by_name(params[:pitcher])
+		@catcher = Challenger.find_by_name(params[:catcher])
+		
+		@catcher.opponent = @pitcher.name
+		@catcher.save
+		
+		#@puts "#{pitcher.get_invite}"
+	end	
+	
 	def new
 		@challenger = Challenger.new
 	end
@@ -42,7 +52,7 @@ class ChallengersController < ApplicationController
 	private 
 
 	def challenger_params
-		params.require(:challenger).permit(:name, :balance)
+		params.require(:challenger).permit(:name, :balance, :opponent)
 	end
 
 end
