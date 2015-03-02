@@ -8,8 +8,14 @@ class ChallengersController < ApplicationController
 	def challenge_player()
 		@issuer = Challenger.find_by_name(params[:challenge_issuer])
 		@receiver = Challenger.find_by_name(params[:challenge_receiver])
-		@receiver.opponent = @issuer.name
-		@receiver.save
+		
+		if (params[:commit] == "No")
+			@issuer.opponent = nil
+			@issuer.save
+		else
+			@receiver.opponent = @issuer.name
+			@receiver.save		
+		end
 	end	
 	
 	def new

@@ -22,12 +22,10 @@
 						<%= form_tag("challenge_player", method: "post") do %>
 							<input type="hidden" name="challenge_issuer", type="text" value="<%=@myself.name%>"/>
 							<input type="hidden" name="challenge_receiver", type="text" value="<%=challenger.name%>"/>
-							
 							<! -- report opponent status and allow challenging or acceptance of challenges >
-							<% if challenger.name == @myself.opponent %>
-								<div class = "chall_button">
-								<%= submit_tag " Accept challenge from #{challenger.name}?" %>
-								</div>
+							<% if challenger.name == @myself.opponent %>								
+								<div class = "report"><%= "Accept challenge from #{challenger.name}?" %></br></div>
+								<div class = "chall_button"><%= submit_tag "Yes" %><%= submit_tag "No" %></div>
 							<% elsif challenger.opponent == nil %>
 								<div class = "chall_button">
 								<%= submit_tag " Challenge #{challenger.name}?" %>
