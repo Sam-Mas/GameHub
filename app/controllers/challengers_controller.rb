@@ -11,6 +11,8 @@ class ChallengersController < ApplicationController
 		
 		@catcher.opponent = @pitcher.name
 		@catcher.save
+		
+		#@puts "#{pitcher.get_invite}"
 	end	
 	
 	def new
