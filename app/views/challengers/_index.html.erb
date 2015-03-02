@@ -1,11 +1,15 @@
 <% if @challengers %>
-	
+		
 	<% if ((cookies[:challenger_name] == nil) or (Challenger.find_by_name(cookies[:challenger_name]) == nil)) %>
 		<% cookies[:challenger_name] = "Guest" %>
 	<% end %>
 	
+	<!-- if the user is signed in... -->
 	<% if (cookies[:challenger_name] != nil and cookies[:challenger_name] != "Guest") %>
-		<!-- if the user is signed in... -->
+		<% if (@challengers.count == 1) %>
+			No other challengers online!
+		<% end %>
+		
 		<% @myself = Challenger.find_by_name(cookies[:challenger_name]) %>
 		<% @challengers = @challengers.order(:name) %>
 		<% @challengers.each do |challenger| %>
@@ -42,10 +46,15 @@
 			</tr>
 		<% end %>
 
+	<!-- guest user, display as read-only-->	
 	<% else %>
-	<!-- the user is not signed in, display everything -->
+		<% if (@challengers.count == 0) %>
+			No other challengers online!
+		<% end %>
+	
 		<% @challengers = @challengers.order(:name) %>
 		<% @challengers.each do |challenger| %>
+				
 		<!-- run down the list of players -->
 			<tr>
 				<div class = "report">
@@ -58,5 +67,5 @@
 				</br>
 			</tr>
 		<% end %>
-	<% end %>
-<% end %>
+	<% end #else %>
+<% end #if challengers %>
