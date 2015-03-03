@@ -12,9 +12,16 @@ class ChallengersController < ApplicationController
 		if (params[:commit] == "No")
 			@issuer.opponent = nil
 			@issuer.save
+		elsif (params[:commit] == "Yes")
+			@issuer.opponent = nil
+			@issuer.save
+			@receiver.opponent = nil
+			@receiver.save
+			redirect_to "/game/coin_games/#{@receiver.coin_game_id}", status: 301
 		else
 			@receiver.opponent = @issuer.name
-			@receiver.save		
+			@receiver.save
+			redirect_to "/game/coin_games/new", status: 301
 		end
 	end	
 	
