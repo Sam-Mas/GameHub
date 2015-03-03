@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
 	def display_challengers
 		@challengers = Challenger.all
+		gon.watch.active_users
 	end
 
 	def require_login
