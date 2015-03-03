@@ -32,6 +32,8 @@ class Game::CoinGamesController < ApplicationController
 			@opponents_score = 0
 			gon.watch.opponents_score = 0
 		end
+	
+		gon.watch.game_result = $game_result
 	end
 
 	# GET /game/coin_games/new
@@ -75,13 +77,18 @@ class Game::CoinGamesController < ApplicationController
 	def update
 
 		if @game.challengers.count == Game::CoinGame.MAX_SIZE 
-			choices = ["tails", "heads"]
+			choices = ["Tails", "Heads"]
 			flip = choices[rand(0..1)]
+
+			$game_result = ""
+	
 
 			# if the right guess
 			if flip == params[:button]
+				$game_result = flip + "! You Win!"
 				@game.add_a_win_for(cookies[:challenger_id].to_i)
 			else
+				$game_result = flip + ". You Lose."
 				other_challenger = @game.challengers.find { |c| c.id != cookies[:challenger_id].to_i }
 				@game.add_a_win_for(other_challenger.id.to_i)
 			end
