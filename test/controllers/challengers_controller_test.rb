@@ -29,4 +29,45 @@ class ChallengersControllerTest < ActionController::TestCase
 		assert_redirected_to root_path
 	end
 
+	test "a new user should have a default balance of 500" do
+		assert_difference('Challenger.count') do
+			post :create, challenger: {name: 'Tom'}
+		end
+		myChallenger = Challenger.find(cookies[:challenger_id]);
+		assert_equal myChallenger.balance, 500
+	
+	end
+
+	test "when creating a new challenger the balance should not be negative" do
+      	assert_difference('Challenger.count') do
+			post :create, challenger: {name: 'Tom'}
+		end
+		myChallenger = Challenger.find(cookies[:challenger_id]);
+      	assert_operator myChallenger.balance, :>=, 0, "Challenger balance is negative"
+    end
+
+    test "when creating a new challenger the balance should not be nil" do
+      	assert_difference('Challenger.count') do
+			post :create, challenger: {name: 'Tom'}
+		end
+		myChallenger = Challenger.find(cookies[:challenger_id]);
+      	assert_not_nil myChallenger.balance, "Challenger balance is nil"
+    end
+
+    test "when creating a new challenger the balance should be numeric" do
+    	assert_difference('Challenger.count') do
+			post :create, challenger: {name: 'Tom'}
+		end
+		myChallenger = Challenger.find(cookies[:challenger_id]);
+      	assert ((myChallenger.balance).is_a? Float), "Challenger balance is not a floating point number"
+    end
+
+    test "when creating a new challenger the balance should exist" do
+    	assert_difference('Challenger.count') do
+			post :create, challenger: {name: 'Tom'}
+		end
+		myChallenger = Challenger.find(cookies[:challenger_id]);
+      	assert_not ((myChallenger.balance).nil?), "Challenger balance does not exist"
+    end
+
 end
