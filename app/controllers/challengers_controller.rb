@@ -5,6 +5,26 @@ class ChallengersController < ApplicationController
 
 	respond_to :html, :js
 
+	def challenge_player()
+		@issuer = Challenger.find_by_name(params[:challenge_issuer])
+		@receiver = Challenger.find_by_name(params[:challenge_receiver])
+		
+		if (params[:commit] == "No")
+			@issuer.opponent = nil
+			@issuer.save
+		elsif (params[:commit] == "Yes")
+			@issuer.opponent = nil
+			@issuer.save
+			@receiver.opponent = nil
+			@receiver.save
+			redirect_to "/game/coin_games/#{@receiver.coin_game_id}", status: 301
+		else
+			@receiver.opponent = @issuer.name
+			@receiver.save
+			redirect_to "/game/coin_games/new", status: 301
+		end
+	end	
+	
 	def new
 		@challenger = Challenger.new
 	end
@@ -42,7 +62,7 @@ class ChallengersController < ApplicationController
 	private 
 
 	def challenger_params
-		params.require(:challenger).permit(:name, :balance)
+		params.require(:challenger).permit(:name, :balance, :opponent)
 	end
 
 end
