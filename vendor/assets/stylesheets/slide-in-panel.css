@@ -2,6 +2,33 @@
 
 /* -------------------------------- 
 
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::after, *::before {
+  content: '';
+}
+
+body {
+  font-size: 100%;
+  font-family: "Droid Sans", sans-serif;
+  color: #dbe2e9;
+  background: #424f5c;
+}
+
+a {
+  color: #89ba2c;
+  text-decoration: none;
+}
+
+/* -------------------------------- 
+
 Main components 
 
 -------------------------------- */

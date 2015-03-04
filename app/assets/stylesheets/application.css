@@ -22,6 +22,7 @@ body {
 	background-color: #848484;
 	color: #FFFFFF;
 	font-family: Georgia, sans-serif;
+	font-size: 14px;
 }
 
 .field
@@ -81,6 +82,10 @@ a:hover {
 	color: #fff;
 }
 
+.global-header *::before {
+  content: none;
+}
+
 .userDropdown {
 	list-style-type: none;
 	display: inline-block;
@@ -111,7 +116,7 @@ a:hover {
 
 .userDropdown ul {
 	text-align: right;
-	margin-top: 20px;
+	margin-top: 22px;
 	margin-right: 120px;
 }
 
@@ -158,8 +163,8 @@ a:hover {
 	bottom: 0;
 	left: 0;
 	right: 0;	
-	width:800px;
-	height: 600px;
+	max-width: 45%;
+	max-height: 70%;
 	z-index: -1;
 	border: black;
 	border: 25px solid black;
@@ -176,23 +181,28 @@ a:hover {
 	padding-top: 30px;
 }
 
+.cd-panel-header {
+	background-color: #1a1a1a;
+}
+
 .cd-panel-header h3 {
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: #1a1a1a;
+	padding-bottom: 12px;
 }
 
 .cd-panel-container {
 	width: 25%;
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: #848484;
 	border-left: 1px solid black;
 	margin-top: 40px;
 }
 
-.cd-panel-close {
-	color: white;
-	text-indent: 0px;
-	text-decoration: none;
-	font-family: sans-serif;
-	font-size: 18px;
+.cd-panel-close::after {
+	background-color: white;
+}
+
+.cd-panel-close::before {
+	background-color: white;
 }
 
 .cd-panel-close:hover {
