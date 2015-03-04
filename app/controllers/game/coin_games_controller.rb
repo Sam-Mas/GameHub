@@ -31,9 +31,12 @@ class Game::CoinGamesController < ApplicationController
 		else
 			@opponents_score = 0
 			gon.watch.opponents_score = 0
+
 		end
-	
+		
+
 		gon.watch.game_result = $game_result
+		gon.watch.game_choice = $game_choice
 	end
 
 	# GET /game/coin_games/new
@@ -47,6 +50,8 @@ class Game::CoinGamesController < ApplicationController
 		@my_score = 0
 
 		@opponents_score = 0
+		$game_result = "No Flip Yet."
+		$game_choice = "No Choice Yet."
 
 		# create the new game and go directly to playing it
 		redirect_to action: "show", id: @game.id
@@ -81,14 +86,15 @@ class Game::CoinGamesController < ApplicationController
 			flip = choices[rand(0..1)]
 
 			$game_result = ""
+			$game_choice = params[:button].to_s
 	
-
 			# if the right guess
 			if flip == params[:button]
-				$game_result = flip + "! You Win!"
+				$game_result = flip + "!"
+
 				@game.add_a_win_for(cookies[:challenger_id].to_i)
 			else
-				$game_result = flip + ". You Lose."
+				$game_result = flip + "!"
 				other_challenger = @game.challengers.find { |c| c.id != cookies[:challenger_id].to_i }
 				@game.add_a_win_for(other_challenger.id.to_i)
 			end

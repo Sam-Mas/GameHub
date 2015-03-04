@@ -6,7 +6,13 @@
 		<%= f.button "#{image_tag("Money-Coin-01-24.png")} &nbsp; TAILS".html_safe, value: "Tails", class: 'btn btn-primary' %>
 	<% end %>
 
-	Turn Result:
+	Choice:
+	<span id = 'game_choice'>
+		<%= @game_choice %>
+	</span>
+	<br>
+
+	Flip Result:
 	<span id = 'game_result'>
 		<%= @game_result %>
 	</span>
