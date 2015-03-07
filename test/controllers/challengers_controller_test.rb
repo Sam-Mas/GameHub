@@ -2,6 +2,14 @@ require 'test_helper'
 
 class ChallengersControllerTest < ActionController::TestCase
 
+	setup do
+		challenger = Challenger.new
+		challenger.name = "Sammy"
+		challenger.save
+		cookies[:challenger_name] = challenger.name
+		cookies[:challenger_id] = challenger.id
+	end
+
 	test "should get new" do
 		get :new
 		assert_response :success, "response was not successfull"

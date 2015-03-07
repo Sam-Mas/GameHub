@@ -25,14 +25,17 @@ class Game::CoinGamesController < ApplicationController
 		@my_score = @game.get_score_for(cookies[:challenger_id].to_i)
 		gon.watch.my_score = @my_score
 
+		@num_turns = @game.num_turns
+		gon.watch.num_turns = @num_turns
+
 		if @other_challenger
 			@opponents_score = @game.get_score_for(@other_challenger.id)
 			gon.watch.opponents_score = @opponents_score
 		else
 			@opponents_score = 0
 			gon.watch.opponents_score = 0
-
 		end
+		
 		
 
 		gon.watch.game_result = $game_result
@@ -98,6 +101,8 @@ class Game::CoinGamesController < ApplicationController
 				other_challenger = @game.challengers.find { |c| c.id != cookies[:challenger_id].to_i }
 				@game.add_a_win_for(other_challenger.id.to_i)
 			end
+
+			@game.num_turns = @game.num_turns - 1
 
 			@game.save
 		end
