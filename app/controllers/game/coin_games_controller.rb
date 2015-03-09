@@ -31,12 +31,27 @@ class Game::CoinGamesController < ApplicationController
 		if @other_challenger
 			@opponents_score = @game.get_score_for(@other_challenger.id)
 			gon.watch.opponents_score = @opponents_score
+
+			@myChallenger = Challenger.find(cookies[:challenger_id])
+
+			if @myChallenger.turn_taken == true and @other_challenger.turn_taken == false
+			
+				@playersTurn = true
+				gon.watch.playersTurn = @playersTurn
+			else
+				@myChallenger.turn_taken = false
+				@myChallenger.save
+
+				@other_challenger.turn_taken = false
+				@other_challenger.save
+				@playersTurn = false
+				gon.watch.playersTurn = @playersTurn
+			end
+
 		else
 			@opponents_score = 0
 			gon.watch.opponents_score = 0
 		end
-		
-		
 
 		gon.watch.game_result = $game_result
 		gon.watch.game_choice = $game_choice
@@ -49,7 +64,6 @@ class Game::CoinGamesController < ApplicationController
 		@game.score2 = 0
 		@game.challengers << Challenger.find(cookies[:challenger_id])
 		@game.save
-
 		@my_score = 0
 
 		@opponents_score = 0
@@ -93,10 +107,20 @@ class Game::CoinGamesController < ApplicationController
 	
 			# if the right guess
 			if flip == params[:button]
+
+				@myChallenger = Challenger.find(cookies[:challenger_id])
+				@myChallenger.turn_taken = true
+				@myChallenger.save
+
 				$game_result = flip + "!"
 
 				@game.add_a_win_for(cookies[:challenger_id].to_i)
 			else
+
+				@myChallenger = Challenger.find(cookies[:challenger_id])
+				@myChallenger.turn_taken = true
+				@myChallenger.save
+
 				$game_result = flip + "!"
 				other_challenger = @game.challengers.find { |c| c.id != cookies[:challenger_id].to_i }
 				@game.add_a_win_for(other_challenger.id.to_i)

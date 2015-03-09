@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150306092005) do
   create_table "challengers", force: :cascade do |t|
     t.string   "name"
     t.float    "balance",      default: 500.0
+    t.boolean  "turn_taken",   default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "coin_game_id"
@@ -23,12 +24,12 @@ ActiveRecord::Schema.define(version: 20150306092005) do
   end
 
   create_table "game_coin_games", force: :cascade do |t|
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "challenger_id"
     t.integer  "score1"
     t.integer  "score2"
-    t.integer  "num_turns",     default: 1
+    t.integer  "num_turns",     default: 10
     t.integer  "winner",        default: 0
   end
 
