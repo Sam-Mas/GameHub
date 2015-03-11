@@ -16,28 +16,6 @@ class Game::CoinGameTest < ActiveSupport::TestCase
   test "should not allow for null values to be set in score1 and score2" do
   	game = Game::CoinGame.new(score1: nil, score2: nil)
 
-	assert_not game.save, "Saved a game with nil values as the scores"
-
-  end
-
-  test "scores should not be negative numbers" do
-
-  	# game = Game::CoinGame.new
-  	# game.score1 = -2;
-  	# game.score2 = -4
-
-
-  	# #asserts
-
-  end
-
-  test "when player wins their score should be incremented by 1" do
-
-
-
-  end
-
-  test "scores should not be alpha character" do
-
+	  assert_not game.save, "Saved a game with nil values as the scores"
   end
 end
