@@ -25,28 +25,29 @@ class Game::CoinGamesController < ApplicationController
 		@my_score = @game.get_score_for(cookies[:challenger_id].to_i)
 		gon.watch.my_score = @my_score
 
+		@player1status = @game.check_if_player_done(cookies[:challenger_id].to_i)
+		@player2status = false
+		
+		if @other_challenger
+			@player2status = @game.check_if_player_done( (@other_challenger.id).to_i )
+		end
+
+		@playersTurn = @player1status
+
+		if ( @player1status == true ) and ( @player2status == true )
+			@game.player1done = false
+			@game.player2done = false
+			@game.save
+			@playersTurn = false
+		end
+
+
 		@num_turns = @game.num_turns
 		gon.watch.num_turns = @num_turns
 
 		if @other_challenger
 			@opponents_score = @game.get_score_for(@other_challenger.id)
 			gon.watch.opponents_score = @opponents_score
-
-			@myChallenger = Challenger.find(cookies[:challenger_id])
-
-			if @myChallenger.turn_taken == true and @other_challenger.turn_taken == false
-			
-				@playersTurn = true
-				gon.watch.playersTurn = @playersTurn
-			else
-				@myChallenger.turn_taken = false
-				@myChallenger.save
-
-				@other_challenger.turn_taken = false
-				@other_challenger.save
-				@playersTurn = false
-				gon.watch.playersTurn = @playersTurn
-			end
 
 		else
 			@opponents_score = 0
@@ -65,6 +66,8 @@ class Game::CoinGamesController < ApplicationController
 		@game.challengers << Challenger.find(cookies[:challenger_id])
 		@game.save
 		@my_score = 0
+		@game.player1done = false
+		@game.player2done = false
 
 		@opponents_score = 0
 		$game_result = "No Flip Yet."
@@ -108,18 +111,10 @@ class Game::CoinGamesController < ApplicationController
 			# if the right guess
 			if flip == params[:button]
 
-				@myChallenger = Challenger.find(cookies[:challenger_id])
-				@myChallenger.turn_taken = true
-				@myChallenger.save
-
 				$game_result = flip + "!"
 
 				@game.add_a_win_for(cookies[:challenger_id].to_i)
 			else
-
-				@myChallenger = Challenger.find(cookies[:challenger_id])
-				@myChallenger.turn_taken = true
-				@myChallenger.save
 
 				$game_result = flip + "!"
 				other_challenger = @game.challengers.find { |c| c.id != cookies[:challenger_id].to_i }
@@ -127,6 +122,7 @@ class Game::CoinGamesController < ApplicationController
 			end
 
 			@game.num_turns = @game.num_turns - 1
+			@game.mark_board(cookies[:challenger_id].to_i)
 
 			@game.save
 		end

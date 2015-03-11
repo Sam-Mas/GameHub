@@ -13,6 +13,33 @@ class Game::CoinGame < ActiveRecord::Base
 		end
 
 	end
+
+	def mark_board(challenger_id)
+
+		if self.challengers.first.id == challenger_id
+			self.player1done = true
+		elsif self.challengers.last.id == challenger_id
+			self.player2done = true
+		end
+	end
+
+	def check_if_player_done(challenger_id)
+
+		done = false
+
+		if self.challengers.first.id == challenger_id
+
+			if self.player1done == true
+				done = true
+			end
+		elsif self.challengers.last.id == challenger_id
+			if self.player2done == true
+				done = true
+			end
+		end
+
+		return done
+	end
 	
 	def get_score_for(challenger_id)
 	
