@@ -23,3 +23,12 @@
 
 # OSX files
 .DS_Store
+
+
+#xcode user files
+GameHub\ iOS/GameHub\ iOS.xcodeproj/project.xcworkspace/xcuserdata/
+
+GameHub\ iOS/GameHub\ iOS.xcodeproj/xcuserdata/
+
+
+
