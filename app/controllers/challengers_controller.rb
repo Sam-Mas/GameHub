@@ -24,6 +24,12 @@ class ChallengersController < ApplicationController
 			redirect_to "/game/coin_games/new", status: 301
 		end
 	end	
+
+	def sign_out
+		cookies[:challenger_id] = nil
+		cookies[:challenger_name] = nil
+		redirect_to root_path
+	end
 	
 	def new
 		@challenger = Challenger.new
