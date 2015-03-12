@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150311061842) do
     t.integer  "score2"
     t.integer  "num_turns",     default: 10
     t.integer  "winner",        default: 0
-    t.boolean  "turn_done",     default: false
     t.boolean  "player1done",   default: false
     t.boolean  "player2done",   default: false
   end
