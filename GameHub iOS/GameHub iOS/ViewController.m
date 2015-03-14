@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "ChallengerManager.h"
+#import "Challenger.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[ChallengerManager sharedManager] loadAuthenticatedChallenger:^(Challenger *challenger){
+        NSLog(@"************user is: %@ *************", challenger.name);
+    }
+    failure:^(RKObjectRequestOperation *operation, NSError *error) {
+         NSLog(@"* ****   ****   *****  **error occured: %@", error);
+     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

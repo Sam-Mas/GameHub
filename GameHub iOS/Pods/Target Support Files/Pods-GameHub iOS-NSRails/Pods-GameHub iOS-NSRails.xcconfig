@@ -1,0 +1,1 @@
+PODS_GAMEHUB_IOS_NSRAILS_OTHER_LDFLAGS = -framework "CoreData"
