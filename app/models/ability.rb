@@ -3,7 +3,6 @@ class Ability
 
   def initialize(challenger)
 
-  def initialize(user)
     
     # Define abilities for the passed in user here. For example:
     #
