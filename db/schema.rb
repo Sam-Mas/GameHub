@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311061842) do
+ActiveRecord::Schema.define(version: 20150312074726) do
 
   create_table "challengers", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150311061842) do
     t.datetime "updated_at",                   null: false
     t.integer  "coin_game_id"
     t.string   "opponent"
+    t.string   "token"
   end
 
   create_table "game_coin_games", force: :cascade do |t|

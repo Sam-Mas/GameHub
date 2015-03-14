@@ -37,6 +37,7 @@ gem 'gon', '~> 5.2.3'
 
 # For testing
 gem 'rspec', '~> 3.0'
+gem 'factory_girl'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
