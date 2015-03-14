@@ -26,7 +26,7 @@
 					<!-- exclude self -->
 					<% if (challenger.name != @myself.name) %> 
 						<div class= "btn_challenge">
-							<%= form_tag("challenge_player", method: "post") do %>
+							<%= form_tag("/challenge_player", method: "post") do %>
 								<input type="hidden" name="challenge_issuer", type="text" value="<%=@myself.name%>"/>
 								<input type="hidden" name="challenge_receiver", type="text" value="<%=challenger.name%>"/>
 								<! -- report opponent status and allow challenging or acceptance of challenges >
