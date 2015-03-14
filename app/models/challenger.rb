@@ -50,7 +50,7 @@ class Challenger < ActiveRecord::Base
 
 	def guest_have_token
 		result = true
-		if self.name.start_with?("Guest")
+		if !self.name.nil? && self.name.start_with?("Guest")
 			result = !self.token.nil? && self.name.end_with?(self.token)
 		end
 		result
