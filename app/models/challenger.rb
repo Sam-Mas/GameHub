@@ -6,6 +6,7 @@ class Challenger < ActiveRecord::Base
 
 	validates :name, presence: true, uniqueness: true, allow_nil: false, format: { with: /\A[a-zA-Z0-9]+\Z/ }
 	validates :token, allow_nil: true, uniqueness: true, length: { is: GUEST_DIGIT_MAX }, format: { with: /\A\d+\Z/ }
+	validate :validate_guest_have_token
 
 	belongs_to :coingame
 
@@ -41,7 +42,18 @@ class Challenger < ActiveRecord::Base
 		end
 	end
 
-	# TODO, add another validation that makes sure that any guest created
-	# has its token added to the end of the name.
+	def validate_guest_have_token
+		unless guest_have_token
+			errors.add(:name, "Guest must have a token that is padded onto the end")
+		end
+	end
+
+	def guest_have_token
+		result = true
+		if self.name.start_with?("Guest")
+			result = !self.token.nil? && self.name.end_with?(self.token)
+		end
+		result
+	end
 
 end

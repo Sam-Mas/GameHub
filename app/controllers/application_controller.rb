@@ -1,7 +1,4 @@
 class ApplicationController < ActionController::Base
-	
-        @@guest_num = 1
-        @@hasRun = false
 
 	# This forces users to the login page
         before_filter :require_account, :display_challengers
@@ -15,31 +12,17 @@ class ApplicationController < ActionController::Base
 	end
 
         def require_account
-                unless @@hasRun
-                        # Creates a temporary Guest account for the userc
-                        if cookies[:challenger_name]
-                                @@hasRun
-                                name = Challenger.find_by_name(cookies[:challenger_name])
-
-                                unless name 
-                                        create_guest()
-                                end
-                        else 
-                                @@hasRun
-                                create_guest()
-                        end
+                unless Challenger.exists?(name: cookies[:challenger_name]) 
+                        cookies[:challenger_name] = nil
+                        cookies[:challenger_id] = nil
                 end
-        end
 
-        def create_guest
-                @challenger = Challenger.new
-                @challenger.name = "Guest" + @@guest_num.to_s
-                @challenger.save!
+                unless cookies[:challenger_name]
+                        @challenger = Challenger.create_guest
 
-                cookies[:challenger_id] = @challenger.id
-                cookies[:challenger_name] = @challenger.name
-
-                @@guest_num += 1
+                        cookies[:challenger_name] = @challenger.name
+                        cookies[:challenger_id] = @challenger.id
+                end
         end
 
 end
