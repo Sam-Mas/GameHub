@@ -1,10 +1,8 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(challenger)
 
-    user || = User.new
-    can :manage, :all
 
     
     # Define abilities for the passed in user here. For example:
