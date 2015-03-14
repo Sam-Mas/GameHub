@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSRConfig.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+// http://localhost:3000/api/v1/challengers   
+    
+     [[NSRConfig defaultConfig] setRootURL:[NSURL URLWithString:@"http://localhost:3000/"]];
+    
+    
     return YES;
 }
 

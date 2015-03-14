@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CEACB843-E7F9-43AA-9CCF-8A9F4AAE8C45</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GameHub iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1C7389114573AF1D48D0943A72C918D04563D2A1</key>
+		<string>https://github.com/Sam-Mas/GameHub.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GameHub iOS/GameHub iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1C7389114573AF1D48D0943A72C918D04563D2A1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Sam-Mas/GameHub.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1C7389114573AF1D48D0943A72C918D04563D2A1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1C7389114573AF1D48D0943A72C918D04563D2A1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GameHub</string>
+		</dict>
+	</array>
+</dict>
+</plist>
