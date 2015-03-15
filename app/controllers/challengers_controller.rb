@@ -36,44 +36,61 @@ class ChallengersController < ApplicationController
 	end
 
 	def create
-		current_name = cookies[:challenger_name]
-
-		if current_name.include?("Guest")
-			guest = Challenger.find_by_name(current_name)
-			guest.destroy
-		end
 
 		@challenger = Challenger.find_by_name(challenger_params[:name])
+		
+		# if the challenger already exists
+		if @challenger 
+			
+			flash[:danger] = nil
+			flash[:notice] = 'challenger successfully loaded'
+			set_cookies(@challenger)
+			redirect_to root_path
 
-		unless @challenger
+		# try to create the user
+		else
 			@challenger = Challenger.new(challenger_params)
-			@challenger.save
+
+			# on success
+			if @challenger.save
+
+				flash[:danger] = nil
+				flash[:notice] = 'new challenger created'
+				set_cookies(@challenger)
+				redirect_to root_path
+
+			# on failure, ask for another name
+			else
+				flash[:danger] = 'Invalid username, please only user letters and numbers'
+				render 'new'
+			end
 		end
 
-		cookies[:challenger_id] = @challenger.id
-		cookies[:challenger_name] = @challenger.name
-
-		redirect_to root_path
 	end
 
 	def edit
 		@challenger = Challenger.find(cookies[:challenger_id]);
 	end
 
-    def update
-        @challenger = Challenger.find(cookies[:challenger_id])
+	def update
+		@challenger = Challenger.find(cookies[:challenger_id])
 
-        if @challenger.update_attributes(challenger_params)
-            redirect_to root_path
-        else
-            render 'edit'
-        end
-    end
+		if @challenger.update_attributes(challenger_params)
+			redirect_to root_path
+		else
+			render 'edit'
+		end
+	end
 
 	private 
 
 	def challenger_params
 		params.require(:challenger).permit(:name, :balance, :opponent)
+	end
+
+	def set_cookies(challenger)
+		cookies[:challenger_id] = challenger.id
+		cookies[:challenger_name] = challenger.name
 	end
 
 end

@@ -26,12 +26,18 @@
 		        <div onclick="slideChallengers(true)">
 		           	<%= image_tag("users.png") %>
 		        </div>
-			</div>
+		    </div>
 		</header>
 
-		<main id="content">
+		<main id="content"
+			<% flash.each do |message_type, message| %>
+				<% unless message.nil? %>
+					<div class="alert alert-<%= message_type %>"><%= message %></div>
+					<% flash[:danger] = nil %>
+				<% end %>
+			<% end %>>
 			<%= yield %>
-	
+
 			<div id="gameList" style="display:none">
 				<h3> All GameHub Games: </h3>
 			</div>
