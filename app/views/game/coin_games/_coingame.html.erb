@@ -4,16 +4,22 @@
 		<%= f.button "#{image_tag("Money-Coin-24.png")} &nbsp; HEADS".html_safe, :onclick => 'reload_function()' , value: "Heads", class: 'btn btn-primary', disabled: @playersTurn %>
 		or
 		<%= f.button "#{image_tag("Money-Coin-01-24.png")} &nbsp; TAILS".html_safe, :onclick => 'reload_function()' , value: "Tails", class: 'btn btn-primary', disabled: @playersTurn %>
+		
+		<%= javascript_tag do %>
+			window.setInterval(function(){ location.reload(); }, 3000);
+		<% end %>
+	
 	<% end %>
 
 	<script>
 	function reload_function() 
 	{
-    	setInterval(function(){ location.reload(); }, 1000);
+    	
 		if( <%= @num_turns %> <= 1)
 		{
 			alert('<%= @message %>');
 			document.location.href="/";
+
 		}
 	}	
 	</script>
