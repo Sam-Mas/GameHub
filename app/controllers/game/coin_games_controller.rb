@@ -25,6 +25,10 @@ class Game::CoinGamesController < ApplicationController
 		@my_score = @game.get_score_for(cookies[:challenger_id].to_i)
 		gon.watch.my_score = @my_score
 
+		if @game.num_turns <= 0
+				@message = @game.who_won(cookies[:challenger_id].to_i)
+		end
+
 		@player1status = @game.check_if_player_done(cookies[:challenger_id].to_i)
 		@player2status = false
 		
@@ -33,17 +37,16 @@ class Game::CoinGamesController < ApplicationController
 		end
 
 		@playersTurn = @player1status
+		
+		@num_turns = @game.num_turns
+		gon.watch.num_turns = @num_turns
 
-		if ( @player1status == true ) and ( @player2status == true )
+		if ( @game.player1done == true ) and ( @game.player2done == true )
 			@game.player1done = false
 			@game.player2done = false
 			@game.save
 			@playersTurn = false
 		end
-
-
-		@num_turns = @game.num_turns
-		gon.watch.num_turns = @num_turns
 
 		if @other_challenger
 			@opponents_score = @game.get_score_for(@other_challenger.id)
@@ -122,6 +125,7 @@ class Game::CoinGamesController < ApplicationController
 			end
 
 			@game.num_turns = @game.num_turns - 1
+
 			@game.mark_board(cookies[:challenger_id].to_i)
 
 			@game.save

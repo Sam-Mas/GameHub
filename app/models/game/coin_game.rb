@@ -40,6 +40,29 @@ class Game::CoinGame < ActiveRecord::Base
 
 		return done
 	end
+
+	def who_won(challenger_id)
+		@message = "You Lost"
+		
+		if self.challengers.first.id == challenger_id
+			
+			if self.score1 > self.score2
+				@message = "You Won"
+			elsif self.score1 == self.score2
+				@message = "A Tie"
+			end
+
+		elsif self.challengers.last.id == challenger_id
+			if self.score1 < self.score2
+				@message = "You Won"
+			elsif self.score1 == self.score2
+				@message = "A Tie"
+			end
+		end
+
+		return @message
+
+	end
 	
 	def get_score_for(challenger_id)
 	

@@ -10,6 +10,11 @@
 	function reload_function() 
 	{
     	setInterval(function(){ location.reload(); }, 1000);
+		if( <%= @num_turns %> <= 1)
+		{
+			alert('<%= @message %>');
+			document.location.href="/";
+		}
 	}	
 	</script>
 
