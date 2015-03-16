@@ -39,18 +39,6 @@ class Game::CoinGamesControllerTest < ActionController::TestCase
 	# couldn't get this test to work with gon	
 	end
 
-	test "should get edit" do
-		get :edit, id: @game.id
-		assert_response :success
-	end
-
-	test "should update game_coin_game" do
-		assert_difference('@game.score1 + @game.score2', 1) do
-			patch :update, id: @game.id, params: { buttons: "tails" }
-			@game.reload
-		end
-	end
-
 	test "should destroy game_coin_game" do
 		assert_difference('Game::CoinGame.count', -1) do
 			delete :destroy, id: @game.id
