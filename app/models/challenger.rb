@@ -4,7 +4,8 @@ class Challenger < ActiveRecord::Base
 	GUEST_DIGIT_MAX = 6
 	UP_TO_NUMBER_OF_GUESTS = 10 ** GUEST_DIGIT_MAX
 
-	validates :name, presence: true, uniqueness: true, allow_nil: false, format: { with: /\A[a-zA-Z0-9]+\Z/ }
+	validates :name, presence: true, uniqueness: true, allow_nil: false, format: { with: /\A[a-zA-Z0-9]+\Z/ }, length: { maximum: 30 }
+	validates :balance, presence: true, uniqueness: false, allow_nil: false, length: { maximum: 10 }
 	validates :token, allow_nil: true, uniqueness: true, length: { is: GUEST_DIGIT_MAX }, format: { with: /\A\d+\Z/ }
 	validate :validate_guest_have_token
 

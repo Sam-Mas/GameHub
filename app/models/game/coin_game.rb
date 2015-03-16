@@ -6,21 +6,23 @@ class Game::CoinGame < ActiveRecord::Base
 
 	def flip_for(challenger_id, guess)
 
-		flip = flip_coin
+		if (my_turn?(challenger_id.to_i)) 
+			flip = flip_coin
 
-		# if the right guess
-		if flip == guess 
-			add_a_win_for(challenger_id.to_i)
-		else
-			opponent = get_opponent(challenger_id)
-			add_a_win_for(opponent.id.to_i)
+			# if the right guess
+			if flip == guess 
+				add_a_win_for(challenger_id.to_i)
+			else
+				opponent = get_opponent(challenger_id)
+				add_a_win_for(opponent.id.to_i)
+			end
+
+			self.last_flip_result = flip + "!"
+			self.last_guess = get_me(challenger_id).name + " guessed " + guess
+			self.num_turns = self.num_turns - 1
+			mark_board(challenger_id)
+			end_turn(challenger_id)
 		end
-
-		self.last_flip_result = flip + "!"
-		self.last_guess = get_me(challenger_id).name + " guessed " + guess
-		self.num_turns = self.num_turns - 1
-		mark_board(challenger_id)
-		end_turn(challenger_id)
 
 		save
 

@@ -61,7 +61,7 @@ class ChallengersController < ApplicationController
 
 			# on failure, ask for another name
 			else
-				flash[:danger] = 'Invalid username, please only user letters and numbers'
+				flash[:danger] = 'Invalid username, please only use letters and numbers, of a length between 1 and 30'
 				render 'new'
 			end
 		end
@@ -74,10 +74,11 @@ class ChallengersController < ApplicationController
 
 	def update
 		@challenger = Challenger.find(cookies[:challenger_id])
-
+		
 		if @challenger.update_attributes(challenger_params)
 			redirect_to root_path
 		else
+			flash[:danger] = 'Please enter a balance between 0 and 1,000,000.00'
 			render 'edit'
 		end
 	end

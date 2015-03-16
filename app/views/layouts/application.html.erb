@@ -14,7 +14,7 @@
 			<div class="userDropdown dropdown">
 				<div class="dropdown-toggle" data-toggle="dropdown"><%= cookies[:challenger_name] %><span class="caret"></span></div>
 				<ul class="dropdown-menu dropdown-menu-right" role="menu">
-					<% if cookies[:challenger_name].include?("Guest") %>
+					<% if cookies[:challenger_name].start_with?("Guest") %>
 						<li role="menuitem"><%= link_to "Sign in",{ controller: "/challengers", action: "new"} %></li>
 					<% else %>
 						<li role="menuitem"><%= link_to "Sign out",{ controller: "/challengers", action: "sign_out"} %></li>
