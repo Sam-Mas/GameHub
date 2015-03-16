@@ -5,25 +5,25 @@ RSpec.describe ChallengersController, type: :controller do
 	context 'when signing in with invalide username' do
 		it 'should tell you it is invalid and keep you on the login page' do
 			post :create, challenger: { name: "" }
-			expect(flash[:danger]).to eq('Invalid username, please only user letters and numbers')
+			expect(flash[:danger]).to eq('Invalid username, please only use letters and numbers, of a length between 1 and 30')
 			expect(response).to render_template(:new)
 		end
 
 		it 'should tell you it is invalid and keep you on the login page' do
 			post :create, challenger: { name: "Guest123456" }
-			expect(flash[:danger]).to eq('Invalid username, please only user letters and numbers')
+			expect(flash[:danger]).to eq('Invalid username, please only use letters and numbers, of a length between 1 and 30')
 			expect(response).to render_template(:new)
 		end
 
 		it 'should tell you it is invalid and keep you on the login page' do
 			post :create, challenger: { name: "_" }
-			expect(flash[:danger]).to eq('Invalid username, please only user letters and numbers')
+			expect(flash[:danger]).to eq('Invalid username, please only use letters and numbers, of a length between 1 and 30')
 			expect(response).to render_template(:new)
 		end
 
 		it 'should tell you it is invalid and keep you on the login page' do
 			post :create, challenger: { name: "Bad_Username" }
-			expect(flash[:danger]).to eq('Invalid username, please only user letters and numbers')
+			expect(flash[:danger]).to eq('Invalid username, please only use letters and numbers, of a length between 1 and 30')
 			expect(response).to render_template(:new)
 		end
 	end
