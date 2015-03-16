@@ -19,65 +19,61 @@ class Game::CoinGamesController < ApplicationController
 			@game.challengers << Challenger.find(cookies[:challenger_id])
 			@game.save
 		end
-		
-		@other_challenger = @game.challengers.find { |c| c.id != cookies[:challenger_id].to_i }
 
-		@my_score = @game.get_score_for(cookies[:challenger_id].to_i)
-		gon.watch.my_score = @my_score
-
-		if @game.num_turns <= 0
-				@message = @game.who_won(cookies[:challenger_id].to_i)
-		end
-
-		@player1status = @game.check_if_player_done(cookies[:challenger_id].to_i)
-		@player2status = false
-		
-		if @other_challenger
-			@player2status = @game.check_if_player_done( (@other_challenger.id).to_i )
-		end
-
-		@playersTurn = @player1status
+		# is it my turn?
+		@my_turn = @game.my_turn?(cookies[:challenger_id].to_i)
 		
 		@num_turns = @game.num_turns
-		gon.watch.num_turns = @num_turns
 
-		if ( @game.player1done == true ) and ( @game.player2done == true )
-			@game.player1done = false
-			@game.player2done = false
-			@game.save
-			@playersTurn = false
-		end
+		# get scores
+		@my_score = @game.get_score_for(cookies[:challenger_id].to_i)
 
-		if @other_challenger
-			@opponents_score = @game.get_score_for(@other_challenger.id)
-			gon.watch.opponents_score = @opponents_score
+		opponent = @game.get_opponent(cookies[:challenger_id])
 
+		if opponent
+			@opponents_score = @game.get_score_for(opponent.id)
 		else
 			@opponents_score = 0
-			gon.watch.opponents_score = 0
 		end
 
-		gon.watch.game_result = $game_result
-		gon.watch.game_choice = $game_choice
+		# get guess and result
+		@last_challengers_guess = @game.last_guess
+		@last_flip_result = @game.last_flip_result
+
+		@win_message = nil
+
+		if @game.done?
+			@win_message = @game.finished_message(cookies[:challenger_id])
+			@my_turn = false
+		end
+
 	end
 
 	# GET /game/coin_games/new
 	def new
+
+		# create the game
 		@game = Game::CoinGame.new
 		@game.score1 = 0
 		@game.score2 = 0
 		@game.challengers << Challenger.find(cookies[:challenger_id])
-		@game.save
-		@my_score = 0
-		@game.player1done = false
-		@game.player2done = false
+		@game.player_1_turn = true
+		@game.last_guess = "No guess's yet"
+		@game.last_flip_result = "No flips yet"
 
-		@opponents_score = 0
-		$game_result = "No Flip Yet."
-		$game_choice = "No Choice Yet."
+		# save the game with all the values above 
+		@game.save
+
+		# let the challenger see the necessary values
+		@my_score = @game.score1
+		@opponents_score = @game.score2
+		@last_challengers_guess = @game.last_guess
+		@last_flip_result = @game.last_flip_result
+		@my_turn = true 
 
 		# create the new game and go directly to playing it
 		redirect_to action: "show", id: @game.id
+
 	end
 
 	# GET /game/coin_games/1/edit
@@ -104,31 +100,8 @@ class Game::CoinGamesController < ApplicationController
 	# PATCH/PUT /game/coin_games/1.json
 	def update
 
-		if @game.challengers.count == Game::CoinGame.MAX_SIZE 
-			choices = ["Tails", "Heads"]
-			flip = choices[rand(0..1)]
-
-			$game_result = ""
-			$game_choice = params[:button].to_s
-	
-			# if the right guess
-			if flip == params[:button]
-
-				$game_result = flip + "!"
-
-				@game.add_a_win_for(cookies[:challenger_id].to_i)
-			else
-
-				$game_result = flip + "!"
-				other_challenger = @game.challengers.find { |c| c.id != cookies[:challenger_id].to_i }
-				@game.add_a_win_for(other_challenger.id.to_i)
-			end
-
-			@game.num_turns = @game.num_turns - 1
-
-			@game.mark_board(cookies[:challenger_id].to_i)
-
-			@game.save
+		if @game.challengers.count == Game::CoinGame.MAX_SIZE
+			@game.flip_for(cookies[:challenger_id], params[:button].to_s)
 		end
 
 		respond_to do |format|

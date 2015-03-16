@@ -1,39 +1,32 @@
+<script type="text/javascript">
+	function reload_coingame(){
+		$("#coingame").load(location.href + " #coingame");	
+	}
+	setInterval(function(){reload_coingame()}, 5000);
+</script>
+
 <div id="coingame" class="centerBox">
 	<h2>COIN TOSS GAME</h2>
 	<%= form_for(@game, remote: true, html: {:id => "game_form"}) do |f| %>
-		<%= f.button "#{image_tag("Money-Coin-24.png")} &nbsp; HEADS".html_safe, :onclick => 'reload_function()' , value: "Heads", class: 'btn btn-primary', disabled: @playersTurn %>
+		<%= f.button "#{image_tag("Money-Coin-24.png")} &nbsp; HEADS".html_safe, :onclick => 'reload_function()' , value: "Heads", class: 'btn btn-primary', disabled: !@my_turn %>
 		or
-		<%= f.button "#{image_tag("Money-Coin-01-24.png")} &nbsp; TAILS".html_safe, :onclick => 'reload_function()' , value: "Tails", class: 'btn btn-primary', disabled: @playersTurn %>
-		
-		<%= javascript_tag do %>
-			window.setInterval(function(){ location.reload(); }, 3000);
-		<% end %>
-	
+		<%= f.button "#{image_tag("Money-Coin-01-24.png")} &nbsp; TAILS".html_safe, :onclick => 'reload_function()' , value: "Tails", class: 'btn btn-primary', disabled: !@my_turn %>	
 	<% end %>
 
-	<script>
-	function reload_function() 
-	{
-    	
-		if( <%= @num_turns %> <= 1)
-		{
-			alert('<%= @message %>');
-			document.location.href="/";
-
-		}
-	}	
-	</script>
-
+	<span id = 'win_message'>
+		<%= @win_message %>
+	</span>
+	<br>
 
 	Choice:
-	<span id = 'game_choice'>
-		<%= @game_choice %>
+	<span id = 'last_challengers_guess'>
+		<%= @last_challengers_guess %>
 	</span>
 	<br>
 
 	Flip Result:
-	<span id = 'game_result'>
-		<%= @game_result %>
+	<span id = 'last_flip_result'>
+		<%= @last_flip_result %>
 	</span>
 	<br>
 
@@ -55,4 +48,3 @@
 	</span>
 </div>
 
-<%= javascript_include_tag '_coingame' %>
