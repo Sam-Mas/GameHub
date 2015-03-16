@@ -16,6 +16,7 @@
 		B2469EC61AA65B24000DDF96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2469EC51AA65B24000DDF96 /* Images.xcassets */; };
 		B2469EC91AA65B24000DDF96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2469EC71AA65B24000DDF96 /* LaunchScreen.xib */; };
 		B2469ED51AA65B24000DDF96 /* GameHub_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */; };
+		B28363721AB6B18300022F45 /* LoginChallengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363711AB6B18300022F45 /* LoginChallengerViewController.m */; };
 		B2A927CA1AB3DE2200C2B176 /* GHRestKitClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */; };
 		B2A927CD1AB3E04200C2B176 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CC1AB3E04200C2B176 /* MappingProvider.m */; };
 		B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */; };
@@ -52,6 +53,8 @@
 		B2469ECE1AA65B24000DDF96 /* GameHub iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GameHub iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2469ED31AA65B24000DDF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameHub_iOSTests.m; sourceTree = "<group>"; };
+		B28363701AB6B18300022F45 /* LoginChallengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginChallengerViewController.h; sourceTree = "<group>"; };
+		B28363711AB6B18300022F45 /* LoginChallengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginChallengerViewController.m; sourceTree = "<group>"; };
 		B2A927C81AB3DE2200C2B176 /* GHRestKitClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHRestKitClient.h; sourceTree = "<group>"; };
 		B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHRestKitClient.m; sourceTree = "<group>"; };
 		B2A927CB1AB3E04200C2B176 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */,
 				B2A927D11AB40CBE00C2B176 /* ChallengerManager.h */,
 				B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */,
+				B28363701AB6B18300022F45 /* LoginChallengerViewController.h */,
+				B28363711AB6B18300022F45 /* LoginChallengerViewController.m */,
 			);
 			path = "GameHub iOS";
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 			files = (
 				B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */,
 				B23240921AB0F24800763746 /* Challenger.m in Sources */,
+				B28363721AB6B18300022F45 /* LoginChallengerViewController.m in Sources */,
 				B2469EC11AA65B24000DDF96 /* ViewController.m in Sources */,
 				B2469EBE1AA65B24000DDF96 /* AppDelegate.m in Sources */,
 				B2A927CA1AB3DE2200C2B176 /* GHRestKitClient.m in Sources */,
