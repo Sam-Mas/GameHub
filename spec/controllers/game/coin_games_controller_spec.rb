@@ -23,9 +23,13 @@ RSpec.describe Game::CoinGamesController, type: :controller do
 	end
 
 	context 'GET show' do
+		before(:each) do
+			@game = Game::CoinGame.create!
+		end
+
 		it 'calls show with no errors' do
-			game = Game::CoinGame.create! score1: 0, score2: 0
-			get :show, id: game.id
+			allow(Game::CoinGame).to receive(:find) {@game}
+			get :show, id: @game.id
 			expect(response).to have_http_status(:success)
 		end
 	end
