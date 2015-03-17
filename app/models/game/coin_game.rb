@@ -22,10 +22,8 @@ class Game::CoinGame < ActiveRecord::Base
 			self.num_turns = self.num_turns - 1
 			mark_board(challenger_id)
 			end_turn(challenger_id)
+			save
 		end
-
-		save
-
 	end
 
 	def my_turn?(challenger_id)
