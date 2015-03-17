@@ -35,6 +35,7 @@ class Game::CoinGamesControllerTest < ActionController::TestCase
 		end
 	end
 
+
 	test "should show game_coin_game" do
 		get :show, id: @game.id
 	    assert_response :success
@@ -44,7 +45,7 @@ class Game::CoinGamesControllerTest < ActionController::TestCase
 		assert_difference('Game::CoinGame.count', -1) do
 			delete :destroy, id: @game.id
 		end
-		
+
 		assert_redirected_to game_coin_games_path
 	end
 
