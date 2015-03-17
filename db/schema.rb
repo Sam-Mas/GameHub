@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150316024824) do
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.integer  "challenger_id"
-    t.integer  "score1"
-    t.integer  "score2"
+    t.integer  "score1",           default: 0
+    t.integer  "score2",           default: 0
     t.integer  "num_turns",        default: 10
     t.integer  "winner",           default: 0
     t.boolean  "player1done",      default: false
