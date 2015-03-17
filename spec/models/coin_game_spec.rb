@@ -64,7 +64,15 @@ RSpec.describe Game::CoinGame, type: :model do
 		end
 		
 		it "should allow the active player to flip a coin" do
+			allow(@game).to receive(:my_turn?) {true}
+			allow(@game).to receive(:flip_coin) {"Heads"}
+			allow(@game).to receive(:get_me) {@player1}
+			
 			expect(@game.flip_for(@player1.id, "Heads")).to be true
+			expect(@game.last_flip_result).to eq("Heads!")
+			expect(@game.last_guess).to eq(@player1.name + " guessed Heads")
+			expect(@game.num_turns).to eq(9)
+			expect(@game.score1).to eq(1)
 		end		
 	end # of context 'starting game state'
 
