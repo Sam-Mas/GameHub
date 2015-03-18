@@ -4,9 +4,10 @@ class Game::CoinGame < ActiveRecord::Base
 	validates :score2, presence: true, allow_nil: false
 	has_many :challengers, before_add: :check_challengers_limit
 
+	
 	def flip_for(challenger_id, guess)
 
-		if (my_turn?(challenger_id.to_i)) 
+		if (my_turn?(challenger_id.to_i) && (guess == 'Heads' or guess == 'Tails') && (!done?))
 			flip = flip_coin
 
 			# if the right guess
