@@ -149,7 +149,6 @@ RSpec.describe Game::CoinGame, type: :model do
 				expect(@game.flip_for(@player1.id, "Heads")).to be nil # move 11 of 10
 			end		
 		end
-		
 		#############################################################################
 		# This block is for endgame regardless of moves
 		#############################################################################
