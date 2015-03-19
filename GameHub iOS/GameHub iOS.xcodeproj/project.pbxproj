@@ -17,19 +17,21 @@
 		B2469EC91AA65B24000DDF96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2469EC71AA65B24000DDF96 /* LaunchScreen.xib */; };
 		B2469ED51AA65B24000DDF96 /* GameHub_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */; };
 		B28363721AB6B18300022F45 /* LoginChallengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363711AB6B18300022F45 /* LoginChallengerViewController.m */; };
-		B283637B1AB9F5DD00022F45 /* MMRightSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363741AB9F5DD00022F45 /* MMRightSideDrawerViewController.m */; };
-		B283637C1AB9F5DD00022F45 /* MMSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363761AB9F5DD00022F45 /* MMSideDrawerViewController.m */; };
-		B283637D1AB9F5DD00022F45 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363781AB9F5DD00022F45 /* MMViewController.m */; };
 		B283637E1AB9F5DD00022F45 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B283637A1AB9F5DD00022F45 /* MMNavigationController.m */; };
 		B28363851AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363801AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m */; };
 		B28363861AB9F80100022F45 /* MMSideDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363821AB9F80100022F45 /* MMSideDrawerTableViewCell.m */; };
 		B28363871AB9F80100022F45 /* MMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363841AB9F80100022F45 /* MMTableViewCell.m */; };
 		B283638A1AB9F83500022F45 /* MMLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363891AB9F83500022F45 /* MMLogoView.m */; };
-		B2A927CA1AB3DE2200C2B176 /* GHRestKitClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */; };
+		B28363991ABB5D8E00022F45 /* MMCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */; };
+		B283639A1ABB5D8E00022F45 /* MMCenterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */; };
+		B283639B1ABB5D8E00022F45 /* MMDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */; };
+		B283639C1ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */; };
+		B283639D1ABB5D8E00022F45 /* MMRightSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */; };
+		B283639E1ABB5D8E00022F45 /* MMSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */; };
+		B283639F1ABB5D8E00022F45 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363981ABB5D8E00022F45 /* MMViewController.m */; };
 		B2A927CD1AB3E04200C2B176 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CC1AB3E04200C2B176 /* MappingProvider.m */; };
 		B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */; };
 		B2A927D31AB40CBE00C2B176 /* ChallengerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */; };
-		C92B5E0E1ABB4E1400941A6A /* MMDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B5E0D1ABB4E1400941A6A /* MMDrawerVisualStateManager.m */; };
 		D48FEEB23CEE521EB67E44A0 /* libPods-GameHub iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDEC83AC963813F4A3BC74D /* libPods-GameHub iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -64,12 +66,6 @@
 		B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameHub_iOSTests.m; sourceTree = "<group>"; };
 		B28363701AB6B18300022F45 /* LoginChallengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginChallengerViewController.h; sourceTree = "<group>"; };
 		B28363711AB6B18300022F45 /* LoginChallengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginChallengerViewController.m; sourceTree = "<group>"; };
-		B28363731AB9F5DD00022F45 /* MMRightSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRightSideDrawerViewController.h; sourceTree = "<group>"; };
-		B28363741AB9F5DD00022F45 /* MMRightSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRightSideDrawerViewController.m; sourceTree = "<group>"; };
-		B28363751AB9F5DD00022F45 /* MMSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerViewController.h; sourceTree = "<group>"; };
-		B28363761AB9F5DD00022F45 /* MMSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerViewController.m; sourceTree = "<group>"; };
-		B28363771AB9F5DD00022F45 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
-		B28363781AB9F5DD00022F45 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		B28363791AB9F5DD00022F45 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
 		B283637A1AB9F5DD00022F45 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
 		B283637F1AB9F80100022F45 /* MMSideDrawerSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerSectionHeaderView.h; sourceTree = "<group>"; };
@@ -80,16 +76,26 @@
 		B28363841AB9F80100022F45 /* MMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewCell.m; sourceTree = "<group>"; };
 		B28363881AB9F83500022F45 /* MMLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLogoView.h; sourceTree = "<group>"; };
 		B28363891AB9F83500022F45 /* MMLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLogoView.m; sourceTree = "<group>"; };
-		B2A927C81AB3DE2200C2B176 /* GHRestKitClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHRestKitClient.h; sourceTree = "<group>"; };
-		B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHRestKitClient.m; sourceTree = "<group>"; };
+		B283638B1ABB5D8E00022F45 /* MMCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCenterTableViewCell.h; sourceTree = "<group>"; };
+		B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCenterTableViewCell.m; sourceTree = "<group>"; };
+		B283638D1ABB5D8E00022F45 /* MMCenterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCenterTableViewController.h; sourceTree = "<group>"; };
+		B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCenterTableViewController.m; sourceTree = "<group>"; };
+		B283638F1ABB5D8E00022F45 /* MMDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualStateManager.h; sourceTree = "<group>"; };
+		B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualStateManager.m; sourceTree = "<group>"; };
+		B28363911ABB5D8E00022F45 /* MMLeftSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLeftSideDrawerViewController.h; sourceTree = "<group>"; };
+		B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLeftSideDrawerViewController.m; sourceTree = "<group>"; };
+		B28363931ABB5D8E00022F45 /* MMRightSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRightSideDrawerViewController.h; sourceTree = "<group>"; };
+		B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRightSideDrawerViewController.m; sourceTree = "<group>"; };
+		B28363951ABB5D8E00022F45 /* MMSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerViewController.h; sourceTree = "<group>"; };
+		B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerViewController.m; sourceTree = "<group>"; };
+		B28363971ABB5D8E00022F45 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
+		B28363981ABB5D8E00022F45 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		B2A927CB1AB3E04200C2B176 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		B2A927CC1AB3E04200C2B176 /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
 		B2A927CE1AB3E13500C2B176 /* AKObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKObjectManager.h; sourceTree = "<group>"; };
 		B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKObjectManager.m; sourceTree = "<group>"; };
 		B2A927D11AB40CBE00C2B176 /* ChallengerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengerManager.h; sourceTree = "<group>"; };
 		B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengerManager.m; sourceTree = "<group>"; };
-		C92B5E0C1ABB4E1400941A6A /* MMDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualStateManager.h; sourceTree = "<group>"; };
-		C92B5E0D1ABB4E1400941A6A /* MMDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualStateManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +148,20 @@
 		B2469EB71AA65B24000DDF96 /* GameHub iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B28363731AB9F5DD00022F45 /* MMRightSideDrawerViewController.h */,
+				B283638B1ABB5D8E00022F45 /* MMCenterTableViewCell.h */,
+				B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */,
+				B283638D1ABB5D8E00022F45 /* MMCenterTableViewController.h */,
+				B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */,
+				B283638F1ABB5D8E00022F45 /* MMDrawerVisualStateManager.h */,
+				B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */,
+				B28363911ABB5D8E00022F45 /* MMLeftSideDrawerViewController.h */,
+				B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */,
+				B28363931ABB5D8E00022F45 /* MMRightSideDrawerViewController.h */,
+				B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */,
+				B28363951ABB5D8E00022F45 /* MMSideDrawerViewController.h */,
+				B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */,
+				B28363971ABB5D8E00022F45 /* MMViewController.h */,
+				B28363981ABB5D8E00022F45 /* MMViewController.m */,
 				B28363881AB9F83500022F45 /* MMLogoView.h */,
 				B28363891AB9F83500022F45 /* MMLogoView.m */,
 				B283637F1AB9F80100022F45 /* MMSideDrawerSectionHeaderView.h */,
@@ -151,11 +170,6 @@
 				B28363821AB9F80100022F45 /* MMSideDrawerTableViewCell.m */,
 				B28363831AB9F80100022F45 /* MMTableViewCell.h */,
 				B28363841AB9F80100022F45 /* MMTableViewCell.m */,
-				B28363741AB9F5DD00022F45 /* MMRightSideDrawerViewController.m */,
-				B28363751AB9F5DD00022F45 /* MMSideDrawerViewController.h */,
-				B28363761AB9F5DD00022F45 /* MMSideDrawerViewController.m */,
-				B28363771AB9F5DD00022F45 /* MMViewController.h */,
-				B28363781AB9F5DD00022F45 /* MMViewController.m */,
 				B28363791AB9F5DD00022F45 /* MMNavigationController.h */,
 				B283637A1AB9F5DD00022F45 /* MMNavigationController.m */,
 				B2469EBC1AA65B24000DDF96 /* AppDelegate.h */,
@@ -163,15 +177,11 @@
 				B2469EBF1AA65B24000DDF96 /* ViewController.h */,
 				B2469EC01AA65B24000DDF96 /* ViewController.m */,
 				B2469EC21AA65B24000DDF96 /* Main.storyboard */,
-				C92B5E0C1ABB4E1400941A6A /* MMDrawerVisualStateManager.h */,
-				C92B5E0D1ABB4E1400941A6A /* MMDrawerVisualStateManager.m */,
 				B2469EC51AA65B24000DDF96 /* Images.xcassets */,
 				B2469EC71AA65B24000DDF96 /* LaunchScreen.xib */,
 				B2469EB81AA65B24000DDF96 /* Supporting Files */,
 				B23240901AB0F24800763746 /* Challenger.h */,
 				B23240911AB0F24800763746 /* Challenger.m */,
-				B2A927C81AB3DE2200C2B176 /* GHRestKitClient.h */,
-				B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */,
 				B2A927CB1AB3E04200C2B176 /* MappingProvider.h */,
 				B2A927CC1AB3E04200C2B176 /* MappingProvider.m */,
 				B2A927CE1AB3E13500C2B176 /* AKObjectManager.h */,
@@ -355,23 +365,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92B5E0E1ABB4E1400941A6A /* MMDrawerVisualStateManager.m in Sources */,
 				B283638A1AB9F83500022F45 /* MMLogoView.m in Sources */,
 				B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */,
-				B283637D1AB9F5DD00022F45 /* MMViewController.m in Sources */,
 				B23240921AB0F24800763746 /* Challenger.m in Sources */,
-				B283637B1AB9F5DD00022F45 /* MMRightSideDrawerViewController.m in Sources */,
+				B283639E1ABB5D8E00022F45 /* MMSideDrawerViewController.m in Sources */,
 				B28363721AB6B18300022F45 /* LoginChallengerViewController.m in Sources */,
-				B283637C1AB9F5DD00022F45 /* MMSideDrawerViewController.m in Sources */,
+				B283639B1ABB5D8E00022F45 /* MMDrawerVisualStateManager.m in Sources */,
 				B28363861AB9F80100022F45 /* MMSideDrawerTableViewCell.m in Sources */,
 				B2469EC11AA65B24000DDF96 /* ViewController.m in Sources */,
 				B28363851AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m in Sources */,
 				B28363871AB9F80100022F45 /* MMTableViewCell.m in Sources */,
 				B2469EBE1AA65B24000DDF96 /* AppDelegate.m in Sources */,
-				B2A927CA1AB3DE2200C2B176 /* GHRestKitClient.m in Sources */,
+				B283639A1ABB5D8E00022F45 /* MMCenterTableViewController.m in Sources */,
+				B283639D1ABB5D8E00022F45 /* MMRightSideDrawerViewController.m in Sources */,
 				B283637E1AB9F5DD00022F45 /* MMNavigationController.m in Sources */,
+				B283639F1ABB5D8E00022F45 /* MMViewController.m in Sources */,
 				B2A927D31AB40CBE00C2B176 /* ChallengerManager.m in Sources */,
+				B283639C1ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m in Sources */,
 				B2469EBB1AA65B24000DDF96 /* main.m in Sources */,
+				B28363991ABB5D8E00022F45 /* MMCenterTableViewCell.m in Sources */,
 				B2A927CD1AB3E04200C2B176 /* MappingProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

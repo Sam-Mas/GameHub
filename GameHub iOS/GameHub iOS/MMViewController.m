@@ -39,11 +39,11 @@
 {
     [super viewDidLoad];
 //    if(OSVersionIsAtLeastiOS7()){
-        [[NSNotificationCenter defaultCenter]
-         addObserver:self
-         selector:@selector(contentSizeDidChangeNotification:)
-         name:UIContentSizeCategoryDidChangeNotification
-         object:nil];
+//        [[NSNotificationCenter defaultCenter]
+//         addObserver:self
+//         selector:@selector(contentSizeDidChangeNotification:)
+//         name:UIContentSizeCategoryDidChangeNotification
+//         object:nil];
 //    }
 }
 

@@ -19,24 +19,8 @@
 // THE SOFTWARE.
 
 
-#import <Foundation/Foundation.h>
-#import "MMDrawerVisualState.h"
+#import "MMTableViewCell.h"
 
-typedef NS_ENUM(NSInteger, MMDrawerAnimationType){
-    MMDrawerAnimationTypeNone,
-    MMDrawerAnimationTypeSlide,
-    MMDrawerAnimationTypeSlideAndScale,
-    MMDrawerAnimationTypeSwingingDoor,
-    MMDrawerAnimationTypeParallax,
-};
-
-@interface MMDrawerVisualStateManager : NSObject
-
-@property (nonatomic,assign) MMDrawerAnimationType leftDrawerAnimationType;
-@property (nonatomic,assign) MMDrawerAnimationType rightDrawerAnimationType;
-
-+ (MMDrawerVisualStateManager *)sharedManager;
-
--(MMDrawerControllerDrawerVisualStateBlock)drawerVisualStateBlockForDrawerSide:(MMDrawerSide)drawerSide;
+@interface MMCenterTableViewCell : MMTableViewCell
 
 @end

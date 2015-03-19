@@ -19,24 +19,25 @@
 // THE SOFTWARE.
 
 
-#import <Foundation/Foundation.h>
-#import "MMDrawerVisualState.h"
+#import "MMCenterTableViewCell.h"
 
-typedef NS_ENUM(NSInteger, MMDrawerAnimationType){
-    MMDrawerAnimationTypeNone,
-    MMDrawerAnimationTypeSlide,
-    MMDrawerAnimationTypeSlideAndScale,
-    MMDrawerAnimationTypeSwingingDoor,
-    MMDrawerAnimationTypeParallax,
-};
+@implementation MMCenterTableViewCell
 
-@interface MMDrawerVisualStateManager : NSObject
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setAccessoryCheckmarkColor:[UIColor colorWithRed:13.0/255.0
+                                                         green:88.0/255.0
+                                                          blue:161.0/255.0
+                                                         alpha:1.0]];
+    }
+    return self;
+}
 
-@property (nonatomic,assign) MMDrawerAnimationType leftDrawerAnimationType;
-@property (nonatomic,assign) MMDrawerAnimationType rightDrawerAnimationType;
-
-+ (MMDrawerVisualStateManager *)sharedManager;
-
--(MMDrawerControllerDrawerVisualStateBlock)drawerVisualStateBlockForDrawerSide:(MMDrawerSide)drawerSide;
-
+-(void)updateContentForNewContentSize{
+    if([[UIFont class] respondsToSelector:@selector(preferredFontForTextStyle:)]){
+        [self.textLabel setFont:[UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
+    }
+}
 @end

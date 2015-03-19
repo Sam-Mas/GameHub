@@ -20,10 +20,11 @@
 
 
 #import "MMSideDrawerViewController.h"
+#import "MMCenterTableViewController.h"
 #import "MMSideDrawerTableViewCell.h"
 #import "MMSideDrawerSectionHeaderView.h"
-#import "MMNavigationController.h"
 #import "MMLogoView.h"
+#import "MMNavigationController.h"
 
 @implementation MMSideDrawerViewController
 
@@ -354,25 +355,25 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.section) {
-//        case MMDrawerSectionViewSelection:{
-////            MMCenterTableViewController * center = [[MMCenterTableViewController alloc] init];
-////            
-//            UINavigationController * nav = [[MMNavigationController alloc] initWithRootViewController:center];
-//            
-//            if(indexPath.row%2==0){
-//                [self.mm_drawerController
-//                 setCenterViewController:nav
-//                 withCloseAnimation:YES
-//                 completion:nil];
-//            }
-//            else {
-//                [self.mm_drawerController
-//                 setCenterViewController:nav
-//                 withFullCloseAnimation:YES
-//                 completion:nil];
-//            }
-//            break;
-//        }
+        case MMDrawerSectionViewSelection:{
+            MMCenterTableViewController * center = [[MMCenterTableViewController alloc] init];
+            
+            UINavigationController * nav = [[MMNavigationController alloc] initWithRootViewController:center];
+            
+            if(indexPath.row%2==0){
+                [self.mm_drawerController
+                 setCenterViewController:nav
+                 withCloseAnimation:YES
+                 completion:nil];
+            }
+            else {
+                [self.mm_drawerController
+                 setCenterViewController:nav
+                 withFullCloseAnimation:YES
+                 completion:nil];
+            }
+            break;
+        }
             
         case MMDrawerSectionDrawerWidth:{
             //Implement in Subclass

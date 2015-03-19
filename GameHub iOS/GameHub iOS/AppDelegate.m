@@ -9,9 +9,15 @@
 #import "AppDelegate.h"
 #import "NSRConfig.h"
 #import "MMDrawerController.h"
+
+#import "MMCenterTableViewController.h"
 #import "MMRightSideDrawerViewController.h"
+#import "MMLeftSideDrawerViewController.h"
+
 #import "MMDrawerVisualStateManager.h"
 #import "MMNavigationController.h"
+
+#import "ViewController.h"
 
 @interface AppDelegate ()
 @property (nonatomic,strong) MMDrawerController * drawerController;
@@ -22,15 +28,23 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIViewController * leftSideDrawerViewController = [[MMLeftSideDrawerViewController alloc] init];
     
+    //Dave and Shelby Code
+    
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *centerViewController = [storyboard instantiateInitialViewController];
+    
+    //end
+//    UIViewController * centerViewController = [[ViewController alloc] init];
     
     UIViewController * rightSideDrawerViewController = [[MMRightSideDrawerViewController alloc] init];
-    UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
-    [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
     
-////        if(OSVersionIsAtLeastiOS7()){
+    UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:centerViewController];
+    [navigationController setRestorationIdentifier:@"MMCenterNavigationControllerRestorationKey"];
+//    if(OSVersionIsAtLeastiOS7()){
 //        UINavigationController * rightSideNavController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
 //        [rightSideNavController setRestorationIdentifier:@"MMExampleRightNavigationControllerRestorationKey"];
 //        UINavigationController * leftSideNavController = [[MMNavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
@@ -71,11 +85,8 @@
 //    }
     [self.window setRootViewController:self.drawerController];
     
-    return YES;
+    
 
-    
-    
-    
     
 // http://localhost:3000/api/v1/challengers   
     

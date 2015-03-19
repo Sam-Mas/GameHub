@@ -55,8 +55,8 @@
                                       blue:242.0/255.0
                                       alpha:1.0]];
 //        if(OSVersionIsAtLeastiOS7()== NO){
-//            [self.textLabel setShadowColor:[[UIColor blackColor] colorWithAlphaComponent:.5]];
-//            [self.textLabel setShadowOffset:CGSizeMake(0, 1)];
+            [self.textLabel setShadowColor:[[UIColor blackColor] colorWithAlphaComponent:.5]];
+            [self.textLabel setShadowOffset:CGSizeMake(0, 1)];
 //        }
     }
     return self;
