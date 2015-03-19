@@ -23,7 +23,8 @@
 
 # OSX files
 .DS_Store
-
+._.DS_Store
+._.gitignore
 
 #xcode user files
 GameHub\ iOS/GameHub\ iOS.xcworkspace/xcuserdata
