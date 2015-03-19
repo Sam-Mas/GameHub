@@ -5,6 +5,7 @@ target 'GameHub iOS' do
 
 pod 'RestKit', '~> 0.24'
 pod 'NSRails', 		'~> 2.2'
+pod 'MMDrawerController', '~> 0.5.7'
 
 
 end

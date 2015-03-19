@@ -1,12 +1,12 @@
 module Api
 	module V1
 
+
 		class ChallengersController < ApplicationController
-			class Challenger < ::Challenger
+		
+
 			
-			end
-
-
+		protect_from_forgery with: :exception
 			respond_to :json
 
 			def index
@@ -22,7 +22,7 @@ module Api
 
 			def create
 				debugger
-				respond_with Challenger.create(challenger_params[:name])
+				respond_with Challenger.create(name: params[:name])
 			end
 
 			def update
