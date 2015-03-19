@@ -39,6 +39,42 @@ static ChallengerManager *sharedManager = nil;
     }];
 }
 
+//- (void)postObject:(id)object
+//              path:(NSString *)path
+//        parameters:(NSDictionary *)parameters
+//           success:(void (^)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult))success
+//           failure:(void (^)(RKObjectRequestOperation *operation, NSError *error))failure;
+
+
+-(void) loadUser:(NSDictionary *)name : (void (^)(Challenger *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure
+{
+    Challenger *challenger = nil;
+    
+    [self postObject:challenger path:@"challengers" parameters: name success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+     {
+         if (success)
+         {
+              NSLog(@"hey Bitches-----------");
+             Challenger *currentChallenger = (Challenger *)[mappingResult.array firstObject];
+             success(currentChallenger);
+             
+             
+         }
+         
+        
+         
+         
+     }
+    failure:^(RKObjectRequestOperation *operation, NSError *error)
+     {
+         if (failure)
+         {
+             failure(operation, error);
+         }
+     }];
+}
+
+
 #pragma mark - Setup Helpers
 
 - (void) setupResponseDescriptors {

@@ -8,16 +8,71 @@
 
 #import "AppDelegate.h"
 #import "NSRConfig.h"
+#import "MMDrawerController.h"
+#import "MMRightSideDrawerViewController.h"
+
+#import "MMNavigationController.h"
 
 @interface AppDelegate ()
+@property (nonatomic,strong) MMDrawerController * drawerController;
 
 @end
+
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    UIViewController * rightSideDrawerViewController = [[MMRightSideDrawerViewController alloc] init];
+    
+////        if(OSVersionIsAtLeastiOS7()){
+//        UINavigationController * rightSideNavController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
+//        [rightSideNavController setRestorationIdentifier:@"MMExampleRightNavigationControllerRestorationKey"];
+//        UINavigationController * leftSideNavController = [[MMNavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
+//        [leftSideNavController setRestorationIdentifier:@"MMExampleLeftNavigationControllerRestorationKey"];
+//        self.drawerController = [[MMDrawerController alloc]
+//                                 initWithCenterViewController:navigationController
+//                                 leftDrawerViewController:leftSideNavController
+//                                 rightDrawerViewController:rightSideNavController];
+//        [self.drawerController setShowsShadow:NO];
+//    }
+//    else{
+        self.drawerController = [[MMDrawerController alloc]
+//                                 initWithCenterViewController:navigationController
+//                                 leftDrawerViewController:leftSideDrawerViewController
+                                 rightDrawerViewController:rightSideDrawerViewController];
+//    }
+    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    [self.drawerController
+     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+         MMDrawerControllerDrawerVisualStateBlock block;
+         block = [[MMExampleDrawerVisualStateManager sharedManager]
+                  drawerVisualStateBlockForDrawerSide:drawerSide];
+         if(block){
+             block(drawerController, drawerSide, percentVisible);
+         }
+     }];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    if(OSVersionIsAtLeastiOS7()){
+        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+                                              green:173.0/255.0
+                                               blue:234.0/255.0
+                                              alpha:1.0];
+        [self.window setTintColor:tintColor];
+    }
+    [self.window setRootViewController:self.drawerController];
+    
+    return YES;
+
+    
+    
     
     
 // http://localhost:3000/api/v1/challengers   
