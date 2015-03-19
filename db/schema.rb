@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316024824) do
+ActiveRecord::Schema.define(version: 20150317233423) do
 
   create_table "challengers", force: :cascade do |t|
     t.string   "name"
@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(version: 20150316024824) do
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.integer  "challenger_id"
-    t.integer  "score1"
-    t.integer  "score2"
+    t.integer  "score1",           default: 0
+    t.integer  "score2",           default: 0
     t.integer  "num_turns",        default: 10
     t.integer  "winner",           default: 0
     t.boolean  "player1done",      default: false
     t.boolean  "player2done",      default: false
-    t.boolean  "player_1_turn"
+    t.boolean  "player_1_turn",    default: true
     t.string   "last_guess"
     t.string   "last_flip_result"
   end

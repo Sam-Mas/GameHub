@@ -51,7 +51,6 @@ class Game::CoinGamesController < ApplicationController
 
 	# GET /game/coin_games/new
 	def new
-
 		# create the game
 		@game = Game::CoinGame.new
 		@game.score1 = 0

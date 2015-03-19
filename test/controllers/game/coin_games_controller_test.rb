@@ -35,8 +35,10 @@ class Game::CoinGamesControllerTest < ActionController::TestCase
 		end
 	end
 
+
 	test "should show game_coin_game" do
-	# couldn't get this test to work with gon	
+		get :show, id: @game.id
+	    assert_response :success
 	end
 
 	test "should destroy game_coin_game" do
@@ -46,4 +48,16 @@ class Game::CoinGamesControllerTest < ActionController::TestCase
 
 		assert_redirected_to game_coin_games_path
 	end
+
+	test "should get update game_coin_game" do
+		post :update, id: @game.id
+		assert_response :success
+	end
+
+	test "should create coin game game_coin_games" do
+  		assert_difference('Game::CoinGame.count', 1) do
+    		post :create, game_coin_game: {score1: 0, score2: 0}
+  		end
+	end
+
 end
