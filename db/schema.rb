@@ -13,16 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20150317233423) do
 
-  create_table "api_keys", force: :cascade do |t|
-    t.string   "access_token"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "challengers", force: :cascade do |t|
     t.string   "name"
     t.float    "balance",      default: 500.0
+    t.boolean  "turn_taken",   default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "coin_game_id"

@@ -32,7 +32,7 @@ class ChallengersController < ApplicationController
 	end
 	
 	def new
-		debugger
+		
 		@challenger = Challenger.new
 	end
 
@@ -70,12 +70,12 @@ class ChallengersController < ApplicationController
 	end
 
 	def edit
-		debugger
+		
 		@challenger = Challenger.find(cookies[:challenger_id]);
 	end
 
 	def update
-		debugger
+		
 		@challenger = Challenger.find(cookies[:challenger_id])
 		
 		if @challenger.update_attributes(challenger_params)
