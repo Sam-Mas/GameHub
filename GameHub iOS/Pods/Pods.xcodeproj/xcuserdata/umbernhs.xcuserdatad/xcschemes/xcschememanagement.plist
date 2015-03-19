@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-GameHub iOS-AFNetworking.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-GameHub iOS-ISO8601DateFormatterValueTransformer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>Pods-GameHub iOS-MMDrawerController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>Pods-GameHub iOS-NSRails.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-GameHub iOS-RKValueTransformers.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-GameHub iOS-RestKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-GameHub iOS-SOCKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>Pods-GameHub iOS-TransitionKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Pods-GameHub iOS.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>12D6F3EF4C42C7BD710192E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3C2F005F84A3D6494C87E7E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3DF8D5C684996354450133AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D60C509710CD65EF7EE8C19</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>516DA75958855E0F266985A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A1F3DFFC450A626909012BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6C7DF2D47148593BFC919C94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7090E3A50DF2B6ED867E5FC7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7CF11A1321F68046E6F9E0FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>95E7720551EEF1E3F455F864</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFA38265FDDE053B9AA71301</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA12525AD3027208AA571DD6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6B5D8A68F3D97CDA6AA6C32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD78F48D9463F0D0AC8412B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E04081716EDC38D9BD07661B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC547083BC2C66247CE104FA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD8246D4EE64D243608E008A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -29,6 +29,7 @@
 		B2A927CD1AB3E04200C2B176 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CC1AB3E04200C2B176 /* MappingProvider.m */; };
 		B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */; };
 		B2A927D31AB40CBE00C2B176 /* ChallengerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */; };
+		C92B5E0E1ABB4E1400941A6A /* MMDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B5E0D1ABB4E1400941A6A /* MMDrawerVisualStateManager.m */; };
 		D48FEEB23CEE521EB67E44A0 /* libPods-GameHub iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDEC83AC963813F4A3BC74D /* libPods-GameHub iOS.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,8 @@
 		B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKObjectManager.m; sourceTree = "<group>"; };
 		B2A927D11AB40CBE00C2B176 /* ChallengerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengerManager.h; sourceTree = "<group>"; };
 		B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengerManager.m; sourceTree = "<group>"; };
+		C92B5E0C1ABB4E1400941A6A /* MMDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualStateManager.h; sourceTree = "<group>"; };
+		C92B5E0D1ABB4E1400941A6A /* MMDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualStateManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				B2469EBF1AA65B24000DDF96 /* ViewController.h */,
 				B2469EC01AA65B24000DDF96 /* ViewController.m */,
 				B2469EC21AA65B24000DDF96 /* Main.storyboard */,
+				C92B5E0C1ABB4E1400941A6A /* MMDrawerVisualStateManager.h */,
+				C92B5E0D1ABB4E1400941A6A /* MMDrawerVisualStateManager.m */,
 				B2469EC51AA65B24000DDF96 /* Images.xcassets */,
 				B2469EC71AA65B24000DDF96 /* LaunchScreen.xib */,
 				B2469EB81AA65B24000DDF96 /* Supporting Files */,
@@ -350,6 +355,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92B5E0E1ABB4E1400941A6A /* MMDrawerVisualStateManager.m in Sources */,
 				B283638A1AB9F83500022F45 /* MMLogoView.m in Sources */,
 				B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */,
 				B283637D1AB9F5DD00022F45 /* MMViewController.m in Sources */,

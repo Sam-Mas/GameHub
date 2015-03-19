@@ -10,7 +10,7 @@
 #import "NSRConfig.h"
 #import "MMDrawerController.h"
 #import "MMRightSideDrawerViewController.h"
-
+#import "MMDrawerVisualStateManager.h"
 #import "MMNavigationController.h"
 
 @interface AppDelegate ()
@@ -27,6 +27,8 @@
     
     
     UIViewController * rightSideDrawerViewController = [[MMRightSideDrawerViewController alloc] init];
+    UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
+    [navigationController setRestorationIdentifier:@"MMExampleCenterNavigationControllerRestorationKey"];
     
 ////        if(OSVersionIsAtLeastiOS7()){
 //        UINavigationController * rightSideNavController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
@@ -41,7 +43,7 @@
 //    }
 //    else{
         self.drawerController = [[MMDrawerController alloc]
-//                                 initWithCenterViewController:navigationController
+                                 initWithCenterViewController:navigationController
 //                                 leftDrawerViewController:leftSideDrawerViewController
                                  rightDrawerViewController:rightSideDrawerViewController];
 //    }
@@ -53,20 +55,20 @@
     [self.drawerController
      setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
          MMDrawerControllerDrawerVisualStateBlock block;
-         block = [[MMExampleDrawerVisualStateManager sharedManager]
+         block = [[MMDrawerVisualStateManager sharedManager]
                   drawerVisualStateBlockForDrawerSide:drawerSide];
          if(block){
              block(drawerController, drawerSide, percentVisible);
          }
      }];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    if(OSVersionIsAtLeastiOS7()){
-        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
-                                              green:173.0/255.0
-                                               blue:234.0/255.0
-                                              alpha:1.0];
-        [self.window setTintColor:tintColor];
-    }
+//    if(OSVersionIsAtLeastiOS7()){
+//        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+//                                              green:173.0/255.0
+//                                               blue:234.0/255.0
+//                                              alpha:1.0];
+//        [self.window setTintColor:tintColor];
+//    }
     [self.window setRootViewController:self.drawerController];
     
     return YES;
