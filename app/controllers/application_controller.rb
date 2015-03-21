@@ -8,7 +8,9 @@ class ApplicationController < ActionController::Base
 	private
 
 	def display_challengers
-		@challengers = Challenger.all
+                @challengers = Challenger.all.order(:name)
+                @other_challengers = @challengers.find_all { |challenger| challenger.id != cookies[:challenger_id].to_i }
+                @myself = Challenger.find_by_name(cookies[:challenger_name])
 	end
 
         def require_account

@@ -21,7 +21,6 @@ class Game::CoinGame < ActiveRecord::Base
 			self.last_flip_result = flip + "!"
 			self.last_guess = get_me(challenger_id).name + " guessed " + guess
 			self.num_turns = self.num_turns - 1
-			mark_board(challenger_id)
 			end_turn(challenger_id)
 			save
 		end
@@ -87,14 +86,6 @@ class Game::CoinGame < ActiveRecord::Base
 			self.score1 += 1
 		elsif self.challengers.last.id == challenger_id
 			self.score2 += 1
-		end
-	end
-
-	def mark_board(challenger_id)
-		if self.challengers.first.id == challenger_id
-			self.player1done = true
-		elsif self.challengers.last.id == challenger_id
-			self.player2done = true
 		end
 	end
 

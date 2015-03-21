@@ -4,18 +4,18 @@
 
 <h1>GAMES IN PROGRESS</h1>
 
-	<table>
-		<thead>
-			<tr>
-				<th colspan="3"></th>
-			</tr>
-		</thead>
+<table>
+	<thead>
+		<tr>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
 
-		<tbody>
-			<% @coin_games_need_another_player.each do |coin_game| %>
-				<tr>
-					<td ><%= link_to('JOIN GAME', coin_game, data: { no_turbolink: true }, class: 'btn btn-primary') %></td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<tbody>
+		<% @coin_games_need_another_player.each do |coin_game| %>
+			<tr>
+				<td ><%= link_to('JOIN GAME', coin_game, data: { no_turbolink: true }, class: 'btn btn-primary') %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

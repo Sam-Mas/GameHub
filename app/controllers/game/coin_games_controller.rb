@@ -1,5 +1,5 @@
 class Game::CoinGamesController < ApplicationController
-	before_action :set_game_coin_game, only: [:show, :edit, :update, :destroy]
+	before_action :set_game_coin_game, only: [:show, :update]
 
 	# GET /game/coin_games
 	# GET /game/coin_games.json
@@ -12,8 +12,6 @@ class Game::CoinGamesController < ApplicationController
 	# GET /game/coin_games/1
 	# GET /game/coin_games/1.json
 	def show
-
-		@game = Game::CoinGame.find(params[:id])
 
 		if @game.challengers.count == 0 || (@game.challengers.count < Game::CoinGame.MAX_SIZE && @game.challengers.first.id != cookies[:challenger_id].to_i)
 			@game.challengers << Challenger.find(cookies[:challenger_id])
@@ -75,26 +73,6 @@ class Game::CoinGamesController < ApplicationController
 
 	end
 
-	# GET /game/coin_games/1/edit
-	def edit
-	end
-
-	# POST /game/coin_games
-	# POST /game/coin_games.json
-	def create
-		@game_coin_game = Game::CoinGame.new(game_coin_game_params)
-
-		respond_to do |format|
-			if @game_coin_game.save
-				format.html { redirect_to @game_coin_game, notice: 'Coin game was successfully created.' }
-				format.json { render :show, status: :created, location: @game_coin_game }
-			else
-				format.html { render :new }
-				format.json { render json: @game_coin_game.errors, status: :unprocessable_entity }
-			end
-		end
-	end
-
 	# PATCH/PUT /game/coin_games/1
 	# PATCH/PUT /game/coin_games/1.json
 	def update
@@ -104,19 +82,9 @@ class Game::CoinGamesController < ApplicationController
 		end
 
 		respond_to do |format|
-			format.html { render json: 0 } 
+			format.html 
 			format.json
-			format.js { render json: 0 } # JBUILDER CODE MIGHT BE POSSIBLE HERE
-		end
-	end
-
-	# DELETE /game/coin_games/1
-	# DELETE /game/coin_games/1.json
-	def destroy
-		@game.destroy
-		respond_to do |format|
-			format.html { redirect_to game_coin_games_url, notice: 'Coin game was successfully destroyed.' }
-			format.json { head :no_content }
+			format.js { render :nothing => true }
 		end
 	end
 
@@ -126,8 +94,4 @@ class Game::CoinGamesController < ApplicationController
 		@game = Game::CoinGame.find(params[:id])
 	end
 
-	# Never trust parameters from the scary internet, only allow the white list through.
-	def game_coin_game_params
-		params[:game_coin_game].permit(:score1, :score2)
-	end
 end

@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>GameHub</title>
-		<%= include_gon(:init => true) %> 
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<%= csrf_meta_tags %>
@@ -14,14 +13,15 @@
 			<div class="userDropdown dropdown">
 				<div class="dropdown-toggle" data-toggle="dropdown"><%= cookies[:challenger_name] %><span class="caret"></span></div>
 				<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					
 					<% if cookies[:challenger_name].start_with?("Guest") %>
 						<li role="menuitem"><%= link_to "Sign in",{ controller: "/challengers", action: "new"} %></li>
 					<% else %>
 						<li role="menuitem"><%= link_to "Sign out",{ controller: "/challengers", action: "sign_out"} %></li>
 					<% end %>
-		            <% unless cookies[:challenger_id].blank? %>
-		                <li role"menuitem"><%= link_to "Manage Account", edit_challenger_path(cookies[:challenger_id]) %></li>
-		            <% end %>
+
+	                <li role"menuitem"><%= link_to "Manage Account", edit_challenger_path(cookies[:challenger_id]) %></li>
+
 		        </ul>
 		        <div onclick="slideChallengers(true)">
 		           	<%= image_tag("users.png") %>
@@ -30,6 +30,7 @@
 		</header>
 
 		<main id="content"
+
 			<% flash.each do |message_type, message| %>
 				<% unless message.nil? %>
 					<div class="alert alert-<%= message_type %>"><%= message %></div>
@@ -38,10 +39,6 @@
 			<% end %>>
 			<%= yield %>
 
-			<div id="gameList" style="display:none">
-				<h3> All GameHub Games: </h3>
-			</div>
-			
 		</main>
 
 		<div class="cd-panel from-right" id="challengerContainer">

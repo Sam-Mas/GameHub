@@ -7,71 +7,40 @@
 
 <div id="challenger_list_realtime">
 	<% if @challengers %>
-		<% if ((cookies[:challenger_name] == nil) or (Challenger.find_by_name(cookies[:challenger_name]) == nil)) %>
-			<% cookies[:challenger_name] = "Guest" %>
+		
+		<% if (@challengers.count == 1) %>
+			No other challengers online!
 		<% end %>
 		
-		<!-- if the user is signed in... -->
-		<% if (cookies[:challenger_name] != nil and cookies[:challenger_name] != "Guest") %>
-			<% if (@challengers.count == 1) %>
-				No other challengers online!
-			<% end %>
-			
-			<% @myself = Challenger.find_by_name(cookies[:challenger_name]) %>
-			<% @challengers = @challengers.order(:name) %>
-			<% @challengers.each do |challenger| %>
+		<% @other_challengers.each do |challenger| %>
 
-				<!-- run down the list of players -->
-				<tr>
-					<!-- exclude self -->
-					<% if (challenger.name != @myself.name) %> 
-						<div class= "btn_challenge">
-							<%= form_tag("/challenge_player", method: "post") do %>
-								<input type="hidden" name="challenge_issuer", type="text" value="<%=@myself.name%>"/>
-								<input type="hidden" name="challenge_receiver", type="text" value="<%=challenger.name%>"/>
-								<! -- report opponent status and allow challenging or acceptance of challenges >
-								<% if challenger.name == @myself.opponent %>								
-									<div class = "report"><%= "Accept challenge from #{challenger.name}?" %></br></div>
-									<div class = "chall_button"><%= submit_tag "Yes" %><%= submit_tag "No" %></div>
-								<% elsif challenger.opponent == nil %>
-									<div class = "chall_button">
-									<%= submit_tag " Challenge #{challenger.name}?" %>
-									</div>
-								<% else %>
-									<div class = "report">
-									<%= "#{challenger.name} has been challenged by #{challenger.opponent}!" %>
-									</div>
-								<% end %> 
-								
-							<% end %>
-						</div>
-						
-						</br></br>
-					<% end %>	
-				</tr>
-			<% end %>
-
-		<!-- guest user, display as read-only-->	
-		<% else %>
-			<% if (@challengers.count == 0) %>
-				No other challengers online!
-			<% end %>
-		
-			<% @challengers = @challengers.order(:name) %>
-			<% @challengers.each do |challenger| %>
-					
 			<!-- run down the list of players -->
-				<tr>
-					<div class = "report">
-						<% if challenger.opponent == nil %>
-							<%= " #{challenger.name} has not yet been challenged." %>
+			<tr>
+				<div class= "btn_challenge">
+					<%= form_tag("/challenge_player", method: "post") do %>
+						<input type="hidden" name="challenge_issuer", type="text" value="<%=@myself.name%>"/>
+						<input type="hidden" name="challenge_receiver", type="text" value="<%=challenger.name%>"/>
+						<! -- report opponent status and allow challenging or acceptance of challenges >
+						<% if challenger.name == @myself.opponent %>								
+							<div class = "report"><%= "Accept challenge from #{challenger.name}?" %></br></div>
+							<div class = "chall_button"><%= submit_tag "Yes" %><%= submit_tag "No" %></div>
+						<% elsif challenger.opponent == nil %>
+							<div class = "chall_button">
+							<%= submit_tag " Challenge #{challenger.name}?" %>
+							</div>
 						<% else %>
+							<div class = "report">
 							<%= "#{challenger.name} has been challenged by #{challenger.opponent}!" %>
-						<% end %>
-					</div>				
-					</br>
-				</tr>
-			<% end %>
-		<% end #else %>
+							</div>
+						<% end %> 
+						
+					<% end %>
+				</div>
+				
+				</br></br>
+			</tr>
+
+		<% end %>
+
 	<% end #if challengers %>
 </div>

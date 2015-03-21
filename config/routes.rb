@@ -11,9 +11,9 @@ Rails.application.routes.draw do
 	get '/sign_out', to: 'challengers#sign_out'
 	
 	namespace :game do
-		resources :coin_games 
+		resources :coin_games, except: [:edit, :destroy, :create]
 	end
 
-	resources :challengers
+	resources :challengers, except: [:destroy, :index]
 
 end

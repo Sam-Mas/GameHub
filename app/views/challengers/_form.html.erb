@@ -1,8 +1,0 @@
-<h2>Welcome to GameHub</h2>
-<%= form_for @challenger, remote: true do |f| %>
-	<p>
-	<%= f.text_field :name, :placeholder => "Username" %>
-	</p>
-	<br>
-	<%= f.button :Login, class: 'btn btn-primary' %>
-<% end %>

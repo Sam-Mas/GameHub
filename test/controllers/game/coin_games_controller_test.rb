@@ -41,23 +41,9 @@ class Game::CoinGamesControllerTest < ActionController::TestCase
 	    assert_response :success
 	end
 
-	test "should destroy game_coin_game" do
-		assert_difference('Game::CoinGame.count', -1) do
-			delete :destroy, id: @game.id
-		end
-
-		assert_redirected_to game_coin_games_path
-	end
-
 	test "should get update game_coin_game" do
-		post :update, id: @game.id
+		patch :update, id: @game.id, _method: "patch", format: "js"
 		assert_response :success
-	end
-
-	test "should create coin game game_coin_games" do
-  		assert_difference('Game::CoinGame.count', 1) do
-    		post :create, game_coin_game: {score1: 0, score2: 0}
-  		end
 	end
 
 end
