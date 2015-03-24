@@ -32,11 +32,12 @@ class ChallengersController < ApplicationController
 	end
 	
 	def new
+		
 		@challenger = Challenger.new
 	end
 
 	def create
-
+		debugger
 		@challenger = Challenger.find_by_name(challenger_params[:name])
 		
 		# if the challenger already exists
@@ -69,10 +70,12 @@ class ChallengersController < ApplicationController
 	end
 
 	def edit
+		
 		@challenger = Challenger.find(cookies[:challenger_id]);
 	end
 
 	def update
+		
 		@challenger = Challenger.find(cookies[:challenger_id])
 		
 		if @challenger.update_attributes(challenger_params)
