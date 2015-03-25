@@ -6,7 +6,7 @@ class Game::CoinGamesController < ApplicationController
 	def index
 		@game_coin_games = Game::CoinGame.all
 		@coin_games_full = Game::CoinGame.all.find_all { |g| g.challengers.count == 2 }
-		@coin_games_need_another_player = Game::CoinGame.all.find_all { |g| g.challengers.count == 1 }
+		@coin_games_need_another_player = Game::CoinGame.all.find_all { |g| g.challengers.count == 1 && !g.game_full }
 	end
 
 	# GET /game/coin_games/1
@@ -51,22 +51,10 @@ class Game::CoinGamesController < ApplicationController
 	def new
 		# create the game
 		@game = Game::CoinGame.new
-		@game.score1 = 0
-		@game.score2 = 0
 		@game.challengers << Challenger.find(cookies[:challenger_id])
-		@game.player_1_turn = true
-		@game.last_guess = "No guess's yet"
-		@game.last_flip_result = "No flips yet"
 
 		# save the game with all the values above 
 		@game.save
-
-		# let the challenger see the necessary values
-		@my_score = @game.score1
-		@opponents_score = @game.score2
-		@last_challengers_guess = @game.last_guess
-		@last_flip_result = @game.last_flip_result
-		@my_turn = true 
 
 		# create the new game and go directly to playing it
 		redirect_to action: "show", id: @game.id

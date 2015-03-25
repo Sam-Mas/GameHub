@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325065302) do
+ActiveRecord::Schema.define(version: 20150325070442) do
 
   create_table "challengers", force: :cascade do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150325065302) do
     t.boolean  "player_1_turn",    default: true
     t.string   "last_guess",       default: "No guess's yet"
     t.string   "last_flip_result", default: "No flips yet"
+    t.boolean  "game_full",        default: false
   end
 
   add_index "game_coin_games", ["challenger_id"], name: "index_game_coin_games_on_challenger_id"

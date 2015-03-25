@@ -201,5 +201,97 @@ RSpec.describe Game::CoinGame, type: :model do
 			end		
 			
 		end
+
+		context 'with challengers' do
+
+			it 'should have many challengers' do
+				challengers = Game::CoinGame.reflect_on_association(:challengers)
+				challengers.macro.should == :has_many
+			end
+
+			it 'should not be a full game with no challengers' do
+				game = Game::CoinGame.new
+				expect(game.game_full).to be false
+			end
+
+			it 'should not be a full game with one challengers' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				expect(game.game_full).to be false
+			end
+
+			it 'should be a full game with two challengers' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				game.challengers << @player2
+				expect(game.game_full).to be true
+			end
+
+			it 'should be a full game with two challengers and one leaves for another game' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				game.challengers << @player2
+				expect(game.game_full).to be true
+				other_game = Game::CoinGame.new
+				other_game.challengers << @player2
+				expect(game.game_full).to be true
+			end
+
+			it 'should be a full game with two challengers and both leave for another game' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				game.challengers << @player2
+				expect(game.game_full).to be true
+				other_game = Game::CoinGame.new
+				other_game.challengers << @player1
+				other_game.challengers << @player2
+				expect(game.game_full).to be true
+			end
+
+		end
+
+		context 'add challengers to a game' do
+
+			before :each do #set up a dummy game
+				@player3 = Challenger.create(name: "Sam")
+				@player4 = Challenger.create(name: "Sammy")
+			end
+
+			it 'should be able to add two challengers to a game' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				game.challengers << @player2
+				expect(game.challengers.size).to eq(Game::CoinGame.MAX_SIZE)
+			end
+
+			it 'should not be able to add three challengers to a game' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				game.challengers << @player2
+				expect { game.challengers << @player3 }.to raise_error
+				expect(game.challengers.size).to eq(Game::CoinGame.MAX_SIZE)
+			end
+
+			it 'should not be able to add more than two challengers to a game' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				game.challengers << @player2
+				expect { game.challengers << @player3 }.to raise_error
+				expect { game.challengers << @player4 }.to raise_error
+				expect(game.challengers.size).to eq(Game::CoinGame.MAX_SIZE)
+			end
+
+			it 'should not be able to add more than two challengers to a game, even if some leave' do
+				game = Game::CoinGame.new
+				game.challengers << @player1
+				game.challengers << @player2
+				other_game = Game::CoinGame.new
+				other_game.challengers << @player1
+				expect { game.challengers << @player3 }.to raise_error
+				expect { game.challengers << @player4 }.to raise_error
+				expect(game.challengers.size).to eq(Game::CoinGame.MAX_SIZE)
+			end
+
+		end
 	end
 end
