@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317233423) do
+ActiveRecord::Schema.define(version: 20150325065302) do
 
   create_table "challengers", force: :cascade do |t|
     t.string   "name"
@@ -19,24 +19,22 @@ ActiveRecord::Schema.define(version: 20150317233423) do
     t.boolean  "turn_taken",   default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.integer  "coin_game_id"
     t.string   "opponent"
     t.string   "token"
+    t.integer  "coin_game_id"
   end
 
   create_table "game_coin_games", force: :cascade do |t|
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
     t.integer  "challenger_id"
     t.integer  "score1",           default: 0
     t.integer  "score2",           default: 0
     t.integer  "num_turns",        default: 10
     t.integer  "winner",           default: 0
-    t.boolean  "player1done",      default: false
-    t.boolean  "player2done",      default: false
     t.boolean  "player_1_turn",    default: true
-    t.string   "last_guess"
-    t.string   "last_flip_result"
+    t.string   "last_guess",       default: "No guess's yet"
+    t.string   "last_flip_result", default: "No flips yet"
   end
 
   add_index "game_coin_games", ["challenger_id"], name: "index_game_coin_games_on_challenger_id"
