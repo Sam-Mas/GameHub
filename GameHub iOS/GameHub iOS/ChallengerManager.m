@@ -11,6 +11,8 @@
 #import "MappingProvider.h"
 #import "Challenger.h"
 
+#import "LoggedInViewController.h"
+
 
 static ChallengerManager *sharedManager = nil;
 
@@ -44,7 +46,8 @@ static ChallengerManager *sharedManager = nil;
     Challenger *challenger = [Challenger new];
     challenger.name = name[@"name"];
     
-    [self postObject:challenger path:@"challengers" parameters:name success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
+    [self postObject:challenger path:@"challengers" parameters:name
+    success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
      {
          if (success)
          {
@@ -52,6 +55,19 @@ static ChallengerManager *sharedManager = nil;
              Challenger *currentChallenger = (Challenger *)[mappingResult.array firstObject];
              success(currentChallenger);
          }
+         
+         NSLog(@"************user is: %@ *************", challenger.name);
+         
+         LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
+         //]initWithNibName:@"LoggedInViewController" bundle:nil];
+         
+         loggedInViewController.challenger = challenger;
+         
+         [loggedInViewController doWork];
+         
+         //        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
+
+    
      }
     failure:^(RKObjectRequestOperation *operation, NSError *error)
      {

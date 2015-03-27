@@ -11,6 +11,7 @@
 
 @interface LoggedInViewController : UIViewController
 @property (nonatomic, retain) Challenger *challenger;
+@property (nonatomic, retain) IBOutlet UILabel *usernameLabel;
 
 -(void) doWork;
 @end
