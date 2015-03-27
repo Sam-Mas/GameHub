@@ -117,6 +117,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		638A06EB1AC603B0007F7ADC /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				B283638B1ABB5D8E00022F45 /* MMCenterTableViewCell.h */,
+				B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */,
+				B283638D1ABB5D8E00022F45 /* MMCenterTableViewController.h */,
+				B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */,
+				B283638F1ABB5D8E00022F45 /* MMDrawerVisualStateManager.h */,
+				B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */,
+				B28363911ABB5D8E00022F45 /* MMLeftSideDrawerViewController.h */,
+				B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */,
+				B28363931ABB5D8E00022F45 /* MMRightSideDrawerViewController.h */,
+				B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */,
+				B28363951ABB5D8E00022F45 /* MMSideDrawerViewController.h */,
+				B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */,
+				B28363971ABB5D8E00022F45 /* MMViewController.h */,
+				B28363981ABB5D8E00022F45 /* MMViewController.m */,
+				B28363881AB9F83500022F45 /* MMLogoView.h */,
+				B28363891AB9F83500022F45 /* MMLogoView.m */,
+				B283637F1AB9F80100022F45 /* MMSideDrawerSectionHeaderView.h */,
+				B28363801AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m */,
+				B28363811AB9F80100022F45 /* MMSideDrawerTableViewCell.h */,
+				B28363821AB9F80100022F45 /* MMSideDrawerTableViewCell.m */,
+				B28363831AB9F80100022F45 /* MMTableViewCell.h */,
+				B28363841AB9F80100022F45 /* MMTableViewCell.m */,
+				B28363791AB9F5DD00022F45 /* MMNavigationController.h */,
+				B283637A1AB9F5DD00022F45 /* MMNavigationController.m */,
+			);
+			name = MMDrawerController;
+			sourceTree = "<group>";
+		};
 		ADA948DAE8895CDD24BD1CA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,30 +179,7 @@
 		B2469EB71AA65B24000DDF96 /* GameHub iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B283638B1ABB5D8E00022F45 /* MMCenterTableViewCell.h */,
-				B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */,
-				B283638D1ABB5D8E00022F45 /* MMCenterTableViewController.h */,
-				B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */,
-				B283638F1ABB5D8E00022F45 /* MMDrawerVisualStateManager.h */,
-				B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */,
-				B28363911ABB5D8E00022F45 /* MMLeftSideDrawerViewController.h */,
-				B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */,
-				B28363931ABB5D8E00022F45 /* MMRightSideDrawerViewController.h */,
-				B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */,
-				B28363951ABB5D8E00022F45 /* MMSideDrawerViewController.h */,
-				B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */,
-				B28363971ABB5D8E00022F45 /* MMViewController.h */,
-				B28363981ABB5D8E00022F45 /* MMViewController.m */,
-				B28363881AB9F83500022F45 /* MMLogoView.h */,
-				B28363891AB9F83500022F45 /* MMLogoView.m */,
-				B283637F1AB9F80100022F45 /* MMSideDrawerSectionHeaderView.h */,
-				B28363801AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m */,
-				B28363811AB9F80100022F45 /* MMSideDrawerTableViewCell.h */,
-				B28363821AB9F80100022F45 /* MMSideDrawerTableViewCell.m */,
-				B28363831AB9F80100022F45 /* MMTableViewCell.h */,
-				B28363841AB9F80100022F45 /* MMTableViewCell.m */,
-				B28363791AB9F5DD00022F45 /* MMNavigationController.h */,
-				B283637A1AB9F5DD00022F45 /* MMNavigationController.m */,
+				638A06EB1AC603B0007F7ADC /* MMDrawerController */,
 				B2469EBC1AA65B24000DDF96 /* AppDelegate.h */,
 				B2469EBD1AA65B24000DDF96 /* AppDelegate.m */,
 				B2469EBF1AA65B24000DDF96 /* ViewController.h */,
