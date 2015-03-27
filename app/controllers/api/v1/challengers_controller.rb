@@ -70,7 +70,11 @@ module Api
 
 			def update
 				debugger
-				respond_with Challenger.update(challenger_params[:id], challenger_params[:challenger])
+				challenger = Challenger.find_by_name(params[:name])
+				challenger.update(balance: params[:balance])
+				respond_with @challenger do |format|
+    				format.json { render :json => {:challengers => challenger}}
+				end
 			end
 
 			def destroy
