@@ -47,14 +47,14 @@ module Api
 			end
 
 			def create
-				# debugger
+				 debugger
 
 				@challenger = Challenger.find_by_name(params[:name])
 				#check is challenger exists
 				if @challenger
 					puts "Exsiting Challenger"
 				else
-					@challenger = Challenger.new(params[:name])
+					@challenger = Challenger.new(name: params[:name])
 					puts "New Challenger"
 				end
 
