@@ -68,6 +68,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fKa-GE-bXH" secondAttribute="trailing" constant="155" id="zdu-Ts-BfL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="usernameTextField" destination="fKa-GE-bXH" id="tdP-gw-f3f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,6 +20,8 @@
 
 @implementation ViewController
 
+@synthesize usernameTextField;
+
 - (id)init
 {
     self = [super init];
@@ -44,12 +46,13 @@
 
 - (IBAction)loginChallenger:(id)sender {
 
-
+    NSString * username = usernameTextField.text;
     
     NSDictionary *name = @{
-                            @"name": @"Dave",
-                            
-                        };
+                           @"name": username,
+                           
+                           };
+
     
     
     [[ChallengerManager sharedManager] loadUser :name :^(Challenger *challenger)
