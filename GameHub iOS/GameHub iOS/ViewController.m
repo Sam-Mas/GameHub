@@ -52,16 +52,40 @@
                         };
     
     
-    [[ChallengerManager sharedManager] loadUser :name :^(Challenger *challenger){
-                 NSLog(@"************user is: %@ *************", challenger.name);
+    [[ChallengerManager sharedManager] loadUser :name :^(Challenger *challenger)
+    {
+        NSLog(@"************user is: %@ *************", challenger.name);
+        
+        LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
+                                                           //]initWithNibName:@"LoggedInViewController" bundle:nil];
+        
+        loggedInViewController.challenger = challenger;
+        
+        [loggedInViewController doWork];
+        
+        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
+        
+        
         }
-
         failure:^(RKObjectRequestOperation *operation, NSError *error) {
-            NSLog(@"We Fucked Up %@", error);
+            NSLog(@"Something went wrong :  %@", error);
         }
     ];
 
 }
+
+-(void)passDataForward
+{
+    
+    
+}
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+//    if([segue.identifier isEqualToString:@"pushChallenger"]){
+//        LoggedInViewController *controller = (LoggedInViewController *)segue.destinationViewController;
+//        controller.challenger = YES;
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

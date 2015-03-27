@@ -1,22 +1,40 @@
 //
-//  LoginChallengerViewController.m
+//  LoggedInViewController.m
 //  GameHub iOS
 //
 //  Created by Dave Laszczak on 2015-03-16.
 //  Copyright (c) 2015 Dave Laszczak. All rights reserved.
 //
 
-#import "LoginChallengerViewController.h"
+#import "LoggedInViewController.h"
 
-@interface LoginChallengerViewController ()
+@interface LoggedInViewController ()
 
 @end
 
-@implementation LoginChallengerViewController
+@implementation LoggedInViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+}
+
+-(void) doWork{
+    UILabel *myLabel  =  [[UILabel alloc]init];
+    myLabel.frame     =  CGRectMake(50,100,100,20);
+
+     NSLog(@"-=-=--=Challenger naem is : %@ ", self.challenger.name);
+
+    
+//    myLabel.text      =  self.challenger.name;
+    
+     myLabel.text      =  [NSString stringWithFormat:@"Challenger Name : %@", _challenger];
+    
+    [self.view addSubview:myLabel];
+
+    
 }
 
 - (void)didReceiveMemoryWarning {

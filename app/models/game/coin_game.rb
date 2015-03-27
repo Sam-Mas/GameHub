@@ -76,8 +76,10 @@ class Game::CoinGame < ActiveRecord::Base
 
 
 	def check_challengers_limit(challenger)
-		if self.challengers.size >= Game::CoinGame.MAX_SIZE
-			raise "Can't add another challenger to this game"
+		if self.challengers.size >= Game::CoinGame.MAX_SIZE || self.game_full
+			raise "can't add another challenger to this game"
+		elsif self.challengers.size == 1 # we are about to add a new challenger
+			self.game_full = true
 		end
 	end
 
