@@ -29,6 +29,7 @@
 
 @implementation MMRightSideDrawerViewController
 
+
 -(id)init{
     self = [super init];
     if(self){
@@ -60,6 +61,14 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self setTitle:@"Challengers"];
+    [[ChallengerManager sharedManager] loadAllChallengers:^(NSArray *challengerList){
+        NSLog(@"************Challenger count fetched: %u *************", challengerList.count);
+        self.challengers = challengerList;
+        
+    }
+                                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                      NSLog(@"* ****   ****   *****  **error occured: %@", error);
+                                                  }];
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -68,16 +77,9 @@
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    [[ChallengerManager sharedManager] loadAllChallengers:^(NSArray *challengerList){
-        NSLog(@"************Challenger count fetched: %u *************", challengerList.count);
-        if (indexPath.row < challengerList.count) {
-            Challenger * challenger = challengerList[indexPath.row];
-            [cell.textLabel setText:challenger.name];
-        }
+    if (indexPath.row < self.challengers.count) {
+        [cell.textLabel setText:((Challenger *)self.challengers[indexPath.row]).name];
     }
-                                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                      NSLog(@"* ****   ****   *****  **error occured: %@", error);
-                                                  }];
 //    if(indexPath.section == MMDrawerSectionDrawerWidth){
 //        CGFloat width = [self.drawerWidths[indexPath.row] intValue];
 //        CGFloat drawerWidth = self.mm_drawerController.maximumRightDrawerWidth;

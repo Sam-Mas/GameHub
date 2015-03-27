@@ -11,10 +11,11 @@ module Api
 
 
 			def index
+				debugger
 				#respond_with render :json => {:challengers => @challengers}
 				# respond_with Challenger.all
 
-				respond_with Challenger.all do |format|
+				respond_with do |format|
     				format.json { render :json => {:challengers => Challenger.all}}
     			end
 
