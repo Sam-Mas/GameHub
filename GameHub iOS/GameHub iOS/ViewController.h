@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoggedInViewController.h"
+#import "Challenger.h"
+
+@class LoggedInViewController;
 
 @interface ViewController : UIViewController
-
+@property(strong,nonatomic)LoggedInViewController *loggedInViewController;
+@property(strong,nonatomic)Challenger *loggedInChallenger;
 
 @end
 

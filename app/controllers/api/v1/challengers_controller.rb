@@ -47,7 +47,7 @@ module Api
 			end
 
 			def create
-				debugger
+				# debugger
 
 				@challenger = Challenger.find_by_name(params[:name])
 				#check is challenger exists
