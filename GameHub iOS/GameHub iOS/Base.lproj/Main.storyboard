@@ -100,9 +100,18 @@
                                 <color key="textColor" red="0.95643939393939392" green="0.95643939393939392" blue="0.95643939393939392" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snX-3f-thL">
+                                <rect key="frame" x="284" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.634765625" green="0.634765625" blue="0.634765625" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40766238500000002" green="0.24348225679999999" blue="0.48970332919999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="usernameLabel" destination="snX-3f-thL" id="2hO-9C-ZGT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLy-Xt-ued" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

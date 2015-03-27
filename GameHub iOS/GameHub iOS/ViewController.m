@@ -57,16 +57,16 @@
     
     [[ChallengerManager sharedManager] loadUser :name :^(Challenger *challenger)
     {
-        NSLog(@"************user is: %@ *************", challenger.name);
-        
-        LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
-                                                           //]initWithNibName:@"LoggedInViewController" bundle:nil];
-        
-        loggedInViewController.challenger = challenger;
-        
-        [loggedInViewController doWork];
-        
-        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
+//        NSLog(@"************user is: %@ *************", challenger.name);
+//        
+//        LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
+//                                                           //]initWithNibName:@"LoggedInViewController" bundle:nil];
+//        
+//        loggedInViewController.challenger = challenger;
+//        
+//        [loggedInViewController doWork];
+//        
+////        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
         
         
         }

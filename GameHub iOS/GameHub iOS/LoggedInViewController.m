@@ -14,28 +14,36 @@
 
 @implementation LoggedInViewController
 
+@synthesize usernameLabel;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    usernameLabel.text = self.challenger.name;
     
 }
 
 -(void) doWork{
-    UILabel *myLabel  =  [[UILabel alloc]init];
-    myLabel.frame     =  CGRectMake(50,100,100,20);
-
+    
      NSLog(@"-=-=--=Challenger naem is : %@ ", self.challenger.name);
+//
+//    NSString *name = self.challenger.name;
+//    self.usernameLabel.text = name;
+//    self.usernameLabel.text = @"TestTEst";
+    [self viewDidLoad];
+//    [self.usernameLabel setNeedsDisplay];
 
+//
     
-//    myLabel.text      =  self.challenger.name;
-    
-     myLabel.text      =  [NSString stringWithFormat:@"Challenger Name : %@", _challenger];
-    
-    [self.view addSubview:myLabel];
-
     
 }
+
+//
+//-(void)dealloc{
+//    [usernameLabel release];
+//    [super dealloc];
+//    
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
