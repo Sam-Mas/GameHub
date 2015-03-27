@@ -54,7 +54,7 @@ module Api
 				if @challenger
 					puts "Exsiting Challenger"
 				else
-					@challenger = Challenger.new(name: params[:name])
+					@challenger = Challenger.create(name: params[:name])
 					puts "New Challenger"
 				end
 
