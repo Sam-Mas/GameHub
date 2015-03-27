@@ -35,11 +35,21 @@
     if(self){
         [self setRestorationIdentifier:@"MMRightSideDrawerController"];
     }
+    [[ChallengerManager sharedManager] loadAllChallengers:^(NSArray *challengerList){
+        NSLog(@"************Challenger count fetched: %u *************", challengerList.count);
+        self.challengers = challengerList;
+        
+    }
+                                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                      NSLog(@"* ****   ****   *****  **error occured: %@", error);
+                                                  }];
+    
     return self;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
     NSLog(@"Right will appear");
 }
 
@@ -61,14 +71,6 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self setTitle:@"Challengers"];
-    [[ChallengerManager sharedManager] loadAllChallengers:^(NSArray *challengerList){
-        NSLog(@"************Challenger count fetched: %u *************", challengerList.count);
-        self.challengers = challengerList;
-        
-    }
-                                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                                      NSLog(@"* ****   ****   *****  **error occured: %@", error);
-                                                  }];
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
