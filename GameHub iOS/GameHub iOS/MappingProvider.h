@@ -12,6 +12,6 @@
 
 @interface MappingProvider : NSObject
 
-+(RKObjectMapping *) challengerMapping;
++(RKObjectMapping *) getChallengerMapping;
 
 @end

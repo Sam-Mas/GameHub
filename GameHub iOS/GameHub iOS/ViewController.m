@@ -54,8 +54,10 @@
     
     [[ChallengerManager sharedManager] loadUser :name :^(Challenger *challenger){
                  NSLog(@"************user is: %@ *************", challenger.name);
+        
+        
+        
         }
-
         failure:^(RKObjectRequestOperation *operation, NSError *error) {
             NSLog(@"We Fucked Up %@", error);
         }
