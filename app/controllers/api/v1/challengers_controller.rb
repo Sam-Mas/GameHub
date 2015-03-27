@@ -15,7 +15,7 @@ module Api
 				#respond_with render :json => {:challengers => @challengers}
 				# respond_with Challenger.all
 
-				respond_with Challenger.all do |format|
+				respond_with do |format|
     				format.json { render :json => {:challengers => Challenger.all}}
     			end
 
@@ -52,7 +52,7 @@ module Api
 				@challenger = Challenger.find_by_name(params[:name])
 				#check is challenger exists
 				if @challenger
-					puts "Exsiting Challenger"
+					puts "Existing Challenger"
 				else
 					@challenger = Challenger.create(name: params[:name])
 					puts "New Challenger"

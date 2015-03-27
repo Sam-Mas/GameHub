@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
-            landmarkName = "-loadAuthenticatedChallenger:failure:"
+            landmarkName = "-loadAllChallengers:failure:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,7 +105,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
-            landmarkName = "-setupResponseDescriptors"
+            landmarkName = "-setupRequestDescriptors"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,7 +121,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "-setupResponseDescriptors"
+            landmarkName = "-setupRequestDescriptors"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -137,8 +137,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
-            landmarkName = "-loadUser::failure:"
-            landmarkType = "5">
+            landmarkName = "@implementation ChallengerManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

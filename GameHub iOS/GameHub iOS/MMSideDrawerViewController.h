@@ -36,5 +36,6 @@ typedef NS_ENUM(NSInteger, MMDrawerSection){
 @interface MMSideDrawerViewController : MMViewController <UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic,strong) NSArray * drawerWidths;
+@property(strong, nonatomic)NSArray * challengers;
 
 @end

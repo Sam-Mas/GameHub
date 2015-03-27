@@ -34,13 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    
-//    [[ChallengerManager sharedManager] loadAuthenticatedChallenger:^(Challenger *challenger){
-//        NSLog(@"************user is: %@ *************", challenger.name);
-//    }
-//    failure:^(RKObjectRequestOperation *operation, NSError *error) {
-//         NSLog(@"* ****   ****   *****  **error occured: %@", error);
-//     }];
     
 }
 
@@ -71,7 +64,7 @@
         
         }
         failure:^(RKObjectRequestOperation *operation, NSError *error) {
-            NSLog(@"Something went wrong :  %@", error);
+            NSLog(@"Could not login :  %@", error);
         }
     ];
 

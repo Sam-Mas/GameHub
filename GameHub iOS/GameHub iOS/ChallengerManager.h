@@ -12,7 +12,7 @@
 
 @interface ChallengerManager : AKObjectManager
 
-- (void) loadAuthenticatedChallenger:(void (^)(Challenger *challenger))success failure:(void (^)(RKObjectRequestOperation *operation, NSError *error))failure;
+- (void) loadAllChallengers:(void (^)(NSArray *challengerList))success failure:(void (^)(RKObjectRequestOperation *operation, NSError *error))failure;
 
 - (void) loadUser:( NSDictionary *)name : (void (^)(Challenger *))success failure:(void (^)(RKObjectRequestOperation *operation, NSError *error))failure;
 

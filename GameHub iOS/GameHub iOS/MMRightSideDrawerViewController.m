@@ -20,12 +20,16 @@
 
 
 #import "MMRightSideDrawerViewController.h"
+#import "ChallengerManager.h"
+#import "Challenger.h"
 
 @interface MMRightSideDrawerViewController ()
 
 @end
 
 @implementation MMRightSideDrawerViewController
+
+
 -(id)init{
     self = [super init];
     if(self){
@@ -56,28 +60,36 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    [self setTitle:@"Right Drawer"];
+    [self setTitle:@"Challengers"];
+    [[ChallengerManager sharedManager] loadAllChallengers:^(NSArray *challengerList){
+        NSLog(@"************Challenger count fetched: %u *************", challengerList.count);
+        self.challengers = challengerList;
+        
+    }
+                                                  failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                      NSLog(@"* ****   ****   *****  **error occured: %@", error);
+                                                  }];
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    
-    if(section == MMDrawerSectionDrawerWidth)
-        return @"Right Drawer Width";
-    else
-        return [super tableView:tableView titleForHeaderInSection:section];
+    return [super tableView:tableView titleForHeaderInSection:section];
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    if(indexPath.section == MMDrawerSectionDrawerWidth){
-        CGFloat width = [self.drawerWidths[indexPath.row] intValue];
-        CGFloat drawerWidth = self.mm_drawerController.maximumRightDrawerWidth;
-        if(drawerWidth == width)
-            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-        else
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
-        [cell.textLabel setText:[NSString stringWithFormat:@"Width %d",[self.drawerWidths[indexPath.row] intValue]]];
+    if (indexPath.row < self.challengers.count) {
+        [cell.textLabel setText:((Challenger *)self.challengers[indexPath.row]).name];
     }
+//    if(indexPath.section == MMDrawerSectionDrawerWidth){
+//        CGFloat width = [self.drawerWidths[indexPath.row] intValue];
+//        CGFloat drawerWidth = self.mm_drawerController.maximumRightDrawerWidth;
+//        if(drawerWidth == width)
+//            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+//        else
+//            [cell setAccessoryType:UITableViewCellAccessoryNone];
+//        [cell.textLabel setText:[NSString stringWithFormat:@"Width %d",[self.drawerWidths[indexPath.row] intValue]]];
+//    }
+    
     
     return cell;
 }

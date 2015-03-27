@@ -28,11 +28,10 @@ static ChallengerManager *sharedManager = nil;
 }
 
 
-- (void) loadAuthenticatedChallenger:(void (^)(Challenger *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure {
+- (void) loadAllChallengers:(void (^)(NSArray *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure {
     [self getObjectsAtPath:@"challengers" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         if (success) {
-            Challenger *currentChallenger = (Challenger *)[mappingResult.array firstObject];
-            success(currentChallenger);
+            success(mappingResult.array);
         }
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         if (failure) {
@@ -41,31 +40,21 @@ static ChallengerManager *sharedManager = nil;
     }];
 }
 
-//- (void)postObject:(id)object
-//              path:(NSString *)path
-//        parameters:(NSDictionary *)parameters
-//           success:(void (^)(RKObjectRequestOperation *operation, RKMappingResult *mappingResult))success
-//           failure:(void (^)(RKObjectRequestOperation *operation, NSError *error))failure;
-
 
 -(void) loadUser:(NSDictionary *)name : (void (^)(Challenger *))success failure:(void (^)(RKObjectRequestOperation *, NSError *))failure
 {
     Challenger *challenger = [Challenger new];
     challenger.name = name[@"name"];
-//    [self postObject:challenger path:@"challengers" parameters:name success:nil failure:nil];
     
     [self postObject:challenger path:@"challengers" parameters:name
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
      {
          if (success)
          {
-              NSLog(@"hey Bitches-----------");
+              NSLog(@"Login Successful");
              Challenger *currentChallenger = (Challenger *)[mappingResult.array firstObject];
              success(currentChallenger);
-             
-             
          }
-         
          
          NSLog(@"************user is: %@ *************", challenger.name);
          
@@ -78,9 +67,7 @@ static ChallengerManager *sharedManager = nil;
          
          //        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
 
-        
-         
-         
+    
      }
     failure:^(RKObjectRequestOperation *operation, NSError *error)
      {
