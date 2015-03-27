@@ -11,7 +11,6 @@ module Api
 
 
 			def index
-				debugger
 				#respond_with render :json => {:challengers => @challengers}
 				# respond_with Challenger.all
 
@@ -52,7 +51,7 @@ module Api
 				@challenger = Challenger.find_by_name(params[:name])
 				#check is challenger exists
 				if @challenger
-					puts "Exsiting Challenger"
+					puts "Existing Challenger"
 				else
 					@challenger = Challenger.new(name: params[:name])
 					puts "New Challenger"
