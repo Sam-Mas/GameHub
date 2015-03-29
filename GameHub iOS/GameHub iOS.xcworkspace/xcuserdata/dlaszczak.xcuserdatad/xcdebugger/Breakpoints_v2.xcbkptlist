@@ -301,5 +301,49 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GameHub iOS/LoggedInViewController.h"
+            timestampString = "449320848.326503"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "6"
+            endingLineNumber = "6">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoggedInViewController challenger]"
+                  moduleName = "GameHub iOS"
+                  urlString = "file:///Users/dlaszczak/Desktop/GameHub%20Repo/GameHub/GameHub%20iOS/GameHub%20iOS/LoggedInViewController.h"
+                  timestampString = "449320848.329553"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[LoggedInViewController setChallenger:]"
+                  moduleName = "GameHub iOS"
+                  urlString = "file:///Users/dlaszczak/Desktop/GameHub%20Repo/GameHub/GameHub%20iOS/GameHub%20iOS/LoggedInViewController.h"
+                  timestampString = "449320848.329702"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
