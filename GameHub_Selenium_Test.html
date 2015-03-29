@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3000/" />
+<title>GameHub</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">GameHub</td></tr>
+</thead><tbody>
+<!--These tests require users 'Bob' and 'Jim' to not currently have a challenge set between them. If they do, it must be manually cleared.-->
+<!--Certain tests rely on a given page having received at least one update from the server. These are given 5000ms pauses to allow at least one such update to happen. clickAndWait commands will not work in these cases.-->
+<!--Be aware that these tests will spawn a number of guest users. Repeated uses will quickly fill up the list.-->
+<!------->
+<!--Test main UI components-->
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTitle</td>
+	<td>GameHub</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=LET'S PLAY A GAME</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.dropdown-toggle</td>
+	<td>Guest*</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=img[alt=&quot;Users&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertCookie</td>
+	<td>*</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>userDropdown dropdown</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>challenger_list_realtime</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=img[alt=&quot;Users&quot;]</td>
+	<td></td>
+</tr>
+<!--Ensure a user can get to the game lobby, start a game, leave the game, and return to the main page-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=LET'S PLAY A GAME</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=NEW GAME</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Previous 48&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=GAMEHUB</td>
+	<td></td>
+</tr>
+<!--Test Account Dropdown, while a guest-->
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<!--Test Challengers Dropdown, while a guest-->
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;Users&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.cd-panel-content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=X</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<!--Test Sign-In-->
+<tr>
+	<td>assertTitle</td>
+	<td>GameHub</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h2</td>
+	<td>Sign in to GameHub</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=challenger_name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=button</td>
+	<td>Login</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=new_challenger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=loginForm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<!--Test Account Management, basic state-->
+<tr>
+	<td>assertTitle</td>
+	<td>GameHub</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h2</td>
+	<td>MANAGE ACCOUNT</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=label</td>
+	<td>Balance</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=commit</td>
+	<td>SAVE</td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=challenger_balance</td>
+	<td>500.0</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=challenger_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=div.centerBox</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<!--Test Sign-In-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td>Guest99999</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>Invalid username, please only use letters and numbers, of a length between 1 and 30 &gt; Sign in to GameHub <br /> <br /><br /> <br /> <br /> Login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>Invalid username, please only use letters and numbers, of a length between 1 and 30 &gt; Sign in to GameHub <br /> <br /><br /> <br /> <br /> Login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td>1234567890123456789012345678901</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>Invalid username, please only use letters and numbers, of a length between 1 and 30 &gt; Sign in to GameHub <br /> <br /><br /> <br /> <br /> Login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td>!@#$</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>Invalid username, please only use letters and numbers, of a length between 1 and 30 &gt; Sign in to GameHub <br /> <br /><br /> <br /> <br /> Login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td> fraçais</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>Invalid username, please only use letters and numbers, of a length between 1 and 30 &gt; Sign in to GameHub <br /> <br /><br /> <br /> <br /> Login</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td>Bob</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.dropdown-toggle</td>
+	<td>Bob</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>challenger successfully loaded &gt; LET'S PLAY A GAME</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<!----- now that someone has logged in, there should be the option to log out-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+<!--Test Account Management-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_balance</td>
+	<td>1500</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=challenger_balance</td>
+	<td>1500.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_balance</td>
+	<td>999999999</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>Please enter a balance between 0 and 1,000,000.00 &gt; MANAGE ACCOUNT <br /><br /> Balance</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_balance</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=challenger_balance</td>
+	<td>0.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_balance</td>
+	<td>BadText</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>id=challenger_balance</td>
+	<td>0.0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_balance</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=content</td>
+	<td>Please enter a balance between 0 and 1,000,000.00 &gt; MANAGE ACCOUNT <br /><br /> Balance</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_balance</td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_balance</td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=commit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Manage Account</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<!--Test Logout and resulting default Guest generation-->
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.dropdown-toggle</td>
+	<td>Guest*</td>
+</tr>
+<!--Test Challenge functionality for the challenging player-->
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td>Jim</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;Users&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>name=commit</td>
+	<td>Challenge Bob?</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='submit'][@name='commit'][@value=' Challenge Bob?']</td>
+	<td></td>
+</tr>
+<!--Test New Game state-->
+<tr>
+	<td>assertTitle</td>
+	<td>GameHub</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=img[alt=&quot;Previous 48&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h2</td>
+	<td>COIN TOSS GAME</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>xpath=(//button[@name='button'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>name=button</td>
+	<td>HEADS</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>xpath=(//button[@name='button'])[2]</td>
+	<td>TAILS</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=game_form</td>
+	<td>HEADS or&nbsp;&nbsp;&nbsp;TAILS</td>
+</tr>
+<tr>
+	<td>assertElementPresent</td>
+	<td>id=game_form</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=last_challengers_guess</td>
+	<td>No guess's yet</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=last_flip_result</td>
+	<td>No flips yet</td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<!----- the next two lines test css; this requires at least one server update, so a 5000ms pause ensures the page has received at least one-->
+<tr>
+	<td>assertElementPresent</td>
+	<td>css=#coingame &gt; #coingame</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=coingame</td>
+	<td>COIN TOSS GAME&nbsp;&nbsp;&nbsp;HEADS or&nbsp;&nbsp;&nbsp;TAILS <br /> Choice: No guess's yet <br /> Flip Result: No flips yet <br /> My Score: 0 <br /> Opponents Score: 0 <br /> Number of Turns: 10</td>
+</tr>
+<!---->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Previous 48&quot;]</td>
+	<td></td>
+</tr>
+<!--Test Game Lobby basic state-->
+<tr>
+	<td>assertText</td>
+	<td>link=NEW GAME</td>
+	<td>NEW GAME</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h1</td>
+	<td>GAMES IN PROGRESS</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+<!--Test Second Player challenge acceptance-->
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td>Bob</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;Users&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='submit'][@name='commit'][@value='Yes']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Previous 48&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=GAMEHUB</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;Users&quot;]</td>
+	<td></td>
+</tr>
+<!----- server needs 5000ms in worst-case to update the challenger list-->
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='submit'][@name='commit'][@value=' Challenge Jim?']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img[alt=&quot;Previous 48&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign in</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=challenger_name</td>
+	<td>Jim</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img[alt=&quot;Users&quot;]</td>
+	<td></td>
+</tr>
+<!----- server needs 5000ms in worst-case to update the challenger list-->
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@type='submit'][@name='commit'][@value='No']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=div.dropdown-toggle</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Sign out</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
