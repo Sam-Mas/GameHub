@@ -44,7 +44,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginChallenger:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xZq-cH-kO9"/>
-                                    <segue destination="AaU-aC-HTp" kind="show" identifier="pushChallenger" id="qbj-NK-ukY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -70,11 +69,12 @@
                     </view>
                     <connections>
                         <outlet property="usernameTextField" destination="fKa-GE-bXH" id="tdP-gw-f3f"/>
+                        <segue destination="AaU-aC-HTp" kind="show" identifier="loggedInSegue" id="PHV-fJ-GPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="291" y="283"/>
+            <point key="canvasLocation" x="291" y="248"/>
         </scene>
         <!--Logged In View Controller-->
         <scene sceneID="nCC-dA-TbB">
@@ -101,21 +101,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snX-3f-thL">
-                                <rect key="frame" x="284" y="72" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="252" y="56" width="160" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.634765625" green="0.634765625" blue="0.634765625" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-pQ-0qD">
+                                <rect key="frame" x="279" y="151" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.67284169823232332" green="0.67284169823232332" blue="0.67284169823232332" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-Vn-6G2">
+                                <rect key="frame" x="170" y="322" width="188" height="75"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Play a Game">
+                                    <color key="titleColor" red="0.93201546717171713" green="0.60482584617393875" blue="0.16399508264803095" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.40766238500000002" green="0.24348225679999999" blue="0.48970332919999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="balanceLabel" destination="aiP-pQ-0qD" id="U4x-1O-eAo"/>
                         <outlet property="usernameLabel" destination="snX-3f-thL" id="2hO-9C-ZGT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLy-Xt-ued" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="274"/>
+            <point key="canvasLocation" x="1192" y="254"/>
         </scene>
     </scenes>
 </document>

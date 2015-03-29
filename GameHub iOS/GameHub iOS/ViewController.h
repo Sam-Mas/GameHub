@@ -10,12 +10,19 @@
 #import "LoggedInViewController.h"
 #import "Challenger.h"
 
+
 @class LoggedInViewController;
 
 @interface ViewController : UIViewController
-@property(strong,nonatomic)LoggedInViewController *loggedInViewController;
+
+extern Challenger *currentChallenger;
+
+//@property(strong,nonatomic)LoggedInViewController *loggedInViewController;
 @property(strong,nonatomic)Challenger *loggedInChallenger;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 
+
 @end
+
+
 

@@ -11,7 +11,9 @@
 
 @interface LoggedInViewController : UIViewController
 @property (nonatomic, retain) Challenger *challenger;
-@property (nonatomic, retain) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
 
 -(void) doWork;
+
 @end

@@ -11,12 +11,14 @@
 #import "MappingProvider.h"
 #import "Challenger.h"
 
-#import "LoggedInViewController.h"
+
 
 
 static ChallengerManager *sharedManager = nil;
 
 @implementation ChallengerManager
+
+@synthesize loggedInViewController;
 
 + (instancetype)sharedManager {
     static dispatch_once_t onceToken;
@@ -45,6 +47,7 @@ static ChallengerManager *sharedManager = nil;
 {
     Challenger *challenger = [Challenger new];
     challenger.name = name[@"name"];
+
     
     [self postObject:challenger path:@"challengers" parameters:name
     success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult)
@@ -54,16 +57,27 @@ static ChallengerManager *sharedManager = nil;
               NSLog(@"Login Successful");
              Challenger *currentChallenger = (Challenger *)[mappingResult.array firstObject];
              success(currentChallenger);
+             
+//             loggedInViewController.challenger = currentChallenger;
+             
+             //[loggedInViewController performSegueWithIdentifier:@"loggedInSegue" sender:self];
+            // [self performSegueWithIdentifier: @"SegueToScene1" sender: self];
+             
+         
+//             UIStoryboard *storyboard = self.storyboard;
+//             MyViewController *controller = [storyboard
+//            instantiateViewControllerWithIdentifier:@"myControllerIdentifier"];
+//             [self.navigationController pushViewController:controller animated:YES];
          }
          
          NSLog(@"************user is: %@ *************", challenger.name);
          
-         LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
+//         LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
          //]initWithNibName:@"LoggedInViewController" bundle:nil];
          
-         loggedInViewController.challenger = challenger;
+//         loggedInViewController.challenger = challenger;
          
-         [loggedInViewController doWork];
+//         [loggedInViewController doWork];
          
          //        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
 

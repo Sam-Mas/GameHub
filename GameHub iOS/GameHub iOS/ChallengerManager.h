@@ -7,10 +7,13 @@
 //
 
 #import "AKObjectManager.h"
+#import "LoggedInViewController.h"
 
 @class Challenger;
 
 @interface ChallengerManager : AKObjectManager
+
+@property LoggedInViewController *loggedInViewController;
 
 - (void) loadAllChallengers:(void (^)(NSArray *challengerList))success failure:(void (^)(RKObjectRequestOperation *operation, NSError *error))failure;
 

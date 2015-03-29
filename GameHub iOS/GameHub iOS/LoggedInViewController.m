@@ -10,16 +10,35 @@
 
 @interface LoggedInViewController ()
 
+
 @end
+
 
 @implementation LoggedInViewController
 
 @synthesize usernameLabel;
+@synthesize balanceLabel;
+//@synthesize challenger;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
+    
+    NSLog(@"-=-=--=Challenger naem is : %@ ", self.challenger.name);
+    usernameLabel.text  = self.challenger.name;//self.challenger.name;
+    
+//    NSNumber balance    = self.challenger.balance;
+    balanceLabel.text   = self.challenger.balance.stringValue;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    usernameLabel.text = self.challenger.name;
     
 }
 
@@ -29,21 +48,11 @@
 //
 //    NSString *name = self.challenger.name;
 //    self.usernameLabel.text = name;
-//    self.usernameLabel.text = @"TestTEst";
+    usernameLabel.text = @"TestTEst";
     [self viewDidLoad];
 //    [self.usernameLabel setNeedsDisplay];
 
-//
-    
-    
 }
-
-//
-//-(void)dealloc{
-//    [usernameLabel release];
-//    [super dealloc];
-//    
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

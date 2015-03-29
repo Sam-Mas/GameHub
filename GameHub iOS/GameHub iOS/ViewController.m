@@ -10,10 +10,6 @@
 #import "ChallengerManager.h"
 #import "Challenger.h"
 
-
-
-
-
 @interface ViewController ()
 
 @end
@@ -21,6 +17,7 @@
 @implementation ViewController
 
 @synthesize usernameTextField;
+@synthesize loggedInChallenger;
 
 - (id)init
 {
@@ -60,8 +57,18 @@
 //        [loggedInViewController doWork];
 //        
 ////        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
+//        currentChallenger = challenger;
         
         
+        
+        //[loggedInViewController performSegueWithIdentifier:@"loggedInSegue" sender:self];
+         [self performSegueWithIdentifier: @"loggedInSegue" sender: challenger];
+        
+        
+        //             UIStoryboard *storyboard = self.storyboard;
+        //             MyViewController *controller = [storyboard
+        //            instantiateViewControllerWithIdentifier:@"myControllerIdentifier"];
+        //             [self.navigationController pushViewController:controller animated:YES];
         }
         failure:^(RKObjectRequestOperation *operation, NSError *error) {
             NSLog(@"Could not login :  %@", error);
@@ -70,18 +77,32 @@
 
 }
 
--(void)passDataForward
-{
-    
-    
-}
 
 //-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    if([segue.identifier isEqualToString:@"pushChallenger"]){
+//    
+//    if([segue.identifier isEqualToString:@"loggedInSegue"]){
 //        LoggedInViewController *controller = (LoggedInViewController *)segue.destinationViewController;
 //        controller.challenger = YES;
 //    }
+//
 //}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"loggedInSegue"])
+    {
+        // Get reference to the destination view controller
+        LoggedInViewController *vc = [segue destinationViewController];
+        
+//      Challenger *challenger1  = [(Challenger *) sender];
+        
+        Challenger *ch1 = (Challenger *) sender;
+        
+        // Pass any objects to the view controller here, like...
+        [vc setChallenger:ch1];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
