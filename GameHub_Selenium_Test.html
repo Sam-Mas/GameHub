@@ -11,7 +11,7 @@
 <thead>
 <tr><td rowspan="1" colspan="3">GameHub</td></tr>
 </thead><tbody>
-<!--These tests require users 'Bob' and 'Jim' to not currently have a challenge set between them. If they do, it must be manually cleared.-->
+<!--These tests require users 'Bob' and 'Jim' to be (1) logged out, and (2) not currently have a challenge set between them.-->
 <!--Certain tests rely on a given page having received at least one update from the server. These are given 5000ms pauses to allow at least one such update to happen. clickAndWait commands will not work in these cases.-->
 <!--Be aware that these tests will spawn a number of guest users. Repeated uses will quickly fill up the list.-->
 <!------->
@@ -297,6 +297,7 @@
 	<td>id=content</td>
 	<td>Invalid username, please only use letters and numbers, of a length between 1 and 30 &gt; Sign in to GameHub <br /> <br /><br /> <br /> <br /> Login</td>
 </tr>
+<!----- legal login-->
 <tr>
 	<td>type</td>
 	<td>id=challenger_name</td>
@@ -311,6 +312,12 @@
 	<td>assertText</td>
 	<td>css=div.dropdown-toggle</td>
 	<td>Bob</td>
+</tr>
+<!----- ensure cookie and banner are updated-->
+<tr>
+	<td>assertCookie</td>
+	<td>challenger_name=Bob; challenger_id=?</td>
+	<td></td>
 </tr>
 <tr>
 	<td>assertText</td>
@@ -603,7 +610,6 @@
 	<td>id=coingame</td>
 	<td>COIN TOSS GAME&nbsp;&nbsp;&nbsp;HEADS or&nbsp;&nbsp;&nbsp;TAILS <br /> Choice: No guess's yet <br /> Flip Result: No flips yet <br /> My Score: 0 <br /> Opponents Score: 0 <br /> Number of Turns: 10</td>
 </tr>
-<!---->
 <tr>
 	<td>clickAndWait</td>
 	<td>css=img[alt=&quot;Previous 48&quot;]</td>
@@ -666,6 +672,7 @@
 	<td>css=img[alt=&quot;Previous 48&quot;]</td>
 	<td></td>
 </tr>
+<!--Test Second Player challenge rejection-->
 <tr>
 	<td>click</td>
 	<td>link=GAMEHUB</td>
@@ -748,7 +755,6 @@
 	<td>link=Sign out</td>
 	<td></td>
 </tr>
-
 </tbody></table>
 </body>
 </html>
