@@ -11,16 +11,11 @@
 <thead>
 <tr><td rowspan="1" colspan="3">GameHub</td></tr>
 </thead><tbody>
-<!--These tests require users 'Bob' and 'Jim' to be (1) logged out, and (2) not currently have a challenge set between them.-->
+<!--These tests require (1) no current user to be logged in, (2) users 'Bob' and 'Jim' have no current challenge set between them, and (3) start on the main page.-->
 <!--Certain tests rely on a given page having received at least one update from the server. These are given 5000ms pauses to allow at least one such update to happen. clickAndWait commands will not work in these cases.-->
 <!--Be aware that these tests will spawn a number of guest users. Repeated uses will quickly fill up the list.-->
 <!------->
 <!--Test main UI components-->
-<tr>
-	<td>open</td>
-	<td>/</td>
-	<td></td>
-</tr>
 <tr>
 	<td>assertTitle</td>
 	<td>GameHub</td>
@@ -316,7 +311,7 @@
 <!----- ensure cookie and banner are updated-->
 <tr>
 	<td>assertCookie</td>
-	<td>challenger_name=Bob; challenger_id=?</td>
+	<td>challenger_name=Bob; challenger_id=*</td>
 	<td></td>
 </tr>
 <tr>
