@@ -14,6 +14,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *balanceLabel;
 
--(void) doWork;
-
 @end
