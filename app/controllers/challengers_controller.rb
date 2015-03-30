@@ -37,7 +37,6 @@ class ChallengersController < ApplicationController
 	end
 
 	def create
-		debugger
 		@challenger = Challenger.find_by_name(challenger_params[:name])
 		
 		# if the challenger already exists
