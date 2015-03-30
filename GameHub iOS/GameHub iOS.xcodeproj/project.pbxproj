@@ -10,7 +10,6 @@
 		A51C1A96320CC09213BDF4F3 /* libPods-GameHub iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82B43DD04668C2FA5835A1 /* libPods-GameHub iOSTests.a */; };
 		B23240921AB0F24800763746 /* Challenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B23240911AB0F24800763746 /* Challenger.m */; };
 		B23240931AB0F24800763746 /* Challenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B23240911AB0F24800763746 /* Challenger.m */; };
-		B24055A21AC8131100E8FF29 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24055A11AC8131100E8FF29 /* GameViewController.m */; };
 		B2469EBB1AA65B24000DDF96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EBA1AA65B24000DDF96 /* main.m */; };
 		B2469EBE1AA65B24000DDF96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EBD1AA65B24000DDF96 /* AppDelegate.m */; };
 		B2469EC11AA65B24000DDF96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EC01AA65B24000DDF96 /* ViewController.m */; };
@@ -53,8 +52,6 @@
 		3BDEC83AC963813F4A3BC74D /* libPods-GameHub iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GameHub iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23240901AB0F24800763746 /* Challenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Challenger.h; sourceTree = "<group>"; };
 		B23240911AB0F24800763746 /* Challenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Challenger.m; sourceTree = "<group>"; };
-		B24055A01AC8131100E8FF29 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		B24055A11AC8131100E8FF29 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		B2469EB51AA65B24000DDF96 /* GameHub iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameHub iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2469EB91AA65B24000DDF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2469EBA1AA65B24000DDF96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -207,8 +204,6 @@
 				B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */,
 				B28363701AB6B18300022F45 /* LoggedInViewController.h */,
 				B28363711AB6B18300022F45 /* LoggedInViewController.m */,
-				B24055A01AC8131100E8FF29 /* GameViewController.h */,
-				B24055A11AC8131100E8FF29 /* GameViewController.m */,
 			);
 			path = "GameHub iOS";
 			sourceTree = "<group>";
@@ -434,7 +429,6 @@
 				B283637E1AB9F5DD00022F45 /* MMNavigationController.m in Sources */,
 				B283639F1ABB5D8E00022F45 /* MMViewController.m in Sources */,
 				B2A927D31AB40CBE00C2B176 /* ChallengerManager.m in Sources */,
-				B24055A21AC8131100E8FF29 /* GameViewController.m in Sources */,
 				B283639C1ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m in Sources */,
 				B2469EBB1AA65B24000DDF96 /* main.m in Sources */,
 				B28363991ABB5D8E00022F45 /* MMCenterTableViewCell.m in Sources */,
