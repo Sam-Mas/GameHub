@@ -57,31 +57,7 @@ static ChallengerManager *sharedManager = nil;
               NSLog(@"Login Successful");
              Challenger *currentChallenger = (Challenger *)[mappingResult.array firstObject];
              success(currentChallenger);
-             
-//             loggedInViewController.challenger = currentChallenger;
-             
-             //[loggedInViewController performSegueWithIdentifier:@"loggedInSegue" sender:self];
-            // [self performSegueWithIdentifier: @"SegueToScene1" sender: self];
-             
-         
-//             UIStoryboard *storyboard = self.storyboard;
-//             MyViewController *controller = [storyboard
-//            instantiateViewControllerWithIdentifier:@"myControllerIdentifier"];
-//             [self.navigationController pushViewController:controller animated:YES];
          }
-         
-         NSLog(@"************user is: %@ *************", challenger.name);
-         
-//         LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
-         //]initWithNibName:@"LoggedInViewController" bundle:nil];
-         
-//         loggedInViewController.challenger = challenger;
-         
-//         [loggedInViewController doWork];
-         
-         //        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
-
-    
      }
     failure:^(RKObjectRequestOperation *operation, NSError *error)
      {
@@ -98,8 +74,7 @@ static ChallengerManager *sharedManager = nil;
 
 - (void) setupResponseDescriptors {
     [super setupResponseDescriptors];
-    
-//    RKResponseDescriptor *authenticatedChallengerResponseDescriptors = [RKResponseDescriptor responseDescriptorWithMapping:[MappingProvider challengerMapping] method:RKRequestMethodGET pathPattern:@"challengers" keyPath:nil statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+
     RKObjectMapping *challengerMapping = [MappingProvider getChallengerMapping];
     
     RKResponseDescriptor *challengerResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:challengerMapping method:RKRequestMethodAny pathPattern:nil keyPath:@"challengers" statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
@@ -110,13 +85,8 @@ static ChallengerManager *sharedManager = nil;
 - (void) setupRequestDescriptors{
     [super setupRequestDescriptors];
     
-    
-//    RKObjectMapping *challengerRequestMapping = [MappingProvider getChallengerMapping];
-        RKObjectMapping *challengerRequestMapping = [RKObjectMapping requestMapping];
-        [challengerRequestMapping addAttributeMappingsFromArray:@[ @"name"]];
-
-    
-//    [challengerRequestMapping addAttributeMappingsFromArray:@[]]
+    RKObjectMapping *challengerRequestMapping = [RKObjectMapping requestMapping];
+    [challengerRequestMapping addAttributeMappingsFromArray:@[ @"name"]];
     
     RKRequestDescriptor *challengerRequestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:challengerRequestMapping objectClass:[Challenger class] rootKeyPath:@"challengers" method:RKRequestMethodAny];
     

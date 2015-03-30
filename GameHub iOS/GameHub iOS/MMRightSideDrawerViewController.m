@@ -82,17 +82,6 @@
     if (indexPath.row < self.challengers.count) {
         [cell.textLabel setText:((Challenger *)self.challengers[indexPath.row]).name];
     }
-//    if(indexPath.section == MMDrawerSectionDrawerWidth){
-//        CGFloat width = [self.drawerWidths[indexPath.row] intValue];
-//        CGFloat drawerWidth = self.mm_drawerController.maximumRightDrawerWidth;
-//        if(drawerWidth == width)
-//            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-//        else
-//            [cell setAccessoryType:UITableViewCellAccessoryNone];
-//        [cell.textLabel setText:[NSString stringWithFormat:@"Width %d",[self.drawerWidths[indexPath.row] intValue]]];
-//    }
-    
-    
     return cell;
 }
 

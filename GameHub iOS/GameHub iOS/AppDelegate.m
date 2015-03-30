@@ -30,37 +30,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    UIViewController * leftSideDrawerViewController = [[MMLeftSideDrawerViewController alloc] init];
-    
-    //Dave and Shelby Code
-    
     UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *centerViewController = [storyboard instantiateInitialViewController];
-    
-    //end
-//    UIViewController * centerViewController = [[ViewController alloc] init];
-    
     UIViewController * rightSideDrawerViewController = [[MMRightSideDrawerViewController alloc] init];
     
     UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:centerViewController];
     [navigationController setRestorationIdentifier:@"MMCenterNavigationControllerRestorationKey"];
-//    if(OSVersionIsAtLeastiOS7()){
-//        UINavigationController * rightSideNavController = [[MMNavigationController alloc] initWithRootViewController:rightSideDrawerViewController];
-//        [rightSideNavController setRestorationIdentifier:@"MMExampleRightNavigationControllerRestorationKey"];
-//        UINavigationController * leftSideNavController = [[MMNavigationController alloc] initWithRootViewController:leftSideDrawerViewController];
-//        [leftSideNavController setRestorationIdentifier:@"MMExampleLeftNavigationControllerRestorationKey"];
-//        self.drawerController = [[MMDrawerController alloc]
-//                                 initWithCenterViewController:navigationController
-//                                 leftDrawerViewController:leftSideNavController
-//                                 rightDrawerViewController:rightSideNavController];
-//        [self.drawerController setShowsShadow:NO];
-//    }
-//    else{
-        self.drawerController = [[MMDrawerController alloc]
+    self.drawerController = [[MMDrawerController alloc]
                                  initWithCenterViewController:navigationController
-//                                 leftDrawerViewController:leftSideDrawerViewController
                                  rightDrawerViewController:rightSideDrawerViewController];
-//    }
+
     [self.drawerController setRestorationIdentifier:@"MMDrawer"];
     [self.drawerController setMaximumRightDrawerWidth:200.0];
     [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
@@ -76,13 +55,6 @@
          }
      }];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    if(OSVersionIsAtLeastiOS7()){
-//        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
-//                                              green:173.0/255.0
-//                                               blue:234.0/255.0
-//                                              alpha:1.0];
-//        [self.window setTintColor:tintColor];
-//    }
     [self.window setRootViewController:self.drawerController];
     
     

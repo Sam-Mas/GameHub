@@ -32,26 +32,11 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-
-//        if(OSVersionIsAtLeastiOS7()){
-//            [self setBackgroundColor:[UIColor colorWithRed:110./255.0
-//                                                     green:113.0/255.0
-//                                                      blue:115.0/255.0
-//                                                     alpha:1.0]];
-//        }
-//        else {
-            [self setBackgroundColor:[UIColor colorWithRed:77.0/255.0
+        [self setBackgroundColor:[UIColor colorWithRed:77.0/255.0
                                                      green:79.0/255.0
                                                       blue:80.0/255.0
                                                      alpha:1.0]];
-//        }
-        
-//        if(OSVersionIsAtLeastiOS7()){
-//            _label = [[UILabel alloc] initWithFrame:CGRectMake(15, CGRectGetMaxY(self.bounds)-28,CGRectGetWidth(self.bounds)-30, 22)];
-//        }
-//        else {
-            _label = [[UILabel alloc] initWithFrame:CGRectInset(self.bounds, 10.0, 2.0)];
-//        }
+        _label = [[UILabel alloc] initWithFrame:CGRectInset(self.bounds, 10.0, 2.0)];
 
         
         if([[UIFont class] respondsToSelector:@selector(preferredFontForTextStyle:)]){
@@ -66,10 +51,8 @@
                                             green:206.0/255.0
                                              blue:209.0/255.0
                                             alpha:1.0]];
-//        if(OSVersionIsAtLeastiOS7() == NO){
-            [self.label setShadowOffset:CGSizeMake(0, 1)];
-            [self.label setShadowColor:[[UIColor blackColor] colorWithAlphaComponent:.5]];
-//        }
+        [self.label setShadowOffset:CGSizeMake(0, 1)];
+        [self.label setShadowColor:[[UIColor blackColor] colorWithAlphaComponent:.5]];
         [self.label setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
         [self addSubview:self.label];
         [self setClipsToBounds:NO];        
@@ -84,7 +67,6 @@
 
 -(void)drawRect:(CGRect)rect{
     //// General Declarations
-//    if(OSVersionIsAtLeastiOS7()== NO){
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
         CGContextRef context = UIGraphicsGetCurrentContext();
         
@@ -139,24 +121,6 @@
         //// Cleanup
         CGGradientRelease(gradient2);
         CGColorSpaceRelease(colorSpace);
-        
-//    }
-//    else {
-//        CGContextRef context = UIGraphicsGetCurrentContext();
-//        UIColor * lineColor = [UIColor colorWithRed:94.0/255.0
-//                                              green:97.0/255.0
-//                                               blue:99.0/255.0
-//                                              alpha:1.0];
-//        CGContextSetStrokeColorWithColor(context, lineColor.CGColor);
-//        
-//        CGContextSetLineWidth(context, 1.0);
-//        
-//        CGContextMoveToPoint(context, CGRectGetMinX(self.bounds), CGRectGetMaxY(self.bounds)-.5); //start at this point
-//        
-//        CGContextAddLineToPoint(context, CGRectGetMaxX(self.bounds), CGRectGetMaxY(self.bounds)-.5); //draw to this point
-//        
-//        CGContextStrokePath(context);
-//    }
 }
 
 @end

@@ -12,20 +12,12 @@
 #define BASE_URL @"http://localhost:3000/api/v1"
 #define PERSONAL_ACCESS_TOKEN @"6fba03e4e425010d3bf108717280529f79b5c70a"
 
-//#define PERSONAL_ACCESS_TOKEN @"6fba03e4e425010d3bf108717280529f79b5c70a"
-
-//static NSString *const PERSONAL_ACCESS_TOKEN = @"M6yNxlc1CD";
-
-//NSInteger *const PTOKEN = 2091230912;
-//static NSString *const BASE_URL = @"localhost:3000/";//api/v1/challengers
-
 @implementation AKObjectManager
 
 +(instancetype)sharedManager{
     
 //    NSURL *url = [NSURL URLWithString:@"http://gamehub-dev.elasticbeanstalk.com/api/v1/"];
     NSURL *url = [NSURL URLWithString:@"http://localhost:3000/api/v1/"];
-//    NSURL *url = [NSURL URLWithString:BASE_URL];
    
     
     AKObjectManager *sharedManager = [self managerWithBaseURL: url];

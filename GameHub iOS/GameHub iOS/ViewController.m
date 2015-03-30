@@ -30,8 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
 }
 
 - (IBAction)loginChallenger:(id)sender {
@@ -42,33 +40,10 @@
                            @"name": username,
                            
                            };
-
-    
-    
     [[ChallengerManager sharedManager] loadUser :name :^(Challenger *challenger)
     {
-//        NSLog(@"************user is: %@ *************", challenger.name);
-//        
-//        LoggedInViewController *loggedInViewController = [LoggedInViewController alloc] ;
-//                                                           //]initWithNibName:@"LoggedInViewController" bundle:nil];
-//        
-//        loggedInViewController.challenger = challenger;
-//        
-//        [loggedInViewController doWork];
-//        
-////        [self presentViewController:self.loggedInViewController animated:YES completion:nil];
-//        currentChallenger = challenger;
-        
-        
-        
-        //[loggedInViewController performSegueWithIdentifier:@"loggedInSegue" sender:self];
-         [self performSegueWithIdentifier: @"loggedInSegue" sender: challenger];
-        
-        
-        //             UIStoryboard *storyboard = self.storyboard;
-        //             MyViewController *controller = [storyboard
-        //            instantiateViewControllerWithIdentifier:@"myControllerIdentifier"];
-        //             [self.navigationController pushViewController:controller animated:YES];
+            NSLog(@"************user is: %@ *************", challenger.name);
+            [self performSegueWithIdentifier: @"loggedInSegue" sender: challenger];
         }
         failure:^(RKObjectRequestOperation *operation, NSError *error) {
             NSLog(@"Could not login :  %@", error);
@@ -77,16 +52,6 @@
 
 }
 
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-//    
-//    if([segue.identifier isEqualToString:@"loggedInSegue"]){
-//        LoggedInViewController *controller = (LoggedInViewController *)segue.destinationViewController;
-//        controller.challenger = YES;
-//    }
-//
-//}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
@@ -94,9 +59,7 @@
     {
         // Get reference to the destination view controller
         LoggedInViewController *vc = [segue destinationViewController];
-        
-//      Challenger *challenger1  = [(Challenger *) sender];
-        
+
         Challenger *ch1 = (Challenger *) sender;
         
         // Pass any objects to the view controller here, like...

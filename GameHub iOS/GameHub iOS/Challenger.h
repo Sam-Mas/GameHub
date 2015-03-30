@@ -14,7 +14,6 @@
 @property (nonatomic,strong) NSNumber *challengerId;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSNumber *balance;
-//@property (assign) BOOL *turn_taken;
 @property (nonatomic,strong) NSString *created_at;
 @property (nonatomic,strong) NSString *updated_at;
 @property (nonatomic,strong) NSNumber *coin_game_id;
