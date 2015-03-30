@@ -1,10 +1,12 @@
 class Game::CoinGamesController < ApplicationController
 	before_action :set_game_coin_game, only: [:show, :update]
 
+	# this is the only place where the user does not need a cookie
+	skip_before_filter :require_login
+
 	# GET /game/coin_games
 	# GET /game/coin_games.json
 	def index
-		debugger
 		@game_coin_games = Game::CoinGame.all
 		@coin_games_full = Game::CoinGame.all.find_all { |g| g.challengers.count == 2 }
 		@coin_games_need_another_player = Game::CoinGame.all.find_all { |g| g.challengers.count == 1 && !g.game_full }
@@ -14,7 +16,6 @@ class Game::CoinGamesController < ApplicationController
 	# GET /game/coin_games/1.json
 	def show
 
-		debugger
 		if @game.challengers.count == 0 || (@game.challengers.count < Game::CoinGame.MAX_SIZE && @game.challengers.first.id != cookies[:challenger_id].to_i)
 			@game.challengers << Challenger.find(cookies[:challenger_id])
 			@game.save
@@ -52,7 +53,6 @@ class Game::CoinGamesController < ApplicationController
 	# GET /game/coin_games/new
 	def new
 
-		debugger
 		# create the game
 		@game = Game::CoinGame.new
 		@game.challengers << Challenger.find(cookies[:challenger_id])
@@ -69,7 +69,6 @@ class Game::CoinGamesController < ApplicationController
 	# PATCH/PUT /game/coin_games/1.json
 	def update
 
-		debugger
 		if @game.challengers.count == Game::CoinGame.MAX_SIZE
 			@game.flip_for(cookies[:challenger_id], params[:button].to_s)
 		end
@@ -85,7 +84,6 @@ class Game::CoinGamesController < ApplicationController
 	# Use callbacks to share common setup or constraints between actions.
 	def set_game_coin_game
 
-		debugger
 		@game = Game::CoinGame.find(params[:id])
 	end
 

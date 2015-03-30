@@ -2,6 +2,9 @@ module Api
 	module V1
 
 		class ChallengersController < ApplicationController
+
+			# this is the only place where the user does not need a cookie
+			skip_before_filter :require_login
 		
 			protect_from_forgery with: :null_session
 			respond_to :json
@@ -34,7 +37,6 @@ module Api
 			end
 
 			def update
-				debugger
 				challenger = Challenger.find_by_name(params[:name])
 				challenger.update(balance: params[:balance])
 				respond_with @challenger do |format|
@@ -43,7 +45,6 @@ module Api
 			end
 
 			def destroy
-				debugger
 				respond_with Challenger.destroy(challenger_params[:id])
 			end
 		end
