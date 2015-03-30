@@ -20,6 +20,4 @@
 @property (nonatomic,strong) NSString *opponent;
 @property (nonatomic,strong) NSNumber *token;
 
-
-
 @end

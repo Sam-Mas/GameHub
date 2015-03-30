@@ -18,7 +18,6 @@
 
 @synthesize usernameLabel;
 @synthesize balanceLabel;
-//@synthesize challenger;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +27,7 @@
 
 - (void)viewDidLoad {
     
-    NSLog(@"-=-=--=Challenger naem is : %@ ", self.challenger.name);
+    NSLog(@"-=-=--=Challenger name is : %@ ", self.challenger.name);
     usernameLabel.text  = self.challenger.name;
     
     balanceLabel.text   = self.challenger.balance.stringValue;
