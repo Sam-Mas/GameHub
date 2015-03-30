@@ -88,32 +88,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-JY-8ff">
-                                <rect key="frame" x="71" y="60" width="192" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="0.90492818813131315" green="0.90492818813131315" blue="0.90492818813131315" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Welcome " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-JY-8ff">
+                                <rect key="frame" x="50" y="64" width="249" height="115"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.98285590277777779" green="0.98285590277777779" blue="0.98285590277777779" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your current Balance is : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlY-Hg-mRT">
-                                <rect key="frame" x="78" y="152" width="192" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.95643939393939392" green="0.95643939393939392" blue="0.95643939393939392" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Your current Balance is : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlY-Hg-mRT">
+                                <rect key="frame" x="35" y="174" width="336" height="111"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.99358822601010099" green="0.99358822601010099" blue="0.99358822601010099" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sup" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snX-3f-thL">
-                                <rect key="frame" x="252" y="56" width="160" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="0.634765625" green="0.634765625" blue="0.634765625" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="[username]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snX-3f-thL">
+                                <rect key="frame" x="332" y="86" width="336" height="71"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.98285590277777779" green="0.98285590277777779" blue="0.98285590277777779" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-pQ-0qD">
-                                <rect key="frame" x="279" y="151" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.67284169823232332" green="0.67284169823232332" blue="0.67284169823232332" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-Vn-6G2">
-                                <rect key="frame" x="170" y="322" width="188" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-Vn-6G2">
+                                <rect key="frame" x="206" y="429" width="188" height="75"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Play a Game">
                                     <color key="titleColor" red="0.93201546717171713" green="0.60482584617393875" blue="0.16399508264803095" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,8 +117,24 @@
                                     <segue destination="bDq-7l-bq6" kind="show" identifier="startGameSegue" id="8Q4-W1-m8p"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="[balance]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-pQ-0qD">
+                                <rect key="frame" x="379" y="197" width="177" height="66"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" red="0.99358822601010099" green="0.99358822601010099" blue="0.99358822601010099" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.40766238500000002" green="0.24348225679999999" blue="0.48970332919999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Xc-JY-8ff" firstAttribute="leading" secondItem="pbi-uG-dSw" secondAttribute="leadingMargin" constant="20" id="4P9-U9-SYT"/>
+                            <constraint firstItem="aiP-pQ-0qD" firstAttribute="leading" secondItem="NlY-Hg-mRT" secondAttribute="trailing" constant="8" id="BRp-h0-wZu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aiP-pQ-0qD" secondAttribute="trailing" constant="20" id="YLO-6u-Zko"/>
+                            <constraint firstItem="Lb7-Vn-6G2" firstAttribute="leading" secondItem="pbi-uG-dSw" secondAttribute="leadingMargin" constant="161" id="hme-Tg-aIe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="snX-3f-thL" secondAttribute="trailing" constant="50" id="iF6-hY-JHu"/>
+                            <constraint firstItem="NlY-Hg-mRT" firstAttribute="leading" secondItem="pbi-uG-dSw" secondAttribute="leadingMargin" constant="20" id="jYx-Tb-S49"/>
+                            <constraint firstItem="snX-3f-thL" firstAttribute="leading" secondItem="0Xc-JY-8ff" secondAttribute="trailing" constant="50" id="mbh-LL-Oeg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lb7-Vn-6G2" secondAttribute="trailing" constant="161" id="wgL-Tf-a4x"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="balanceLabel" destination="aiP-pQ-0qD" id="U4x-1O-eAo"/>

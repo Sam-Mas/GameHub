@@ -12,5 +12,7 @@ end
 
 target 'GameHub iOSTests' do
 
+pod 'OCMock', '~> 3.1.2'
+
 end
 

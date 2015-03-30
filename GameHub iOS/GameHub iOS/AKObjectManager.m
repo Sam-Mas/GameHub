@@ -16,8 +16,9 @@
 
 +(instancetype)sharedManager{
     
-//    NSURL *url = [NSURL URLWithString:@"http://gamehub-dev.elasticbeanstalk.com/api/v1/"];
-    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/api/v1/"];
+    NSURL *url = [NSURL URLWithString:@"http://gamehub.elasticbeanstalk.com/api/v1/"];  //prod
+//    NSURL *url = [NSURL URLWithString:@"http://gamehub-dev.elasticbeanstalk.com/api/v1/"];  //Dev
+//    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/api/v1/"];  //local
    
     
     AKObjectManager *sharedManager = [self managerWithBaseURL: url];
