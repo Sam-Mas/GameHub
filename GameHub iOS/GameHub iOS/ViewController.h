@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoggedInViewController.h"
+#import "Challenger.h"
+
+
+@class LoggedInViewController;
 
 @interface ViewController : UIViewController
 
+extern Challenger *currentChallenger;
+
+@property(strong,nonatomic)Challenger *loggedInChallenger;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+
 
 @end
+
+
 

@@ -6,6 +6,13 @@ Rails.application.routes.draw do
 		end
 	end
 
+	namespace :api, defaults: {format: 'json'} do
+		namespace :v1 do
+			resources :coin_games
+		end
+	end
+
+
 	root 'welcome#index'
 	post '/challenge_player', to: 'challengers#challenge_player'
 	get '/sign_out', to: 'challengers#sign_out'

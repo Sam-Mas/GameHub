@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C7DF2D47148593BFC919C94"
+               BlueprintIdentifier = "C93C3CD8D948EC0299328C07"
                BuildableName = "libPods-GameHub iOS-NSRails.a"
                BlueprintName = "Pods-GameHub iOS-NSRails"
                ReferencedContainer = "container:Pods.xcodeproj">

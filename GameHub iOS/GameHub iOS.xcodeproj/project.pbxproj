@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51C1A96320CC09213BDF4F3 /* libPods-GameHub iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC82B43DD04668C2FA5835A1 /* libPods-GameHub iOSTests.a */; };
 		B23240921AB0F24800763746 /* Challenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B23240911AB0F24800763746 /* Challenger.m */; };
 		B23240931AB0F24800763746 /* Challenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B23240911AB0F24800763746 /* Challenger.m */; };
+		B24055A21AC8131100E8FF29 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24055A11AC8131100E8FF29 /* GameViewController.m */; };
+		B24055A41AC9C37A00E8FF29 /* basicFunctionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B24055A31AC9C37A00E8FF29 /* basicFunctionsTest.m */; };
 		B2469EBB1AA65B24000DDF96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EBA1AA65B24000DDF96 /* main.m */; };
 		B2469EBE1AA65B24000DDF96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EBD1AA65B24000DDF96 /* AppDelegate.m */; };
 		B2469EC11AA65B24000DDF96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EC01AA65B24000DDF96 /* ViewController.m */; };
@@ -16,7 +19,19 @@
 		B2469EC61AA65B24000DDF96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2469EC51AA65B24000DDF96 /* Images.xcassets */; };
 		B2469EC91AA65B24000DDF96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2469EC71AA65B24000DDF96 /* LaunchScreen.xib */; };
 		B2469ED51AA65B24000DDF96 /* GameHub_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */; };
-		B2A927CA1AB3DE2200C2B176 /* GHRestKitClient.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */; };
+		B28363721AB6B18300022F45 /* LoggedInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363711AB6B18300022F45 /* LoggedInViewController.m */; };
+		B283637E1AB9F5DD00022F45 /* MMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B283637A1AB9F5DD00022F45 /* MMNavigationController.m */; };
+		B28363851AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363801AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m */; };
+		B28363861AB9F80100022F45 /* MMSideDrawerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363821AB9F80100022F45 /* MMSideDrawerTableViewCell.m */; };
+		B28363871AB9F80100022F45 /* MMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363841AB9F80100022F45 /* MMTableViewCell.m */; };
+		B283638A1AB9F83500022F45 /* MMLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363891AB9F83500022F45 /* MMLogoView.m */; };
+		B28363991ABB5D8E00022F45 /* MMCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */; };
+		B283639A1ABB5D8E00022F45 /* MMCenterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */; };
+		B283639B1ABB5D8E00022F45 /* MMDrawerVisualStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */; };
+		B283639C1ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */; };
+		B283639D1ABB5D8E00022F45 /* MMRightSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */; };
+		B283639E1ABB5D8E00022F45 /* MMSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */; };
+		B283639F1ABB5D8E00022F45 /* MMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28363981ABB5D8E00022F45 /* MMViewController.m */; };
 		B2A927CD1AB3E04200C2B176 /* MappingProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CC1AB3E04200C2B176 /* MappingProvider.m */; };
 		B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */; };
 		B2A927D31AB40CBE00C2B176 /* ChallengerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */; };
@@ -39,6 +54,9 @@
 		3BDEC83AC963813F4A3BC74D /* libPods-GameHub iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GameHub iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23240901AB0F24800763746 /* Challenger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Challenger.h; sourceTree = "<group>"; };
 		B23240911AB0F24800763746 /* Challenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Challenger.m; sourceTree = "<group>"; };
+		B24055A01AC8131100E8FF29 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		B24055A11AC8131100E8FF29 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		B24055A31AC9C37A00E8FF29 /* basicFunctionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = basicFunctionsTest.m; sourceTree = "<group>"; };
 		B2469EB51AA65B24000DDF96 /* GameHub iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameHub iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2469EB91AA65B24000DDF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2469EBA1AA65B24000DDF96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,14 +70,41 @@
 		B2469ECE1AA65B24000DDF96 /* GameHub iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GameHub iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2469ED31AA65B24000DDF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameHub_iOSTests.m; sourceTree = "<group>"; };
-		B2A927C81AB3DE2200C2B176 /* GHRestKitClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHRestKitClient.h; sourceTree = "<group>"; };
-		B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHRestKitClient.m; sourceTree = "<group>"; };
+		B28363701AB6B18300022F45 /* LoggedInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggedInViewController.h; sourceTree = "<group>"; };
+		B28363711AB6B18300022F45 /* LoggedInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggedInViewController.m; sourceTree = "<group>"; };
+		B28363791AB9F5DD00022F45 /* MMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNavigationController.h; sourceTree = "<group>"; };
+		B283637A1AB9F5DD00022F45 /* MMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNavigationController.m; sourceTree = "<group>"; };
+		B283637F1AB9F80100022F45 /* MMSideDrawerSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerSectionHeaderView.h; sourceTree = "<group>"; };
+		B28363801AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerSectionHeaderView.m; sourceTree = "<group>"; };
+		B28363811AB9F80100022F45 /* MMSideDrawerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerTableViewCell.h; sourceTree = "<group>"; };
+		B28363821AB9F80100022F45 /* MMSideDrawerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerTableViewCell.m; sourceTree = "<group>"; };
+		B28363831AB9F80100022F45 /* MMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTableViewCell.h; sourceTree = "<group>"; };
+		B28363841AB9F80100022F45 /* MMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTableViewCell.m; sourceTree = "<group>"; };
+		B28363881AB9F83500022F45 /* MMLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLogoView.h; sourceTree = "<group>"; };
+		B28363891AB9F83500022F45 /* MMLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLogoView.m; sourceTree = "<group>"; };
+		B283638B1ABB5D8E00022F45 /* MMCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCenterTableViewCell.h; sourceTree = "<group>"; };
+		B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCenterTableViewCell.m; sourceTree = "<group>"; };
+		B283638D1ABB5D8E00022F45 /* MMCenterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCenterTableViewController.h; sourceTree = "<group>"; };
+		B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCenterTableViewController.m; sourceTree = "<group>"; };
+		B283638F1ABB5D8E00022F45 /* MMDrawerVisualStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualStateManager.h; sourceTree = "<group>"; };
+		B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualStateManager.m; sourceTree = "<group>"; };
+		B28363911ABB5D8E00022F45 /* MMLeftSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLeftSideDrawerViewController.h; sourceTree = "<group>"; };
+		B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLeftSideDrawerViewController.m; sourceTree = "<group>"; };
+		B28363931ABB5D8E00022F45 /* MMRightSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRightSideDrawerViewController.h; sourceTree = "<group>"; };
+		B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRightSideDrawerViewController.m; sourceTree = "<group>"; };
+		B28363951ABB5D8E00022F45 /* MMSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSideDrawerViewController.h; sourceTree = "<group>"; };
+		B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSideDrawerViewController.m; sourceTree = "<group>"; };
+		B28363971ABB5D8E00022F45 /* MMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMViewController.h; sourceTree = "<group>"; };
+		B28363981ABB5D8E00022F45 /* MMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMViewController.m; sourceTree = "<group>"; };
 		B2A927CB1AB3E04200C2B176 /* MappingProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingProvider.h; sourceTree = "<group>"; };
 		B2A927CC1AB3E04200C2B176 /* MappingProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MappingProvider.m; sourceTree = "<group>"; };
 		B2A927CE1AB3E13500C2B176 /* AKObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKObjectManager.h; sourceTree = "<group>"; };
 		B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKObjectManager.m; sourceTree = "<group>"; };
 		B2A927D11AB40CBE00C2B176 /* ChallengerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChallengerManager.h; sourceTree = "<group>"; };
 		B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChallengerManager.m; sourceTree = "<group>"; };
+		CC82B43DD04668C2FA5835A1 /* libPods-GameHub iOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GameHub iOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94159BB3599726A410443D4 /* Pods-GameHub iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameHub iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameHub iOSTests/Pods-GameHub iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		EF9EB7818A51AC796BBF93A4 /* Pods-GameHub iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameHub iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameHub iOSTests/Pods-GameHub iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,16 +120,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51C1A96320CC09213BDF4F3 /* libPods-GameHub iOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		638A06EB1AC603B0007F7ADC /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				B283638B1ABB5D8E00022F45 /* MMCenterTableViewCell.h */,
+				B283638C1ABB5D8E00022F45 /* MMCenterTableViewCell.m */,
+				B283638D1ABB5D8E00022F45 /* MMCenterTableViewController.h */,
+				B283638E1ABB5D8E00022F45 /* MMCenterTableViewController.m */,
+				B283638F1ABB5D8E00022F45 /* MMDrawerVisualStateManager.h */,
+				B28363901ABB5D8E00022F45 /* MMDrawerVisualStateManager.m */,
+				B28363911ABB5D8E00022F45 /* MMLeftSideDrawerViewController.h */,
+				B28363921ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m */,
+				B28363931ABB5D8E00022F45 /* MMRightSideDrawerViewController.h */,
+				B28363941ABB5D8E00022F45 /* MMRightSideDrawerViewController.m */,
+				B28363951ABB5D8E00022F45 /* MMSideDrawerViewController.h */,
+				B28363961ABB5D8E00022F45 /* MMSideDrawerViewController.m */,
+				B28363971ABB5D8E00022F45 /* MMViewController.h */,
+				B28363981ABB5D8E00022F45 /* MMViewController.m */,
+				B28363881AB9F83500022F45 /* MMLogoView.h */,
+				B28363891AB9F83500022F45 /* MMLogoView.m */,
+				B283637F1AB9F80100022F45 /* MMSideDrawerSectionHeaderView.h */,
+				B28363801AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m */,
+				B28363811AB9F80100022F45 /* MMSideDrawerTableViewCell.h */,
+				B28363821AB9F80100022F45 /* MMSideDrawerTableViewCell.m */,
+				B28363831AB9F80100022F45 /* MMTableViewCell.h */,
+				B28363841AB9F80100022F45 /* MMTableViewCell.m */,
+				B28363791AB9F5DD00022F45 /* MMNavigationController.h */,
+				B283637A1AB9F5DD00022F45 /* MMNavigationController.m */,
+			);
+			name = MMDrawerController;
+			sourceTree = "<group>";
+		};
 		ADA948DAE8895CDD24BD1CA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				3BDEC83AC963813F4A3BC74D /* libPods-GameHub iOS.a */,
+				CC82B43DD04668C2FA5835A1 /* libPods-GameHub iOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +190,7 @@
 		B2469EB71AA65B24000DDF96 /* GameHub iOS */ = {
 			isa = PBXGroup;
 			children = (
+				638A06EB1AC603B0007F7ADC /* MMDrawerController */,
 				B2469EBC1AA65B24000DDF96 /* AppDelegate.h */,
 				B2469EBD1AA65B24000DDF96 /* AppDelegate.m */,
 				B2469EBF1AA65B24000DDF96 /* ViewController.h */,
@@ -122,14 +201,16 @@
 				B2469EB81AA65B24000DDF96 /* Supporting Files */,
 				B23240901AB0F24800763746 /* Challenger.h */,
 				B23240911AB0F24800763746 /* Challenger.m */,
-				B2A927C81AB3DE2200C2B176 /* GHRestKitClient.h */,
-				B2A927C91AB3DE2200C2B176 /* GHRestKitClient.m */,
 				B2A927CB1AB3E04200C2B176 /* MappingProvider.h */,
 				B2A927CC1AB3E04200C2B176 /* MappingProvider.m */,
 				B2A927CE1AB3E13500C2B176 /* AKObjectManager.h */,
 				B2A927CF1AB3E13500C2B176 /* AKObjectManager.m */,
 				B2A927D11AB40CBE00C2B176 /* ChallengerManager.h */,
 				B2A927D21AB40CBE00C2B176 /* ChallengerManager.m */,
+				B28363701AB6B18300022F45 /* LoggedInViewController.h */,
+				B28363711AB6B18300022F45 /* LoggedInViewController.m */,
+				B24055A01AC8131100E8FF29 /* GameViewController.h */,
+				B24055A11AC8131100E8FF29 /* GameViewController.m */,
 			);
 			path = "GameHub iOS";
 			sourceTree = "<group>";
@@ -146,6 +227,7 @@
 		B2469ED11AA65B24000DDF96 /* GameHub iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				B24055A31AC9C37A00E8FF29 /* basicFunctionsTest.m */,
 				B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */,
 				B2469ED21AA65B24000DDF96 /* Supporting Files */,
 			);
@@ -165,6 +247,8 @@
 			children = (
 				049A74B7FEBD43259FA4B7D0 /* Pods-GameHub iOS.debug.xcconfig */,
 				2303B2741A35101BF3F6CD60 /* Pods-GameHub iOS.release.xcconfig */,
+				EF9EB7818A51AC796BBF93A4 /* Pods-GameHub iOSTests.debug.xcconfig */,
+				E94159BB3599726A410443D4 /* Pods-GameHub iOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -195,9 +279,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2469EDB1AA65B24000DDF96 /* Build configuration list for PBXNativeTarget "GameHub iOSTests" */;
 			buildPhases = (
+				A73CE02A215B50557A51EAF3 /* Check Pods Manifest.lock */,
 				B2469ECA1AA65B24000DDF96 /* Sources */,
 				B2469ECB1AA65B24000DDF96 /* Frameworks */,
 				B2469ECC1AA65B24000DDF96 /* Resources */,
+				0BDF36678F805ADB2D864757 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +354,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0BDF36678F805ADB2D864757 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameHub iOSTests/Pods-GameHub iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		54A4F7DDC4C54E715198B1C6 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,6 +399,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A73CE02A215B50557A51EAF3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -305,13 +421,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B283638A1AB9F83500022F45 /* MMLogoView.m in Sources */,
 				B2A927D01AB3E13500C2B176 /* AKObjectManager.m in Sources */,
 				B23240921AB0F24800763746 /* Challenger.m in Sources */,
+				B283639E1ABB5D8E00022F45 /* MMSideDrawerViewController.m in Sources */,
+				B28363721AB6B18300022F45 /* LoggedInViewController.m in Sources */,
+				B283639B1ABB5D8E00022F45 /* MMDrawerVisualStateManager.m in Sources */,
+				B28363861AB9F80100022F45 /* MMSideDrawerTableViewCell.m in Sources */,
 				B2469EC11AA65B24000DDF96 /* ViewController.m in Sources */,
+				B28363851AB9F80100022F45 /* MMSideDrawerSectionHeaderView.m in Sources */,
+				B28363871AB9F80100022F45 /* MMTableViewCell.m in Sources */,
 				B2469EBE1AA65B24000DDF96 /* AppDelegate.m in Sources */,
-				B2A927CA1AB3DE2200C2B176 /* GHRestKitClient.m in Sources */,
+				B283639A1ABB5D8E00022F45 /* MMCenterTableViewController.m in Sources */,
+				B283639D1ABB5D8E00022F45 /* MMRightSideDrawerViewController.m in Sources */,
+				B283637E1AB9F5DD00022F45 /* MMNavigationController.m in Sources */,
+				B283639F1ABB5D8E00022F45 /* MMViewController.m in Sources */,
 				B2A927D31AB40CBE00C2B176 /* ChallengerManager.m in Sources */,
+				B24055A21AC8131100E8FF29 /* GameViewController.m in Sources */,
+				B283639C1ABB5D8E00022F45 /* MMLeftSideDrawerViewController.m in Sources */,
 				B2469EBB1AA65B24000DDF96 /* main.m in Sources */,
+				B28363991ABB5D8E00022F45 /* MMCenterTableViewCell.m in Sources */,
 				B2A927CD1AB3E04200C2B176 /* MappingProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +451,7 @@
 			files = (
 				B23240931AB0F24800763746 /* Challenger.m in Sources */,
 				B2469ED51AA65B24000DDF96 /* GameHub_iOSTests.m in Sources */,
+				B24055A41AC9C37A00E8FF29 /* basicFunctionsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,16 +569,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"/**",
 					"\"${PODS_ROOT}/Headers/Public/NSRails\"/**",
 				);
 				INFOPLIST_FILE = "GameHub iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NSRails = "${SRCROOT}/Pods/NSRails";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -458,21 +591,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"/**",
 					"\"${PODS_ROOT}/Headers/Public/NSRails\"/**",
 				);
 				INFOPLIST_FILE = "GameHub iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				NSRails = "${SRCROOT}/Pods/NSRails";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 		B2469EDC1AA65B24000DDF96 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF9EB7818A51AC796BBF93A4 /* Pods-GameHub iOSTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -491,6 +628,7 @@
 		};
 		B2469EDD1AA65B24000DDF96 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E94159BB3599726A410443D4 /* Pods-GameHub iOSTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

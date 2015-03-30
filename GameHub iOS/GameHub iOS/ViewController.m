@@ -16,16 +16,55 @@
 
 @implementation ViewController
 
+@synthesize usernameTextField;
+@synthesize loggedInChallenger;
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self setRestorationIdentifier:@"MMCenterControllerRestorationKey"];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    [[ChallengerManager sharedManager] loadAuthenticatedChallenger:^(Challenger *challenger){
-        NSLog(@"************user is: %@ *************", challenger.name);
-    }
-    failure:^(RKObjectRequestOperation *operation, NSError *error) {
-         NSLog(@"* ****   ****   *****  **error occured: %@", error);
-     }];
+}
+
+- (IBAction)loginChallenger:(id)sender {
+
+    NSString * username = usernameTextField.text;
     
+    NSDictionary *name = @{
+                           @"name": username,
+                           
+                           };
+    [[ChallengerManager sharedManager] loadUser :name :^(Challenger *challenger)
+    {
+            NSLog(@"************user is: %@ *************", challenger.name);
+            [self performSegueWithIdentifier: @"loggedInSegue" sender: challenger];
+        }
+        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+            NSLog(@"Could not login :  %@", error);
+        }
+    ];
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"loggedInSegue"])
+    {
+        // Get reference to the destination view controller
+        LoggedInViewController *vc = [segue destinationViewController];
+
+        Challenger *ch1 = (Challenger *) sender;
+        
+        // Pass any objects to the view controller here, like...
+        [vc setChallenger:ch1];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

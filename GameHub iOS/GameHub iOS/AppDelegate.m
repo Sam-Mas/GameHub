@@ -8,17 +8,57 @@
 
 #import "AppDelegate.h"
 #import "NSRConfig.h"
+#import "MMDrawerController.h"
+
+#import "MMCenterTableViewController.h"
+#import "MMRightSideDrawerViewController.h"
+#import "MMLeftSideDrawerViewController.h"
+
+#import "MMDrawerVisualStateManager.h"
+#import "MMNavigationController.h"
+
+#import "ViewController.h"
 
 @interface AppDelegate ()
+@property (nonatomic,strong) MMDrawerController * drawerController;
 
 @end
+
 
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *centerViewController = [storyboard instantiateInitialViewController];
+    UIViewController * rightSideDrawerViewController = [[MMRightSideDrawerViewController alloc] init];
     
+    UINavigationController * navigationController = [[MMNavigationController alloc] initWithRootViewController:centerViewController];
+    [navigationController setRestorationIdentifier:@"MMCenterNavigationControllerRestorationKey"];
+    self.drawerController = [[MMDrawerController alloc]
+                                 initWithCenterViewController:navigationController
+                                 rightDrawerViewController:rightSideDrawerViewController];
+
+    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+    [self.drawerController setMaximumRightDrawerWidth:200.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    [self.drawerController
+     setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+         MMDrawerControllerDrawerVisualStateBlock block;
+         block = [[MMDrawerVisualStateManager sharedManager]
+                  drawerVisualStateBlockForDrawerSide:drawerSide];
+         if(block){
+             block(drawerController, drawerSide, percentVisible);
+         }
+     }];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:self.drawerController];
+    
+    
+
     
 // http://localhost:3000/api/v1/challengers   
     
