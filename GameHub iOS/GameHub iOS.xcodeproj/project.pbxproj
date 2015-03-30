@@ -11,7 +11,6 @@
 		B23240921AB0F24800763746 /* Challenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B23240911AB0F24800763746 /* Challenger.m */; };
 		B23240931AB0F24800763746 /* Challenger.m in Sources */ = {isa = PBXBuildFile; fileRef = B23240911AB0F24800763746 /* Challenger.m */; };
 		B24055A21AC8131100E8FF29 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24055A11AC8131100E8FF29 /* GameViewController.m */; };
-		B24055A41AC9C37A00E8FF29 /* basicFunctionsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B24055A31AC9C37A00E8FF29 /* basicFunctionsTest.m */; };
 		B2469EBB1AA65B24000DDF96 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EBA1AA65B24000DDF96 /* main.m */; };
 		B2469EBE1AA65B24000DDF96 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EBD1AA65B24000DDF96 /* AppDelegate.m */; };
 		B2469EC11AA65B24000DDF96 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2469EC01AA65B24000DDF96 /* ViewController.m */; };
@@ -56,7 +55,6 @@
 		B23240911AB0F24800763746 /* Challenger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Challenger.m; sourceTree = "<group>"; };
 		B24055A01AC8131100E8FF29 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		B24055A11AC8131100E8FF29 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		B24055A31AC9C37A00E8FF29 /* basicFunctionsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = basicFunctionsTest.m; sourceTree = "<group>"; };
 		B2469EB51AA65B24000DDF96 /* GameHub iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GameHub iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2469EB91AA65B24000DDF96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2469EBA1AA65B24000DDF96 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 		B2469ED11AA65B24000DDF96 /* GameHub iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				B24055A31AC9C37A00E8FF29 /* basicFunctionsTest.m */,
 				B2469ED41AA65B24000DDF96 /* GameHub_iOSTests.m */,
 				B2469ED21AA65B24000DDF96 /* Supporting Files */,
 			);
@@ -451,7 +448,6 @@
 			files = (
 				B23240931AB0F24800763746 /* Challenger.m in Sources */,
 				B2469ED51AA65B24000DDF96 /* GameHub_iOSTests.m in Sources */,
-				B24055A41AC9C37A00E8FF29 /* basicFunctionsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
